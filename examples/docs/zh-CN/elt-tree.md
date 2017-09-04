@@ -262,7 +262,7 @@
 
 ::: demo
 ```html
-<el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
+<elt-tree :data="data" :props="defaultProps" @node-click="handleNodeClick"></elt-tree>
 
 <script>
   export default {
@@ -325,14 +325,14 @@
 
 ::: demo
 ```html
-<el-tree
+<elt-tree
   :data="regions"
   :props="props"
   :load="loadNode"
   lazy
   show-checkbox
   @check-change="handleCheckChange">
-</el-tree>
+</elt-tree>
 
 <script>
   export default {
@@ -398,14 +398,14 @@
 
 ::: demo 分别通过`default-expanded-keys`和`default-checked-keys`设置默认展开和默认选中的节点。需要注意的是，此时必须设置`node-key`，其值为节点数据中的一个字段名，该字段在整棵树中是唯一的。
 ```html
-<el-tree
+<elt-tree
   :data="data2"
   show-checkbox
   node-key="id"
   :default-expanded-keys="[2, 3]"
   :default-checked-keys="[5]"
   :props="defaultProps">
-</el-tree>
+</elt-tree>
 
 <script>
   export default {
@@ -462,13 +462,13 @@
 
 ::: demo 通过`disabled`设置禁用状态。
 ```html
-<el-tree
+<elt-tree
   :data="data3"
   show-checkbox
   node-key="id"
   :default-expanded-keys="[2, 3]"
   :default-checked-keys="[5]">
-</el-tree>
+</elt-tree>
 
 <script>
   export default {
@@ -517,7 +517,7 @@
 
 ::: demo 本例展示如何获取和设置选中节点。获取和设置各有两种方式：通过 node 或通过 key。如果需要通过 key 来获取或设置，则必须设置`node-key`。
 ```html
-<el-tree
+<elt-tree
   :data="data2"
   show-checkbox
   default-expand-all
@@ -525,7 +525,7 @@
   ref="tree"
   highlight-current
   :props="defaultProps">
-</el-tree>
+</elt-tree>
 
 <div class="buttons">
   <el-button @click="getCheckedNodes">通过 node 获取</el-button>
@@ -614,7 +614,7 @@
 
 ::: demo 使用`render-content`指定渲染函数，该函数返回需要的节点区内容即可。渲染函数的用法请参考 Vue 文档。注意：由于 jsfiddle 不支持 JSX 语法，所以本例在 jsfiddle 中无法运行。但是在实际的项目中，只要正确地配置了相关依赖，就可以正常运行。
 ```html
-<el-tree
+<elt-tree
   :data="data2"
   :props="defaultProps"
   show-checkbox
@@ -622,7 +622,7 @@
   default-expand-all
   :expand-on-click-node="false"
   :render-content="renderContent">
-</el-tree>
+</elt-tree>
 
 <script>
   let id = 1000;
@@ -709,14 +709,14 @@
   v-model="filterText">
 </el-input>
 
-<el-tree
+<elt-tree
   class="filter-tree"
   :data="data2"
   :props="defaultProps"
   default-expand-all
   :filter-node-method="filterNode"
   ref="tree2">
-</el-tree>
+</elt-tree>
 
 <script>
   export default {
@@ -788,12 +788,12 @@
 
 ::: demo
 ```html
-<el-tree
+<elt-tree
   :data="data"
   :props="defaultProps"
   accordion
   @node-click="handleNodeClick">
-</el-tree>
+</elt-tree>
 
 <script>
   export default {
