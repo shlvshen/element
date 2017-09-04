@@ -63,5 +63,5 @@
   "cascader": "./packages/cascader/index.js",
   "color-picker": "./packages/color-picker/index.js",
   "transfer": "./packages/transfer/index.js",
-  "thx-tree": "./packages/thx-tree/index.js"
+  "elt-tree": "./packages/elt-tree/index.js"
 }

@@ -56,13 +56,13 @@
       <div
         class="el-tree-node__children"
         v-show="expanded">
-        <thx-tree-node
+        <elt-tree-node
           :render-content="renderContent"
           v-for="child in node.childNodes"
           :key="getNodeKey(child)"
           :node="child"
           @node-expand="handleChildNodeExpand">
-        </thx-tree-node>
+        </elt-tree-node>
       </div>
     </el-collapse-transition>
   </div>
@@ -74,9 +74,9 @@
   import emitter from 'element-ui/src/mixins/emitter';
 
   export default {
-    name: 'ThxTreeNode',
+    name: 'EltTreeNode',
 
-    componentName: 'ThxTreeNode',
+    componentName: 'EltTreeNode',
 
     mixins: [emitter],
 

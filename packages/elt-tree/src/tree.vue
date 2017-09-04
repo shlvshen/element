@@ -7,14 +7,14 @@
         </div>
       </div>
     </el-collapse-transition>
-    <thx-tree-node
+    <elt-tree-node
       v-for="child in root.childNodes"
       :node="child"
       :props="props"
       :key="getNodeKey(child)"
       :render-content="renderContent"
       @node-expand="handleNodeExpand">
-    </thx-tree-node>
+    </elt-tree-node>
     <div class="el-tree__empty-block" v-if="!root.childNodes || root.childNodes.length === 0">
       <span class="el-tree__empty-text">{{ emptyText }}</span>
     </div>
@@ -27,12 +27,12 @@
   import emitter from 'element-ui/src/mixins/emitter';
 
   export default {
-    name: 'ThxTree',
+    name: 'EltTree',
 
     mixins: [emitter],
 
     components: {
-      ThxTreeNode: require('./tree-node.vue')
+      EltTreeNode: require('./tree-node.vue')
     },
 
     data() {
