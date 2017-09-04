@@ -233,6 +233,10 @@
       filterNode(value, data) {
         if (!value) return true;
         return data.label.indexOf(value) !== -1;
+      },
+
+      editTree() {
+        this.onEditable = !this.onEditable;
       }
     },
 
@@ -246,7 +250,8 @@
         props,
         defaultCheckedKeys: [5],
         defaultExpandedKeys: [2, 3],
-        filterText: ''
+        filterText: '',
+        onEditable: null
       };
     }
   };
@@ -704,9 +709,18 @@
 
 ::: demo 在需要对节点进行过滤时，调用 Tree 实例的`filter`方法，参数为关键字。需要注意的是，此时需要设置`filter-node-method`，值为过滤函数。
 ```html
+<el-row>
+  <el-col :span="24">
+    <el-button type="primary" style="float: right;" @click="editTree()">
+      <span v-if="!onEditable">编辑</span>
+      <span v-if="onEditable">取消编辑</span>
+    </el-button>
+  </el-col>
+</el-row>
+
 <el-input
   placeholder="输入关键字进行过滤"
-  v-model="filterText">
+  v-model="filterText" style="margin-bottom: 15px;">
 </el-input>
 
 <elt-tree
