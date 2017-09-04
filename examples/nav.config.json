@@ -40,8 +40,8 @@
           "groupName": "Data",
           "list": [
             {
-              "path": "/thx-tree",
-              "title": "Thx-Tree 树形控件"
+              "path": "/elt-tree",
+              "title": "Elt-Tree 树形控件"
             }
           ]
         }
