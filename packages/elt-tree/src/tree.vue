@@ -1,5 +1,20 @@
 <template>
   <div class="el-tree" :class="{ 'el-tree--highlight-current': highlightCurrent }">
+    <!-- onEditable -->
+    <el-row>
+      <el-col :span="24">
+        <el-button type="primary" style="float: right;" @click="handleOnEdit()">
+          <span v-if="!onEditable">编辑</span>
+          <span v-if="onEditable">取消编辑</span>
+        </el-button>
+      </el-col>
+    </el-row>
+    <!-- search -->
+    <el-input
+      placeholder="输入关键字进行过滤"
+      v-model="filterText" style="margin-bottom: 15px;">
+    </el-input>
+
     <el-collapse-transition>
       <div style="padding-left: 15px;" v-show="config.isAddable && store.isAddable">
         <div class="el-tree-node__add">
@@ -39,7 +54,9 @@
       return {
         store: null,
         root: null,
-        currentNode: null
+        currentNode: null,
+        onEditable: null,
+        filterText: ''
       };
     },
 
@@ -132,6 +149,9 @@
     },
 
     methods: {
+      handleOnEdit() {
+        this.onEditable = !this.onEditable;
+      },
       filter(value) {
         if (!this.filterNodeMethod) throw new Error('[Tree] filterNodeMethod is required when filter');
         this.store.filter(value);
