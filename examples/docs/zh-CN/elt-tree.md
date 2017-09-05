@@ -145,7 +145,8 @@
   const config = {
     isEditable: true,
     isSearchable: true,
-    isAddable: true
+    isAddable: true,
+    isDelable: true
   };
 
   export default {
