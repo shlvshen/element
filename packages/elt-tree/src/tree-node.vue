@@ -211,7 +211,7 @@
       handleCompleteEdit(event) {
         const node = this.node;
         node.data.label = event.target.value;
-        // node.onEditable = false;
+        node.onEditable = false;
         this.tree.$emit('node-label-change', node.data);
       },
 
