@@ -69,12 +69,13 @@ export default class TreeStore {
   /**
    * 展示新增节点
    */
-  edit(value) {
+  edit() {
+    var onEditable = this.onEditable;
     const config = this.config || {};
     const traverse = function(node) {
-      node.isAddable = value && config.isAddable;
-      node.isEditable = value && config.isEditable;
-      node.isDelable = value && config.isDelable;
+      node.isAddable = onEditable && config.isAddable;
+      node.isEditable = onEditable && config.isEditable;
+      node.isDelable = onEditable && config.isDelable;
       node.isShowEditBar = node.isEditable || node.isDelable;
       const childNodes = node.root ? node.root.childNodes : node.childNodes;
       childNodes.forEach((child) => {

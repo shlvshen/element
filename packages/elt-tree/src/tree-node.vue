@@ -35,7 +35,7 @@
       <el-dropdown style="float: right;"
                    :style="{'padding-right': tree.indent + 'px'}"
                    @click.native.stop
-                   v-show="node.isShowEditBar"
+                   v-show="node.isShowEditBar && node.id"
                    @command="handleNodeEditable">
         <span class="el-dropdown-link"><i class="iconfont">&#xe649;</i></span>
         <el-dropdown-menu slot="dropdown">
@@ -46,7 +46,7 @@
     </div>
     <el-collapse-transition>
       <div :style="{ 'padding-left': (node.level + 1) * tree.indent + 'px' }"
-           v-show="node.isAddable">
+           v-show="node.isAddable && node.id">
         <div class="el-tree-node__add" @click.stop="handleAppendNode">
           <i class="iconfont">&#xe69b;</i>
           <span>新建目录</span>

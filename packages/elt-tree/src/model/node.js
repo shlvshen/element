@@ -72,12 +72,12 @@ const getPropertyFromData = function(node, prop) {
   }
 };
 
-let nodeIdSeed = 0;
+// let nodeIdSeed = 0;
 
 export default class Node {
   constructor(options) {
     options.data = options.data || {};
-    this.id = options.data.id || nodeIdSeed++;
+    this.id = options.data.id;
     this.text = options.data.text || null;
     this.checked = options.data.checked || false;
     this.indeterminate = options.data.indeterminate || false;
