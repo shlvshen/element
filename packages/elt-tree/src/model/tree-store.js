@@ -5,10 +5,11 @@ export default class TreeStore {
   constructor(options) {
     this.currentNode = null;
     this.currentNodeKey = null;
-    this.isAddable = false;
-    this.isShowEditBar = false;
-    this.isEditable = false;
-    this.isDelable = false;
+    this.onEditable = false;
+    // this.isAddable = false;
+    // this.isShowEditBar = false;
+    // this.isEditable = false;
+    // this.isDelable = false;
 
     for (let option in options) {
       if (options.hasOwnProperty(option)) {
