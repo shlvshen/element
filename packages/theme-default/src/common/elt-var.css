@@ -76,6 +76,10 @@
       --index-normal: 1;
       --index-top: 1000;
       --index-popper: 2000;
+
+      /* distance
+      -------------------------- */
+      --distance-normal: 15px;
     
       /* Disable base
       -------------------------- */
