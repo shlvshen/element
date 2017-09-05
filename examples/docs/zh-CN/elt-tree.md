@@ -632,7 +632,9 @@
   node-key="id"
   default-expand-all
   :expand-on-click-node="false"
-  :render-content="renderContent">
+  :render-content="renderContent"
+  :filter-node-method="filterNode"
+  :config="config">
 </elt-tree>
 
 <script>
