@@ -46,9 +46,11 @@
       </el-dropdown>
     </div>
     <el-collapse-transition>
-      <div :style="{ 'padding-left': (node.level + 1) * tree.indent + 'px' }" v-show="node.isAddable">
+      <div :style="{ 'padding-left': (node.level + 1) * tree.indent + 'px' }"
+           v-show="node.isAddable">
         <div class="el-tree-node__add" @click.stop="handleAppendNode(node)">
-          <p style="color: #20a0ff"><i class="el-icon-plus" style="margin-right: 5px;"></i><span>新建目录</span></p>
+          <i class="iconfont">&#xe69b;</i>
+          <span>新建目录</span>
         </div>
       </div>
     </el-collapse-transition>
@@ -67,6 +69,25 @@
     </el-collapse-transition>
   </div>
 </template>
+
+<style type="scss">
+  @font-face {
+    font-family: 'iconfont';  /* project id 313336 */
+    src: url('//at.alicdn.com/t/font_313336_sf8sihacyx6iggb9.eot');
+    src: url('//at.alicdn.com/t/font_313336_sf8sihacyx6iggb9.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_313336_sf8sihacyx6iggb9.woff') format('woff'),
+    url('//at.alicdn.com/t/font_313336_sf8sihacyx6iggb9.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_313336_sf8sihacyx6iggb9.svg#iconfont') format('svg');
+  }
+  .iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    /* font-size: 18px; */
+  }
+</style>
 
 <script type="text/jsx">
   import ElCollapseTransition from 'element-ui/src/transitions/collapse-transition';

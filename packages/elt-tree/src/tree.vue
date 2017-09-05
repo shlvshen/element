@@ -21,7 +21,6 @@
         <div class="el-tree-node__add">
           <i class="iconfont">&#xe69b;</i>
           <span>新建目录</span>
-          <!-- <i class="el-icon-plus" style="margin-right: 5px;"></i>           -->
         </div>
       </div>
     </el-collapse-transition>
@@ -38,7 +37,7 @@
     </div>
   </div>
 </template>
-<style type="scss" scoped>
+<style type="scss">
   @font-face {
     font-family: 'iconfont';  /* project id 313336 */
     src: url('//at.alicdn.com/t/font_313336_sf8sihacyx6iggb9.eot');
