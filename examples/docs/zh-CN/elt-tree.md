@@ -142,6 +142,11 @@
     label: 'label'
   };
 
+  const config = {
+    isEditable: true,
+    isSearchable: true
+  };
+
   export default {
     watch: {
       filterText(val) {
@@ -251,7 +256,8 @@
         defaultCheckedKeys: [5],
         defaultExpandedKeys: [2, 3],
         filterText: '',
-        onEditable: null
+        onEditable: null,
+        config: config
       };
     }
   };
@@ -709,19 +715,6 @@
 
 ::: demo 在需要对节点进行过滤时，调用 Tree 实例的`filter`方法，参数为关键字。需要注意的是，此时需要设置`filter-node-method`，值为过滤函数。
 ```html
-<!-- <el-row>
-  <el-col :span="24">
-    <el-button type="primary" style="float: right;" @click="editTree()">
-      <span v-if="!onEditable">编辑</span>
-      <span v-if="onEditable">取消编辑</span>
-    </el-button>
-  </el-col>
-</el-row>
-
-<el-input
-  placeholder="输入关键字进行过滤"
-  v-model="filterText" style="margin-bottom: 15px;">
-</el-input> -->
 
 <elt-tree
   class="filter-tree"
@@ -729,6 +722,7 @@
   :props="defaultProps"
   default-expand-all
   :filter-node-method="filterNode"
+  :config="config"
   ref="tree2">
 </elt-tree>
 
