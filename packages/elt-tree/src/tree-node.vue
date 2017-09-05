@@ -220,7 +220,11 @@
         }
         node.data.label = event.target.value;
         node.onEditable = false;
-        this.tree.$emit('node-label-change', node.data, node, this);
+        if (node.id) {
+          this.tree.$emit('node-modify', node.data, node, this);
+        } else {
+          this.tree.$emit('node-add', node.data, node, this);          
+        }
       },
 
       handleNodeEditable(command) {
