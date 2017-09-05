@@ -220,9 +220,12 @@
         const data = node.data;
         const store = node.store;
         switch(command) {
+          //del
           case 'onDelable':
-            store.remove(data);
+            this.tree.$emit('node-del', store, data, node, this);
+            // store.remove(data);
             break;
+          //rename
           case 'onEditable':
             this.node.onEditable = true;
             break;

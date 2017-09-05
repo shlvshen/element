@@ -244,6 +244,9 @@
 
       editTree() {
         this.onEditable = !this.onEditable;
+      handleNodeDel(store, data, node, tree) {
+        store.remove(data);
+      },
       }
     },
 
