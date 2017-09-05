@@ -3,10 +3,12 @@
     <!-- onEditable -->
     <el-row v-if="config.isEditable">
       <el-col :span="24">
-        <el-button type="primary" style="float: right;" @click="handleOnEdit()">
+        <i class="iconfont">&#xe60d;</i>
+        <span>编辑</span>
+        <!-- <el-button type="primary" style="float: right;" @click="handleOnEdit()">
           <span v-if="!onEditable">编辑</span>
           <span v-if="onEditable">取消编辑</span>
-        </el-button>
+        </el-button> -->
       </el-col>
     </el-row>
     <!-- search -->
@@ -36,7 +38,24 @@
     </div>
   </div>
 </template>
-
+<style type="scss" scoped>
+  @font-face {
+    font-family: 'iconfont';  /* project id 313336 */
+    src: url('//at.alicdn.com/t/font_313336_sf8sihacyx6iggb9.eot');
+    src: url('//at.alicdn.com/t/font_313336_sf8sihacyx6iggb9.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_313336_sf8sihacyx6iggb9.woff') format('woff'),
+    url('//at.alicdn.com/t/font_313336_sf8sihacyx6iggb9.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_313336_sf8sihacyx6iggb9.svg#iconfont') format('svg');
+  }
+  .iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    /* font-size: 18px; */
+  }
+</style>
 <script>
   import TreeStore from './model/tree-store';
   import {t} from 'element-ui/src/locale';
