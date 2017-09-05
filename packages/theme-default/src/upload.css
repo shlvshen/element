@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import "./progress.css";
-@import "./common/var.css";
+@import "./common/elt-var.css";
 
 @component-namespace el {
   @b upload {

@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import "./common/var.css";
+@import "./common/elt-var.css";
 @import "./select-dropdown.css";
 @import "./input.css";
 @import "./tag.css";
