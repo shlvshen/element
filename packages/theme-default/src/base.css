@@ -1,10 +1,2 @@
 @import "./common/transition.css";
 @import "./icon.css";
-
-.fl {
-    float: left;
-}
-
-.fr {
-    float: right;
-}

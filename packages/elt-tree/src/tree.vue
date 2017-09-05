@@ -3,23 +3,25 @@
     <!-- onEditable -->
     <el-row v-if="config.isEditable">
       <el-col :span="24">
-        <p class="elt-info fr" @click.stop="handleOnEdit()">
+        <div class="el-tree__edit" @click.stop="handleOnEdit()">
           <span v-if="!onEditable"><i class="iconfont" style="margin-right: 5px;">&#xe648;</i>编辑</span>
           <span v-if="onEditable">取消编辑</span>
-        </p>
+        </div>
       </el-col>
     </el-row>
     <!-- search -->
     <el-input
       v-if="config.isSearchable"
       placeholder="输入关键字进行过滤"
-      v-model="filterText" style="margin-bottom: 15px;">
+      v-model="filterText">
     </el-input>
 
     <el-collapse-transition>
-      <div style="padding-left: 15px;" v-show="config.isAddable && store.isAddable">
+      <div style="padding-left: 15px;" v-show="isAddable">
         <div class="el-tree-node__add">
-          <p style="color: #20a0ff"><i class="el-icon-plus" style="margin-right: 5px;"></i><span>新建目录</span></p>
+          <i class="iconfont">&#xe69b;</i>
+          <span>新建目录</span>
+          <!-- <i class="el-icon-plus" style="margin-right: 5px;"></i>           -->
         </div>
       </div>
     </el-collapse-transition>
@@ -74,7 +76,8 @@
         root: null,
         currentNode: null,
         onEditable: null,
-        filterText: ''
+        filterText: '',
+        isAddable: false
       };
     },
 
@@ -172,6 +175,7 @@
     methods: {
       handleOnEdit() {
         this.onEditable = !this.onEditable;
+        this.isAddable = this.config.isAddable && this.onEditable;
       },
       filter(value) {
         if (!this.filterNodeMethod) throw new Error('[Tree] filterNodeMethod is required when filter');
