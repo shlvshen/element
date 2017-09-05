@@ -29,8 +29,9 @@
       <!-- <node-content :node="node"></node-content> -->
       <span class="el-tree-node__label" v-show="!node.onEditable">{{ node.label }}</span>
       <el-input :value="node.label" placeholder="" v-show="node.onEditable"
-                class="el-tree-node__label" style="width: auto;"
-                @blur="handleCompleteEdit($event)" autofocus></el-input>
+                class="el-tree-node__label" style="width: auto;" autofocus
+                @blur.stop="handleCompleteEdit" 
+                @keyup.enter.stop="handleCompleteEdit"></el-input>
       <el-dropdown style="float: right;"
                    :style="{'padding-right': tree.indent + 'px'}"
                    @click.native.stop
@@ -178,6 +179,7 @@
       },
 
       handleClick() {
+        if (this.node.onEditable) return;
         const store = this.tree.store;
         store.setCurrentNode(this.node);
         this.tree.$emit('current-change', store.currentNode ? store.currentNode.data : null, store.currentNode);
