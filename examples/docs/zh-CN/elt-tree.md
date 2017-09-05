@@ -146,7 +146,8 @@
     isEditable: true,
     isSearchable: true,
     isAddable: true,
-    isDelable: true
+    isDelable: true,
+    placeholder: '输入关键字'
   };
 
   export default {
@@ -245,7 +246,7 @@
       editTree() {
         this.onEditable = !this.onEditable;
       },
-      
+
       handleNodeDel(store, data, node, tree) {
         store.remove(data);
       },

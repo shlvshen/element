@@ -12,8 +12,8 @@
     <!-- search -->
     <el-input
       v-if="config.isSearchable"
-      placeholder="输入关键字进行过滤"
-      v-model="filterText">
+      v-model="filterText"
+      :placeholder="config.placeholder">
     </el-input>
 
     <el-collapse-transition>
