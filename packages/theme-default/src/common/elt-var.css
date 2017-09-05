@@ -22,6 +22,8 @@
       --color-white: #fff;
       --color-dark-white: color(var(--color-white) blend(var(--color-primary) 2%));
       --color-black: #000;
+
+      --color-border: #ddd;
     
       --color-base-black: #34495e;
       /* --color-base-black: color(var(--color-primary) h(+6) s(33%) l(18%)); */

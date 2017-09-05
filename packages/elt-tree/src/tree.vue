@@ -10,11 +10,13 @@
       </el-col>
     </el-row>
     <!-- search -->
-    <el-input
-      v-if="config.isSearchable"
-      v-model="filterText"
-      :placeholder="config.placeholder">
-    </el-input>
+    <el-row class="el-tree__search">
+      <el-input
+        v-if="config.isSearchable"
+        v-model="filterText"
+        :placeholder="config.placeholder">
+      </el-input>
+    </el-row>
 
     <el-collapse-transition>
       <div style="padding-left: 15px;" v-show="isAddable">
