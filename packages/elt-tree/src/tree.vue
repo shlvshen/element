@@ -175,14 +175,11 @@
       handleOnEdit() {
         this.onEditable = !this.onEditable;
         this.isAddable = this.config.isAddable && this.onEditable;
+        this.store.edit(this.onEditable);
       },
       filter(value) {
         if (!this.filterNodeMethod) throw new Error('[Tree] filterNodeMethod is required when filter');
         this.store.filter(value);
-      },
-      edit(value) {
-        // if (!this.editorMethod) throw new Error('[Tree] filterNodeMethod is required when filter');
-        this.store.edit(value);
       },
       getNodeKey(node, index) {
         const nodeKey = this.nodeKey;
