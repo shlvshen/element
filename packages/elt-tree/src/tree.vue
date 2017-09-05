@@ -3,12 +3,10 @@
     <!-- onEditable -->
     <el-row v-if="config.isEditable">
       <el-col :span="24">
-        <i class="iconfont">&#xe60d;</i>
-        <span>编辑</span>
-        <!-- <el-button type="primary" style="float: right;" @click="handleOnEdit()">
-          <span v-if="!onEditable">编辑</span>
+        <p class="elt-info fr" @click.stop="handleOnEdit()">
+          <span v-if="!onEditable"><i class="iconfont" style="margin-right: 5px;">&#xe648;</i>编辑</span>
           <span v-if="onEditable">取消编辑</span>
-        </el-button> -->
+        </p>
       </el-col>
     </el-row>
     <!-- search -->
