@@ -1,7 +1,7 @@
 <template>
   <div class="el-tree" :class="{ 'el-tree--highlight-current': highlightCurrent }">
     <!-- onEditable -->
-    <el-row>
+    <el-row v-if="config.isEditable">
       <el-col :span="24">
         <el-button type="primary" style="float: right;" @click="handleOnEdit()">
           <span v-if="!onEditable">编辑</span>
@@ -11,6 +11,7 @@
     </el-row>
     <!-- search -->
     <el-input
+      v-if="config.isSearchable"
       placeholder="输入关键字进行过滤"
       v-model="filterText" style="margin-bottom: 15px;">
     </el-input>
