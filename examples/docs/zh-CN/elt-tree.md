@@ -252,7 +252,9 @@
       },
 
       handelNodeLabel(data, node, tree) {
-        console.log('edit success', node.label);
+        data.id = 56;
+        node.id = data.id;
+        console.log('edit success', node);
       }
     },
 
@@ -922,3 +924,5 @@
 | current-change | 当前选中节点变化时触发的事件 | 共两个参数，依次为：当前节点的数据，当前节点的 Node 对象          |
 | node-expand    | 节点被展开时触发的事件    | 共三个参数，依次为：传递给 `data` 属性的数组中该节点所对应的对象、节点对应的 Node、节点组件本身。 |
 | node-collapse  | 节点被关闭时触发的事件    | 共三个参数，依次为：传递给 `data` 属性的数组中该节点所对应的对象、节点对应的 Node、节点组件本身。 |
+| node-del  | 节点被删除时触发的事件    | 共四个参数，依次为：`store`是节点本身封装方法的service, 传递给 `data` 属性的数组中该节点所对应的对象、节点对应的 Node、节点组件本身。 |
+| node-label-change  | 更改节点的label    | 共三个参数，依次为：传递给 `data` 属性的数组中该节点所对应的对象、节点对应的 Node、节点组件本身。 |
