@@ -1,0 +1,23 @@
+@import "./common/elt-var.css";
+
+@component-namespace elt {
+    @b primary {
+        color: var(--color-primary);
+    }
+
+    @b success {
+        color: var(--color-success);
+    }
+
+    @b warning {
+        color: var(--color-warning);
+    }
+
+    @b danger {
+        color: var(--color-danger);
+    }
+
+    @b info {
+        color: var(--color-info);
+    }
+}
