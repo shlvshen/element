@@ -2,22 +2,22 @@
 
 @component-namespace elt {
     @b primary {
-        color: var(--color-primary);
+        color: var(--color-primary) !important;
     }
 
     @b success {
-        color: var(--color-success);
+        color: var(--color-success) !important;
     }
 
     @b warning {
-        color: var(--color-warning);
+        color: var(--color-warning) !important;
     }
 
     @b danger {
-        color: var(--color-danger);
+        color: var(--color-danger) !important;
     }
 
     @b info {
-        color: var(--color-info);
+        color: var(--color-info) !important;
     }
 }
