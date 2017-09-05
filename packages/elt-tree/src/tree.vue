@@ -163,6 +163,9 @@
       },
       data(newVal) {
         this.store.setData(newVal);
+      },
+      filterText(val) {
+        this.filter(val);
       }
     },
 
