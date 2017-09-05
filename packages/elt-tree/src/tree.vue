@@ -173,9 +173,9 @@
 
     methods: {
       handleOnEdit() {
-        this.onEditable = !this.onEditable;
-        this.isAddable = this.config.isAddable && this.onEditable;
-        this.store.edit(this.onEditable);
+        this.store.onEditable = !this.store.onEditable;
+        this.isAddable = this.config.isAddable && this.store.onEditable;
+        this.store.edit();
       },
       filter(value) {
         if (!this.filterNodeMethod) throw new Error('[Tree] filterNodeMethod is required when filter');
@@ -228,6 +228,7 @@
         defaultExpandAll: this.defaultExpandAll,
         filterNodeMethod: this.filterNodeMethod,
         config: this.config,
+        onEditable: false,
         isAddable: null
       });
 
