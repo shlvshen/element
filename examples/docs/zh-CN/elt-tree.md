@@ -738,7 +738,6 @@
   :config="config"
   ref="tree2"
   node-key="id"
-  @node-click="handleNodeClick2"
   @node-del="handleNodeDel"
   @node-label-change="handelNodeLabel">
 </elt-tree>
