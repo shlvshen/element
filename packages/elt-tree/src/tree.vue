@@ -4,8 +4,8 @@
     <el-row v-if="config.isEditable">
       <el-col :span="24">
         <div class="el-tree__edit" @click.stop="handleOnEdit()">
-          <span v-if="!onEditable"><i class="iconfont" style="margin-right: 5px;">&#xe648;</i>编辑</span>
-          <span v-if="onEditable">取消编辑</span>
+          <span v-if="!store.onEditable"><i class="iconfont" style="margin-right: 5px;">&#xe648;</i>编辑</span>
+          <span v-if="store.onEditable">取消编辑</span>
         </div>
       </el-col>
     </el-row>
@@ -74,7 +74,6 @@
         store: null,
         root: null,
         currentNode: null,
-        onEditable: null,
         filterText: '',
         isAddable: false
       };
