@@ -18,7 +18,7 @@
 
     <el-collapse-transition>
       <div style="padding-left: 15px;" v-show="isAddable">
-        <div class="el-tree-node__add">
+        <div class="el-tree-node__add" @click.stop="handleAppendNode">
           <i class="iconfont">&#xe69b;</i>
           <span>新建目录</span>
         </div>
@@ -207,6 +207,19 @@
       handleNodeExpand(nodeData, node, instance) {
         this.broadcast('ElTreeNode', 'tree-node-expand', node);
         this.$emit('node-expand', nodeData, node, instance);
+      },
+      handleAppendNode() {
+        var onEditable = this.store.onEditable;
+        this.store.data.push({
+          id: '',
+          label: '',
+          onEditable: true,
+          isAddable: onEditable && this.config.isAddable,
+          isEditable: onEditable && this.config.isEditable,
+          isDelable: onEditable && this.config.isDelable,
+          isShowEditBar: this.isEditable || this.isDelable,
+          children: []
+        });
       }
     },
 
