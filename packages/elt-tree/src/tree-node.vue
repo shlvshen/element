@@ -31,14 +31,12 @@
       <el-input :value="node.label" placeholder="" v-show="node.onEditable"
                 class="el-tree-node__label" style="width: auto;"
                 @blur="handleCompleteEdit($event)" autofocus></el-input>
-      <el-dropdown style="float: right;transform: rotate(90deg);"
+      <el-dropdown style="float: right;"
                    :style="{'padding-right': tree.indent + 'px'}"
                    @click.native.stop
                    v-show="node.isShowEditBar"
                    @command="handleNodeEditable">
-        <span class="el-dropdown-link">
-          <i class="el-icon-more el-icon--right"></i>
-        </span>
+        <span class="el-dropdown-link"><i class="iconfont">&#xe649;</i></span>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item v-show="node.isEditable" command="onEditable">重命名</el-dropdown-item>
           <el-dropdown-item v-show="node.isDelable" command="onDelable">删除</el-dropdown-item>
