@@ -244,9 +244,14 @@
 
       editTree() {
         this.onEditable = !this.onEditable;
+      },
+      
       handleNodeDel(store, data, node, tree) {
         store.remove(data);
       },
+
+      handelNodeLabel(data, node, tree) {
+        console.log('edit success', node.label);
       }
     },
 
@@ -730,7 +735,11 @@
   default-expand-all
   :filter-node-method="filterNode"
   :config="config"
-  ref="tree2">
+  ref="tree2"
+  node-key="id"
+  @node-click="handleNodeClick2"
+  @node-del="handleNodeDel"
+  @node-label-change="handelNodeLabel">
 </elt-tree>
 
 <script>

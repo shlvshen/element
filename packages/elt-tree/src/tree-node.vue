@@ -212,7 +212,7 @@
         const node = this.node;
         node.data.label = event.target.value;
         node.onEditable = false;
-        this.tree.$emit('node-label-change', node.data);
+        this.tree.$emit('node-label-change', node.data, node, this);
       },
 
       handleNodeEditable(command) {
