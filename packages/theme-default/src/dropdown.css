@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import "./common/var.css";
+@import "./common/elt-var.css";
 @import "./button.css";
 
 @component-namespace el {
@@ -33,7 +33,8 @@
     background-color: var(--color-white);
     border: 1px solid var(--color-base-gray);
     box-shadow: var(--dropdown-menu-box-shadow);
-    padding: 6px 0;
+    /* padding: 6px 0; */
+    padding: 0;
     z-index: 10;
     position: absolute;
     top: 0;

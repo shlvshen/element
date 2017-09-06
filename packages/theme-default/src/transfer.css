@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import "./common/var.css";
+@import "./common/elt-var.css";
 @import "./input.css";
 @import "./button.css";
 @import "./checkbox.css";

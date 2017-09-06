@@ -34,6 +34,20 @@
       "href": "https://eleme.github.io/element-react/"
     },
     {
+      "name": "自定义组件",
+      "groups": [
+        {
+          "groupName": "Data",
+          "list": [
+            {
+              "path": "/elt-tree",
+              "title": "Elt-Tree 树形控件"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "基础组件",
       "groups": [
         {

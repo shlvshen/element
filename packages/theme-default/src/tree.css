@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import "./common/var.css";
+@import "./common/elt-var.css";
 
 @component-namespace el {
   @b tree {
@@ -22,6 +22,19 @@
       transform: translate(-50%, -50%);
       color: color(var(--color-primary) s(16%) l(44%));
     }
+
+    @e edit {
+      /* font-size: 14px; */
+      color: var(--color-info);
+      padding: var(--distance-normal) 0;
+      text-align: right;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    @e search{
+      margin: var(--distance-normal) 0;
+    }
+
   }
 
   @b tree-node {
@@ -53,14 +66,14 @@
       margin-left: 10px;
       border: 6px solid transparent;
       border-right-width: 0;
-      border-left-color: var(--color-light-silver);
+      border-left-color: var(--color-base-black);
       border-left-width: 7px;
 
       transform: rotate(0deg);
       transition: transform 0.3s ease-in-out;
 
       &:hover {
-        border-left-color: #999;
+        /* border-left-color: #999; */
       }
 
       &.expanded {
@@ -94,6 +107,26 @@
 
     &.is-expanded > .el-tree-node__children {
       display: block;
+    }
+
+    @e add {
+      color: var(--color-info);
+      font-size: 14px;
+      line-height: 36px;
+      height: 36px;
+      cursor: pointer;
+
+      & > .iconfont {
+        margin-right: 5px;
+      }
+    }
+
+    @e edit {
+      display: inline-block;
+
+      & > .el-input {
+        width: auto;
+      }
     }
   }
 }
