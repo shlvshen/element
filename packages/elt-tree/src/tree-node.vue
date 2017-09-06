@@ -214,11 +214,13 @@
         const node = this.node;
         const data = node.data;
         const store = node.store;
-        if (!event.target.value) {
+        const val = event.target.value;
+        if (!val) {
           store.remove(data);
           return;
         }
-        node.data.label = event.target.value;
+        node.data.name = val;
+        node.name = node.data.name;
         node.onEditable = false;
         if (node.id) {
           this.tree.$emit('node-modify', node.data, node, this);

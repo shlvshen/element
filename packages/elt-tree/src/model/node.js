@@ -72,24 +72,24 @@ const getPropertyFromData = function(node, prop) {
   }
 };
 
-// let nodeIdSeed = 0;
+let nodeIdSeed = 0;
 
 export default class Node {
   constructor(options) {
     options.data = options.data || {};
-    this.id = options.data.id;
-    this.text = options.data.text || null;
-    this.checked = options.data.checked || false;
-    this.indeterminate = options.data.indeterminate || false;
+    this.id = options.data.id || nodeIdSeed++;
+    this.text = null;
+    this.checked = false;
+    this.indeterminate = false;
     this.data = null;
-    this.expanded = options.data.expanded || false;
+    this.expanded = false;
     this.parent = null;
-    this.visible = options.data.visible || true;
-    this.isAddable = options.data.isAddable || false;
-    this.isShowEditBar = options.data.isShowEditBar || false;
-    this.isEditable = options.data.isEditable || false;
-    this.isDelable = options.data.isDelable || false;
-    this.onEditable = options.data.onEditable || false;
+    this.visible = true;
+    this.isAddable = false;
+    this.isShowEditBar = false;
+    this.isEditable = false;
+    this.isDelable = false;
+    this.onEditable = false;
 
     for (let name in options) {
       if (options.hasOwnProperty(name)) {
