@@ -181,7 +181,7 @@
 
   const defaultProps = {
     children: 'children',
-    label: 'label'
+    label: 'name'
   };
 
   const config = {
