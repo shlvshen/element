@@ -122,6 +122,8 @@
     }
 
     @e edit {
+      display: inline-block;
+
       & > .el-input {
         width: auto;
       }
