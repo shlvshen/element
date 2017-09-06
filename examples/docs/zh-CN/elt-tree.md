@@ -952,7 +952,7 @@
 ### props
 | 参数       | 说明                | 类型     | 可选值  | 默认值  |
 | -------- | ----------------- | ------ | ---- | ---- |
-| label    | 指定节点标签为节点对象的某个属性值 | string, function(data, node) | —    | —    |
+| name    | 指定节点标签为节点对象的某个属性值 | string, function(data, node) | —    | —    |
 | children | 指定子树为节点对象的某个属性值 | string, function(data, node) | —    | —    |
 | disabled | 指定节点选择框是否禁用 |  boolean, function(data, node) | —    | —    |
 
