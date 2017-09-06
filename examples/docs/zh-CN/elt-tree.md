@@ -130,7 +130,7 @@
     isShowEditBar: true,
     isEditable: true,
     isDelable: true,
-    onEditable: true,
+    count: 10,
     children: [{
       id: 4,
       name: '二级 1-1',
@@ -296,12 +296,13 @@
       handelNodeLabel(data, node, tree) {
         data.id = 56;
         node.id = data.id;
-        console.log('edit success', node);
+        console.log('edit success', node.name);
       },
 
       handelNodeAdd(data, node, tree) {
         const parent = node.parent;
-        console.log('add', node.label, node.parent.label)
+        node.id = count++;
+        console.log('add', node.name, node.parent.label);
       }
     },
 

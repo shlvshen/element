@@ -30,9 +30,10 @@
       <span class="iconfont label-icon"
             v-if="node.data.icon"
             v-html="node.data.icon"></span>
-      <span class="el-tree-node__label" v-show="!node.onEditable">{{ node.label }}</span>
-      <el-input :value="node.name" placeholder="" v-show="node.onEditable"
-                class="el-tree-node__label" style="width: auto;" autofocus
+      <span class="el-tree-node__label" v-show="!node.onEditable">{{ node.name }}</span>
+      <el-input :value="node.name" placeholder=""
+                v-if="node.onEditable"
+                class="el-tree-node__edit" autofocus
                 @blur.stop="handleCompleteEdit" 
                 @keyup.enter.stop="handleCompleteEdit"></el-input>
       <span class="el-tree-node__label" v-if="node.count">({{ node.count }})</span>

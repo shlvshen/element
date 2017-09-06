@@ -120,6 +120,12 @@
         margin-right: 5px;
       }
     }
+
+    @e edit {
+      & > .el-input {
+        width: auto;
+      }
+    }
   }
 }
 
