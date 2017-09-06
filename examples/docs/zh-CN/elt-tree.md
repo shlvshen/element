@@ -181,6 +181,11 @@
 
   const defaultProps = {
     children: 'children',
+    label: 'label'
+  };
+
+  const defaultNamePorps = {
+    children: 'children',
     label: 'name'
   };
 
@@ -314,6 +319,7 @@
         data4,
         regions,
         defaultProps,
+        defaultNamePorps,
         props,
         defaultCheckedKeys: [5],
         defaultExpandedKeys: [2, 3],
@@ -783,7 +789,7 @@
 <elt-tree
   class="filter-tree"
   :data="data4"
-  :props="defaultProps"
+  :props="defaultNamePorps"
   default-expand-all
   :filter-node-method="filterNode"
   :config="config"
