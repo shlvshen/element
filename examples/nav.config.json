@@ -42,6 +42,10 @@
             {
               "path": "/elt-tree",
               "title": "Elt-Tree 树形控件"
+            },
+            {
+              "path": "/elt-pagination",
+              "title": "Elt-Pagination 分页"
             }
           ]
         }
