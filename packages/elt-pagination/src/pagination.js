@@ -2,9 +2,10 @@ import Pager from './pager.vue';
 import ElSelect from 'element-ui/packages/select';
 import ElOption from 'element-ui/packages/option';
 import Locale from 'element-ui/src/mixins/locale';
+import ElPagination from 'element-ui/packages/pagination';
 
 export default {
-  name: 'ElPagination',
+  name: 'EltPagination',
 
   props: {
     pageSize: {
@@ -163,7 +164,8 @@ export default {
 
       components: {
         ElSelect,
-        ElOption
+        ElOption,
+        ElPagination
       },
 
       methods: {
