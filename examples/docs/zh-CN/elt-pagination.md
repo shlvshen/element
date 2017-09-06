@@ -8,17 +8,17 @@
 ```html
 <div class="block">
   <span class="demonstration">页数较少时的效果</span>
-  <el-pagination
+  <elt-pagination
     layout="prev, pager, next"
     :total="50">
-  </el-pagination>
+  </elt-pagination>
 </div>
 <div class="block">
   <span class="demonstration">大于 7 页时的效果</span>
-  <el-pagination
+  <elt-pagination
     layout="prev, pager, next"
     :total="1000">
-  </el-pagination>
+  </elt-pagination>
 </div>
 ```
 :::
@@ -29,11 +29,11 @@
 
 :::demo 只需要一个`small`属性，它接受一个`Boolean`，默认为`false`，设为`true`即可启用。
 ```html
-<el-pagination
+<elt-pagination
   small
   layout="prev, pager, next"
   :total="50">
-</el-pagination>
+</elt-pagination>
 ```
 :::
 
@@ -47,18 +47,18 @@
 <template>
   <div class="block">
     <span class="demonstration">显示总数</span>
-    <el-pagination
+    <elt-pagination
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
       :current-page.sync="currentPage1"
       :page-size="100"
       layout="total, prev, pager, next"
       :total="1000">
-    </el-pagination>
+    </elt-pagination>
   </div>
   <div class="block">
     <span class="demonstration">调整每页显示条数</span>
-    <el-pagination
+    <elt-pagination
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
       :current-page.sync="currentPage2"
@@ -66,22 +66,22 @@
       :page-size="100"
       layout="sizes, prev, pager, next"
       :total="1000">
-    </el-pagination>
+    </elt-pagination>
   </div>
   <div class="block">
     <span class="demonstration">直接前往</span>
-    <el-pagination
+    <elt-pagination
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
       :current-page.sync="currentPage3"
       :page-size="100"
       layout="prev, pager, next, jumper"
       :total="1000">
-    </el-pagination>
+    </elt-pagination>
   </div>
   <div class="block">
     <span class="demonstration">完整功能</span>
-    <el-pagination
+    <elt-pagination
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
       :current-page="currentPage4"
@@ -89,7 +89,7 @@
       :page-size="100"
       layout="total, sizes, prev, pager, next, jumper"
       :total="400">
-    </el-pagination>
+    </elt-pagination>
   </div>
 </template>
 <script>
@@ -187,7 +187,7 @@
     line-height: 44px;
   }
 
-  .demo-pagination .last .demonstration + .el-pagination {
+  .demo-pagination .last .demonstration + .elt-pagination {
     float: right;
     width: 70%;
     margin: 5px 20px 0 0;
