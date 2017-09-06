@@ -27,11 +27,15 @@
         class="el-tree-node__loading-icon el-icon-loading">
       </span>
       <!-- <node-content :node="node"></node-content> -->
-      <span class="el-tree-node__label" v-show="!node.onEditable">{{ node.label }}</span>
-      <el-input :value="node.label" placeholder="" v-show="node.onEditable"
+      <span class="iconfont label-icon"
+            v-if="node.data.icon"
+            v-html="node.data.icon"></span>
+      <span class="el-tree-node__label" v-show="!node.onEditable">{{ node.name }}</span>
+      <el-input :value="node.name" placeholder="" v-show="node.onEditable"
                 class="el-tree-node__label" style="width: auto;" autofocus
                 @blur.stop="handleCompleteEdit" 
                 @keyup.enter.stop="handleCompleteEdit"></el-input>
+      <span class="el-tree-node__label" v-if="node.count">({{ node.count }})</span>
       <el-dropdown style="float: right;"
                    :style="{'padding-right': tree.indent + 'px'}"
                    @click.native.stop
@@ -255,7 +259,7 @@
         store.append(
           {
             id: '',
-            label: '',
+            name: '',
             onEditable: true,
             isShowEditBar: node.isShowEditBar,
             isAddable: node.isAddable,
