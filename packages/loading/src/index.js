@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import loadingVue from './loading.vue';
-import { getStyle } from 'element-ui/src/utils/dom';
-import merge from 'element-ui/src/utils/merge';
+import { getStyle } from 'thx-knight/src/utils/dom';
+import merge from 'thx-knight/src/utils/merge';
 
 const LoadingConstructor = Vue.extend(loadingVue);
 

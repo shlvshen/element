@@ -64,8 +64,10 @@ import CollapseItem from '../packages/collapse-item/index.js';
 import Cascader from '../packages/cascader/index.js';
 import ColorPicker from '../packages/color-picker/index.js';
 import Transfer from '../packages/transfer/index.js';
-import locale from 'element-ui/src/locale';
-import CollapseTransition from 'element-ui/src/transitions/collapse-transition';
+import EltTree from '../packages/elt-tree/index.js';
+import EltPagination from '../packages/elt-pagination/index.js';
+import locale from 'thx-knight/src/locale';
+import CollapseTransition from 'thx-knight/src/transitions/collapse-transition';
 
 const components = [
   Pagination,
@@ -128,6 +130,8 @@ const components = [
   Cascader,
   ColorPicker,
   Transfer,
+  EltTree,
+  EltPagination,
   CollapseTransition
 ];
 
@@ -158,7 +162,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 };
 
 module.exports = {
-  version: '1.4.3',
+  version: '0.0.2',
   locale: locale.use,
   i18n: locale.i18n,
   install,
@@ -226,5 +230,7 @@ module.exports = {
   CollapseItem,
   Cascader,
   ColorPicker,
-  Transfer
+  Transfer,
+  EltTree,
+  EltPagination
 };

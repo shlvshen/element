@@ -56,16 +56,16 @@
   </div>
 </template>
 <script>
-  import emitter from 'element-ui/src/mixins/emitter';
+  import Emitter from 'thx-knight/src/mixins/emitter';
   import calcTextareaHeight from './calcTextareaHeight';
-  import merge from 'element-ui/src/utils/merge';
+  import merge from 'thx-knight/src/utils/merge';
 
   export default {
     name: 'ElInput',
 
     componentName: 'ElInput',
 
-    mixins: [emitter],
+    mixins: [Emitter],
 
     data() {
       return {

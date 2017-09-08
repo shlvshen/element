@@ -25,13 +25,13 @@
 </template>
 
 <script>
-  import Popup from 'element-ui/src/utils/popup';
-  import emitter from 'element-ui/src/mixins/emitter';
+  import Popup from 'thx-knight/src/utils/popup';
+  import Emitter from 'thx-knight/src/mixins/emitter';
 
   export default {
     name: 'ElDialog',
 
-    mixins: [Popup, emitter],
+    mixins: [Popup, Emitter],
 
     props: {
       title: {

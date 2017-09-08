@@ -16,13 +16,13 @@
 
 <script>
   import TreeStore from './model/tree-store';
-  import {t} from 'element-ui/src/locale';
-  import emitter from 'element-ui/src/mixins/emitter';
+  import {t} from 'thx-knight/src/locale';
+  import Emitter from 'thx-knight/src/mixins/emitter';
 
   export default {
     name: 'ElTree',
 
-    mixins: [emitter],
+    mixins: [Emitter],
 
     components: {
       ElTreeNode: require('./tree-node.vue')

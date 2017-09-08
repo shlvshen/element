@@ -17,7 +17,7 @@
 </template>
 <script>
   import AsyncValidator from 'async-validator';
-  import emitter from 'element-ui/src/mixins/emitter';
+  import Emitter from 'thx-knight/src/mixins/emitter';
 
   function noop() {}
 
@@ -49,7 +49,7 @@
 
     componentName: 'ElFormItem',
 
-    mixins: [emitter],
+    mixins: [Emitter],
 
     props: {
       label: String,

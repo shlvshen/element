@@ -95,16 +95,16 @@
 </style>
 
 <script type="text/jsx">
-  import ElCollapseTransition from 'element-ui/src/transitions/collapse-transition';
-  import ElCheckbox from 'element-ui/packages/checkbox';
-  import emitter from 'element-ui/src/mixins/emitter';
+  import ElCollapseTransition from 'thx-knight/src/transitions/collapse-transition';
+  import ElCheckbox from 'thx-knight/packages/checkbox';
+  import Emitter from 'thx-knight/src/mixins/emitter';
 
   export default {
     name: 'EltTreeNode',
 
     componentName: 'EltTreeNode',
 
-    mixins: [emitter],
+    mixins: [Emitter],
 
     props: {
       node: {

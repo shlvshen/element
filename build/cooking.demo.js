@@ -17,9 +17,9 @@ function convert(str) {
 cooking.set({
   entry: isProd ? {
     docs: './examples/entry.js',
-    'element-ui': './src/index.js'
+    'thx-knight': './src/index.js'
   } : (isPlay ? './examples/play.js' : './examples/entry.js'),
-  dist: './examples/element-ui/',
+  dist: './examples/thx-knight/',
   template: [
     {
       template: './examples/index.tpl',
@@ -37,7 +37,7 @@ cooking.set({
   },
   minimize: true,
   chunk: isProd ? {
-    'common': { name: ['element-ui', 'manifest'] }
+    'common': { name: ['thx-knight', 'manifest'] }
   } : false,
   extractCSS: true,
   alias: config.alias,

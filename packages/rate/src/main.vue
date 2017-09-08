@@ -24,7 +24,7 @@
 </template>
 
 <script type="text/babel">
-  import { hasClass } from 'element-ui/src/utils/dom';
+  import { hasClass } from 'thx-knight/src/utils/dom';
 
   export default {
     name: 'ElRate',

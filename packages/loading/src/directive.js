@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { addClass, removeClass, getStyle } from 'element-ui/src/utils/dom';
+import { addClass, removeClass, getStyle } from 'thx-knight/src/utils/dom';
 let Mask = Vue.extend(require('./loading.vue'));
 
 exports.install = Vue => {

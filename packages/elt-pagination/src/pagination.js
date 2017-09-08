@@ -2,9 +2,10 @@ import Pager from './pager.vue';
 import ElSelect from 'thx-knight/packages/select';
 import ElOption from 'thx-knight/packages/option';
 import Locale from 'thx-knight/src/mixins/locale';
+import ElPagination from 'thx-knight/packages/pagination';
 
 export default {
-  name: 'ElPagination',
+  name: 'EltPagination',
 
   props: {
     pageSize: {
@@ -163,7 +164,8 @@ export default {
 
       components: {
         ElSelect,
-        ElOption
+        ElOption,
+        ElPagination
       },
 
       methods: {

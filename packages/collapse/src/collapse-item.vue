@@ -14,8 +14,8 @@
   </div>
 </template>
 <script>
-  import ElCollapseTransition from 'element-ui/src/transitions/collapse-transition';
-  import Emitter from 'element-ui/src/mixins/emitter';
+  import ElCollapseTransition from 'thx-knight/src/transitions/collapse-transition';
+  import Emitter from 'thx-knight/src/mixins/emitter';
 
   export default {
     name: 'ElCollapseItem',
