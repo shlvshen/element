@@ -128,7 +128,7 @@
       @mixin button-size var(--button-large-padding-vertical), var(--button-large-padding-horizontal), var(--button-large-font-size), var(--button-border-radius);
     }
     @m small {
-      @mixin button-size var(--button-small-padding-vertical), var(--button-small-padding-horizontal), var(--button-small-font-size), var(--button-border-radius);
+      @mixin button-size var(--button-small-padding-vertical), var(--button-small-padding-horizontal), var(--button-small-font-size), var(--button-border-radius), var(--button-small-line-height);
     }
     @m mini {
       @mixin button-size var(--button-mini-padding-vertical), var(--button-mini-padding-horizontal), var(--button-mini-font-size), var(--button-border-radius);

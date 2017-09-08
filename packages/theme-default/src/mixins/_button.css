@@ -44,8 +44,9 @@
   }
 }
 
-@define-mixin button-size $padding-vertical, $padding-horizontal, $font-size, $border-radius {
+@define-mixin button-size $padding-vertical, $padding-horizontal, $font-size, $border-radius, $line-height: 1 {
   padding: $padding-vertical $padding-horizontal;
   font-size: $font-size;
   border-radius: $border-radius;
+  line-height: $line-height;
 }

@@ -347,9 +347,10 @@
       --button-large-padding-vertical: 11px;
       --button-large-padding-horizontal: 19px;
     
-      --button-small-font-size: 12px;
-      --button-small-padding-vertical: 7px;
+      --button-small-font-size: 13px;
+      --button-small-padding-vertical: 6px;
       --button-small-padding-horizontal: 9px;
+      --button-small-line-height: 1.385;
     
       --button-mini-font-size: 12px;
       --button-mini-padding-vertical: 4px;
