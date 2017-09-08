@@ -40,9 +40,9 @@
 </template>
 
 <script>
-  import ElButton from 'element-ui/packages/button';
-  import Emitter from 'element-ui/src/mixins/emitter';
-  import Locale from 'element-ui/src/mixins/locale';
+  import ElButton from 'thx-knight/packages/button';
+  import Emitter from 'thx-knight/src/mixins/emitter';
+  import Locale from 'thx-knight/src/mixins/locale';
   import TransferPanel from './transfer-panel.vue';
 
   export default {
