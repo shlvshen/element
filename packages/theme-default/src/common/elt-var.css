@@ -338,14 +338,17 @@
     
       /* Button
       -------------------------- */
-      --button-font-size: 14px;
+      --button-font-size: 15px;
       --button-border-radius: var(--border-radius-base);
-      --button-padding-vertical: 10px;
+      --button-padding-vertical: 9px;
       --button-padding-horizontal: 15px;
+      --button-line-height: 1.4;
     
-      --button-large-font-size: 16px;
-      --button-large-padding-vertical: 11px;
+      --button-large-font-size: 17px;
+      --button-large-padding-vertical: 9px;
       --button-large-padding-horizontal: 19px;
+      --button-large-border-radius: 6px;
+      --button-large-line-height: 1.471;
     
       --button-small-font-size: 13px;
       --button-small-padding-vertical: 6px;
@@ -353,8 +356,10 @@
       --button-small-line-height: 1.385;
     
       --button-mini-font-size: 12px;
-      --button-mini-padding-vertical: 4px;
-      --button-mini-padding-horizontal: 4px;
+      --button-mini-padding-vertical: 5px;
+      --button-mini-padding-horizontal: 9px;
+      --button-mini-line-height: 1.083;
+      --button-mini-border-radius: 3px;
     
       --button-default-color: var(--color-base-black);
       --button-default-fill: var(--color-white);
