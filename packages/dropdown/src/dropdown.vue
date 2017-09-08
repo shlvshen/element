@@ -1,8 +1,8 @@
 <script>
-  import Clickoutside from 'element-ui/src/utils/clickoutside';
-  import Emitter from 'element-ui/src/mixins/emitter';
-  import ElButton from 'element-ui/packages/button';
-  import ElButtonGroup from 'element-ui/packages/button-group';
+  import Clickoutside from 'thx-knight/src/utils/clickoutside';
+  import Emitter from 'thx-knight/src/mixins/emitter';
+  import ElButton from 'thx-knight/packages/button';
+  import ElButtonGroup from 'thx-knight/packages/button-group';
 
   export default {
     name: 'ElDropdown',

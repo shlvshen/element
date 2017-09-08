@@ -30,10 +30,10 @@
   </div>
 </template>
 <script>
-  import ElInput from 'element-ui/packages/input';
-  import Clickoutside from 'element-ui/src/utils/clickoutside';
+  import ElInput from 'thx-knight/packages/input';
+  import Clickoutside from 'thx-knight/src/utils/clickoutside';
   import ElAutocompleteSuggestions from './autocomplete-suggestions.vue';
-  import Emitter from 'element-ui/src/mixins/emitter';
+  import Emitter from 'thx-knight/src/mixins/emitter';
 
   export default {
     name: 'ElAutocomplete',

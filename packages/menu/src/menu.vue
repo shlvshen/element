@@ -13,15 +13,15 @@
   </el-menu-collapse-transition>
 </template>
 <script>
-  import emitter from 'element-ui/src/mixins/emitter';
-  import { addClass, removeClass, hasClass } from 'element-ui/src/utils/dom';
+  import Emitter from 'thx-knight/src/mixins/emitter';
+  import { addClass, removeClass, hasClass } from 'thx-knight/src/utils/dom';
 
   export default {
     name: 'ElMenu',
 
     componentName: 'ElMenu',
 
-    mixins: [emitter],
+    mixins: [Emitter],
 
     provide() {
       return {

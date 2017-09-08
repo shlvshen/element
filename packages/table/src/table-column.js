@@ -1,7 +1,7 @@
-import ElCheckbox from 'element-ui/packages/checkbox';
-import ElTag from 'element-ui/packages/tag';
-import objectAssign from 'element-ui/src/utils/merge';
-import { getValueByPath } from 'element-ui/src/utils/util';
+import ElCheckbox from 'thx-knight/packages/checkbox';
+import ElTag from 'thx-knight/packages/tag';
+import objectAssign from 'thx-knight/src/utils/merge';
+import { getValueByPath } from 'thx-knight/src/utils/util';
 
 let columnIdSeed = 1;
 

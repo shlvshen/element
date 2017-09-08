@@ -91,20 +91,20 @@
 </template>
 
 <script type="text/babel">
-  import Emitter from 'element-ui/src/mixins/emitter';
-  import Locale from 'element-ui/src/mixins/locale';
-  import ElInput from 'element-ui/packages/input';
+  import Emitter from 'thx-knight/src/mixins/emitter';
+  import Locale from 'thx-knight/src/mixins/locale';
+  import ElInput from 'thx-knight/packages/input';
   import ElSelectMenu from './select-dropdown.vue';
   import ElOption from './option.vue';
-  import ElTag from 'element-ui/packages/tag';
-  import ElScrollbar from 'element-ui/packages/scrollbar';
+  import ElTag from 'thx-knight/packages/tag';
+  import ElScrollbar from 'thx-knight/packages/scrollbar';
   import debounce from 'throttle-debounce/debounce';
-  import Clickoutside from 'element-ui/src/utils/clickoutside';
-  import { addClass, removeClass, hasClass } from 'element-ui/src/utils/dom';
-  import { addResizeListener, removeResizeListener } from 'element-ui/src/utils/resize-event';
-  import { t } from 'element-ui/src/locale';
-  import scrollIntoView from 'element-ui/src/utils/scroll-into-view';
-  import { getValueByPath } from 'element-ui/src/utils/util';
+  import Clickoutside from 'thx-knight/src/utils/clickoutside';
+  import { addClass, removeClass, hasClass } from 'thx-knight/src/utils/dom';
+  import { addResizeListener, removeResizeListener } from 'thx-knight/src/utils/resize-event';
+  import { t } from 'thx-knight/src/locale';
+  import scrollIntoView from 'thx-knight/src/utils/scroll-into-view';
+  import { getValueByPath } from 'thx-knight/src/utils/util';
 
   const sizeMap = {
     'large': 42,

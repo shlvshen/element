@@ -34,9 +34,9 @@
   </transition>
 </template>
 <script>
-  import Popper from 'element-ui/src/utils/vue-popper';
-  import Emitter from 'element-ui/src/mixins/emitter';
-  import ElScrollbar from 'element-ui/packages/scrollbar';
+  import Popper from 'thx-knight/src/utils/vue-popper';
+  import Emitter from 'thx-knight/src/mixins/emitter';
+  import ElScrollbar from 'thx-knight/packages/scrollbar';
 
   export default {
     components: { ElScrollbar },

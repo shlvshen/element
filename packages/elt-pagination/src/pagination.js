@@ -1,8 +1,8 @@
 import Pager from './pager.vue';
-import ElSelect from 'element-ui/packages/select';
-import ElOption from 'element-ui/packages/option';
-import Locale from 'element-ui/src/mixins/locale';
-import ElPagination from 'element-ui/packages/pagination';
+import ElSelect from 'thx-knight/packages/select';
+import ElOption from 'thx-knight/packages/option';
+import Locale from 'thx-knight/src/mixins/locale';
+import ElPagination from 'thx-knight/packages/pagination';
 
 export default {
   name: 'EltPagination',

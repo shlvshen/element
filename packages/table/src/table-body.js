@@ -1,7 +1,7 @@
 import { getCell, getColumnByCell, getRowIdentity } from './util';
-import { hasClass, addClass, removeClass } from 'element-ui/src/utils/dom';
-import ElCheckbox from 'element-ui/packages/checkbox';
-import ElTooltip from 'element-ui/packages/tooltip';
+import { hasClass, addClass, removeClass } from 'thx-knight/src/utils/dom';
+import ElCheckbox from 'thx-knight/packages/checkbox';
+import ElTooltip from 'thx-knight/packages/tooltip';
 import debounce from 'throttle-debounce/debounce';
 
 export default {

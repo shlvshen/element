@@ -42,12 +42,12 @@
 </template>
 
 <script type="text/babel">
-  import Popup from 'element-ui/src/utils/popup';
-  import Locale from 'element-ui/src/mixins/locale';
-  import ElInput from 'element-ui/packages/input';
-  import ElButton from 'element-ui/packages/button';
-  import { addClass, removeClass } from 'element-ui/src/utils/dom';
-  import { t } from 'element-ui/src/locale';
+  import Popup from 'thx-knight/src/utils/popup';
+  import Locale from 'thx-knight/src/mixins/locale';
+  import ElInput from 'thx-knight/packages/input';
+  import ElButton from 'thx-knight/packages/button';
+  import { addClass, removeClass } from 'thx-knight/src/utils/dom';
+  import { t } from 'thx-knight/src/locale';
 
   let typeMap = {
     success: 'circle-check',
