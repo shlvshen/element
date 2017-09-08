@@ -65,7 +65,6 @@ import Cascader from '../packages/cascader/index.js';
 import ColorPicker from '../packages/color-picker/index.js';
 import Transfer from '../packages/transfer/index.js';
 import EltTree from '../packages/elt-tree/index.js';
-import EltPagination from '../packages/elt-pagination/index.js';
 import locale from 'thx-knight/src/locale';
 import CollapseTransition from 'thx-knight/src/transitions/collapse-transition';
 
@@ -131,7 +130,6 @@ const components = [
   ColorPicker,
   Transfer,
   EltTree,
-  EltPagination,
   CollapseTransition
 ];
 
@@ -231,6 +229,5 @@ module.exports = {
   Cascader,
   ColorPicker,
   Transfer,
-  EltTree,
-  EltPagination
+  EltTree
 };
