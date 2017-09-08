@@ -6,11 +6,11 @@
 
 [![Build Status](https://travis-ci.org/ElemeFE/element.svg?branch=master)](https://travis-ci.org/ElemeFE/element)
 [![Coverage Status](https://coveralls.io/repos/github/ElemeFE/element/badge.svg?branch=master)](https://coveralls.io/github/ElemeFE/element?branch=master)
-[![CDNJS](https://img.shields.io/cdnjs/v/element-ui.svg)](https://cdnjs.com/libraries/element-ui)
-[![npm package](https://img.shields.io/npm/v/element-ui.svg)](https://www.npmjs.org/package/element-ui)
-[![NPM downloads](http://img.shields.io/npm/dm/element-ui.svg)](https://npmjs.org/package/element-ui)
-![JS gzip size](http://img.badgesize.io/https://unpkg.com/element-ui/lib/index.js?compression=gzip&label=gzip%20size:%20JS)
-![CSS gzip size](http://img.badgesize.io/https://unpkg.com/element-ui/lib/theme-default/index.css?compression=gzip&label=gzip%20size:%20CSS)
+[![CDNJS](https://img.shields.io/cdnjs/v/thx-knight.svg)](https://cdnjs.com/libraries/thx-knight)
+[![npm package](https://img.shields.io/npm/v/thx-knight.svg)](https://www.npmjs.org/package/thx-knight)
+[![NPM downloads](http://img.shields.io/npm/dm/thx-knight.svg)](https://npmjs.org/package/thx-knight)
+![JS gzip size](http://img.badgesize.io/https://unpkg.com/thx-knight/lib/index.js?compression=gzip&label=gzip%20size:%20JS)
+![CSS gzip size](http://img.badgesize.io/https://unpkg.com/thx-knight/lib/theme-default/index.css?compression=gzip&label=gzip%20size:%20CSS)
 [![Join the chat at https://gitter.im/ElemeFE/element](https://badges.gitter.im/ElemeFE/element.svg)](https://gitter.im/ElemeFE/element?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)(Chinese)
 [![Join the chat at https://gitter.im/element-en/Lobby](https://badges.gitter.im/element-en/Lobby.svg)](https://gitter.im/element-en/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)(English)
 [![OpenCollective](https://opencollective.com/element/backers/badge.svg)](#backers) 
@@ -47,13 +47,13 @@
 
 ## Install
 ```shell
-npm install element-ui -S
+npm install thx-knight -S
 ```
 
 ## Quick Start
 ``` javascript
 import Vue from 'vue'
-import Element from 'element-ui'
+import Element from 'thx-knight'
 
 Vue.use(Element)
 
@@ -62,7 +62,7 @@ import {
   Select,
   Button
   // ...
-} from 'element-ui'
+} from 'thx-knight'
 
 Vue.component(Select.name, Select)
 Vue.component(Button.name, Button)
