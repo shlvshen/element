@@ -5,9 +5,9 @@
     "utils": {
       "plugins": [
         ["module-resolver", {
-          "root": ["element-ui"],
+          "root": ["thx-knight"],
           "alias": {
-            "element-ui/src": "element-ui/lib"
+            "thx-knight/src": "thx-knight/lib"
           }
         }]
       ]
