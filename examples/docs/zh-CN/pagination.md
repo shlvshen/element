@@ -115,7 +115,7 @@
 ```
 :::
 <script>
-  import { addClass } from 'element-ui/src/utils/dom';
+  import { addClass } from 'thx-knight/src/utils/dom';
   export default {
     methods: {
       handleSizeChange(val) {
