@@ -63,6 +63,5 @@
   "cascader": "./packages/cascader/index.js",
   "color-picker": "./packages/color-picker/index.js",
   "transfer": "./packages/transfer/index.js",
-  "elt-tree": "./packages/elt-tree/index.js",
-  "elt-pagination": "./packages/elt-pagination/index.js"
+  "elt-tree": "./packages/elt-tree/index.js"
 }
