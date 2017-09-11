@@ -5,7 +5,7 @@
 @component-namespace el {
   @b pagination {
     white-space: nowrap;
-    padding: 2px 5px;
+    /* padding: 2px 5px; */
     color: var(--pagination-color);
     @utils-clearfix;
 
