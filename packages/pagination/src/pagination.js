@@ -213,11 +213,11 @@ export default {
               max={ this.internalPageCount }
               value={ this.$parent.internalCurrentPage }
               domProps-value={ this.$parent.internalCurrentPage }
-              on-change={ this.handleChange }
               on-focus={ this.handleFocus }
               on-keyup={ this.handleKeyUp }
               number/>
             { this.t('el.pagination.pageClassifier') }
+            <el-button size="small" class="btn-confirm" type="confirm" on-click={ this.handleChange }>确定</el-button>
           </span>
         );
       }
