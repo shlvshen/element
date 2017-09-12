@@ -187,6 +187,7 @@ export default {
 
       methods: {
         handleFocus(event) {
+          event.target.select();
           this.oldValue = event.target.value;
         },
         handleKeyUp(event) {
