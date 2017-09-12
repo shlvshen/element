@@ -181,13 +181,15 @@ export default {
 
       data() {
         return {
-          oldValue: null
+          oldValue: null,
+          newValue: null
         };
       },
 
       methods: {
         handleFocus(event) {
           event.target.select();
+          this.newValue = event.target.value;
           this.oldValue = event.target.value;
         },
         handleKeyUp(event) {
@@ -198,8 +200,13 @@ export default {
           }
         },
         handleChange({ target }) {
-          this.$parent.internalCurrentPage = this.$parent.getValidCurrentPage(target.value);
+          this.newValue = target.value;
+          // this.$parent.internalCurrentPage = this.$parent.getValidCurrentPage(target.value);
           this.oldValue = null;
+        },
+        confirmChange() {
+          var number = Number(this.newValue) || Number(this.$parent.internalCurrentPage);
+          this.$parent.internalCurrentPage = this.$parent.getValidCurrentPage(number);
         }
       },
 
@@ -214,15 +221,17 @@ export default {
               max={ this.internalPageCount }
               value={ this.$parent.internalCurrentPage }
               domProps-value={ this.$parent.internalCurrentPage }
+              on-change={ this.handleChange }
               on-focus={ this.handleFocus }
-              on-keyup={ this.handleKeyUp }
               number/>
             { this.t('el.pagination.pageClassifier') }
-            <el-button size="small" class="btn-confirm" type="confirm" on-click={ this.handleChange }>确定</el-button>
+            <button type="button" class="btn-confirm"
+                    on-click={ this.confirmChange }>确定</button>
           </span>
         );
       }
     },
+    // on-keyup={ this.handleKeyUp }
 
     Total: {
       mixins: [Locale],
