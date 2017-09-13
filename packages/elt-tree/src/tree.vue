@@ -42,11 +42,11 @@
 <style type="scss">
   @font-face {
     font-family: 'iconfont';  /* project id 313336 */
-    src: url('//at.alicdn.com/t/font_313336_sf8sihacyx6iggb9.eot');
-    src: url('//at.alicdn.com/t/font_313336_sf8sihacyx6iggb9.eot?#iefix') format('embedded-opentype'),
-    url('//at.alicdn.com/t/font_313336_sf8sihacyx6iggb9.woff') format('woff'),
-    url('//at.alicdn.com/t/font_313336_sf8sihacyx6iggb9.ttf') format('truetype'),
-    url('//at.alicdn.com/t/font_313336_sf8sihacyx6iggb9.svg#iconfont') format('svg');
+    src: url('//at.alicdn.com/t/font_313336_5ilrj33g5b2ihpvi.eot');
+    src: url('//at.alicdn.com/t/font_313336_5ilrj33g5b2ihpvi.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_313336_5ilrj33g5b2ihpvi.woff') format('woff'),
+    url('//at.alicdn.com/t/font_313336_5ilrj33g5b2ihpvi.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_313336_5ilrj33g5b2ihpvi.svg#iconfont') format('svg');
   }
   .iconfont{
     font-family:"iconfont" !important;
