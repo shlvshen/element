@@ -243,3 +243,21 @@
     }
   };
 </script>
+<style type="scss">
+  @font-face {
+    font-family: 'iconfont';  /* project id 313336 */
+    src: url('//at.alicdn.com/t/font_313336_5ilrj33g5b2ihpvi.eot');
+    src: url('//at.alicdn.com/t/font_313336_5ilrj33g5b2ihpvi.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_313336_5ilrj33g5b2ihpvi.woff') format('woff'),
+    url('//at.alicdn.com/t/font_313336_5ilrj33g5b2ihpvi.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_313336_5ilrj33g5b2ihpvi.svg#iconfont') format('svg');
+  }
+  .iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    /* font-size: 18px; */
+  }
+</style>
