@@ -35,6 +35,72 @@
         });
       },
 
+      openInfo() {
+        this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'info'
+        }).then(() => {
+          setTimeout(() => {
+            this.$message({
+              message: '删除成功!',
+              type: 'success'
+            });
+          }, 200);
+        }).catch(() => {
+          setTimeout(() => {
+            this.$message({
+              message: '已取消删除',
+              type: 'info'
+            });  
+          }, 200);
+        });
+      },
+
+      openSuccess() {
+        this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'success'
+        }).then(() => {
+          setTimeout(() => {
+            this.$message({
+              message: '删除成功!',
+              type: 'success'
+            });
+          }, 200);
+        }).catch(() => {
+          setTimeout(() => {
+            this.$message({
+              message: '已取消删除',
+              type: 'info'
+            });  
+          }, 200);
+        });
+      },
+
+      openError() {
+        this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'error'
+        }).then(() => {
+          setTimeout(() => {
+            this.$message({
+              message: '删除成功!',
+              type: 'success'
+            });
+          }, 200);
+        }).catch(() => {
+          setTimeout(() => {
+            this.$message({
+              message: '已取消删除',
+              type: 'info'
+            });  
+          }, 200);
+        });
+      },
+
       open3() {
         this.$prompt('请输入邮箱', '提示', {
           confirmButtonText: '确定',
@@ -138,7 +204,10 @@
 
 ```html
 <template>
-  <el-button type="text" @click="open2">点击打开 Message Box</el-button>
+  <el-button type="text" @click="open2">点击打开 warning</el-button>
+  <el-button type="text" @click="openSuccess">点击打开 success</el-button>
+  <el-button type="text" @click="openError">点击打开 error</el-button>
+  <el-button type="text" @click="openInfo">点击打开 info</el-button>  
 </template>
 
 <script>
