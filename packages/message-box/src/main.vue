@@ -12,7 +12,7 @@
         <div class="el-message-box__content" v-if="message !== ''">
           <div class="el-message-box__message" :style="{ 'text-align': typeClass ? 'center' : 'initial' }">
             <p>
-              <span class="el-message-box__status" :class="[ typeClass ]"></span>
+              <span class="el-message-box__status iconfont" :class="[ type ]" v-html="typeClass"></span>
               <slot><span :style="{'padding-left': typeClass ? '46px' : '0px'}">{{ message }}</span></slot>
             </p>
           </div>
@@ -53,11 +53,17 @@
   import { addClass, removeClass } from 'thx-knight/src/utils/dom';
   import { t } from 'thx-knight/src/locale';
 
+  // let typeMap = {
+  //   success: 'circle-check',
+  //   info: 'information',
+  //   warning: 'warning',
+  //   error: 'circle-cross'
+  // };
   let typeMap = {
-    success: 'circle-check',
-    info: 'information',
-    warning: 'warning',
-    error: 'circle-cross'
+    success: '&#xe77f;',
+    info: '&#xe659;',
+    warning: '&#xe65a;',
+    danger: '&#xe695;'
   };
 
   export default {
@@ -89,7 +95,8 @@
 
     computed: {
       typeClass() {
-        return this.type && typeMap[this.type] ? `el-icon-${ typeMap[this.type] }` : '';
+        return this.type && typeMap[this.type] ? `${ typeMap[this.type] }` : '';
+        // return this.type && typeMap[this.type] ? `el-icon-${ typeMap[this.type] }` : '';
       },
 
       confirmButtonClasses() {

@@ -121,14 +121,29 @@
     }
 
     @e status {
-      position: relative;
-      
-      /* position: absolute; */
-      /* top: 50%; */
+      /* position: relative; */
+      position: absolute; 
+      top: 50%;
       transform: translateY(-50%);
       font-size: 36px !important;
 
-      &.el-icon-circle-check {
+      &.warning {
+        color: var(--msgbox-warning-color);
+      }
+
+      &.info {
+        color: var(--msgbox-info-color);
+      }
+
+      &.success {
+        color: var(--msgbox-success-color);
+      }
+
+      &.danger {
+        color: var(--msgbox-danger-color);
+      }
+
+      /* &.el-icon-circle-check {
         color: var(--msgbox-success-color);
       }
 
@@ -142,7 +157,7 @@
 
       &.el-icon-circle-cross {
         color: var(--msgbox-danger-color);
-      }
+      } */
     }
   }
 }

@@ -79,11 +79,11 @@
         });
       },
 
-      openError() {
+      openDanger() {
         this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
           confirmButtonText: '确定',
           cancelButtonText: '取消',
-          type: 'error'
+          type: 'danger'
         }).then(() => {
           setTimeout(() => {
             this.$message({
@@ -206,7 +206,7 @@
 <template>
   <el-button type="text" @click="open2">点击打开 warning</el-button>
   <el-button type="text" @click="openSuccess">点击打开 success</el-button>
-  <el-button type="text" @click="openError">点击打开 error</el-button>
+  <el-button type="text" @click="openDanger">点击打开 error</el-button>
   <el-button type="text" @click="openInfo">点击打开 info</el-button>  
 </template>
 
