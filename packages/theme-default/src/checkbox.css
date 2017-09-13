@@ -10,6 +10,7 @@
     display: inline-block;
     white-space: nowrap;
     @utils-user-select none;
+    line-height: normal;
 
     @e input {
       white-space: nowrap;
@@ -140,7 +141,7 @@
 
     @e label {
       font-size: var(--checkbox-font-size);
-      padding-left: 5px;
+      padding-left: 10px;
     }
 
     & + .el-checkbox {
