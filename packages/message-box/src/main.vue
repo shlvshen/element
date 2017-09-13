@@ -10,9 +10,11 @@
           </button>
         </div>
         <div class="el-message-box__content" v-if="message !== ''">
-          <div class="el-message-box__status" :class="[ typeClass ]"></div>
-          <div class="el-message-box__message" :style="{ 'margin-left': typeClass ? '50px' : '0' }">
-            <slot><p>{{ message }}</p></slot>
+          <div class="el-message-box__message" :style="{ 'text-align': typeClass ? 'center' : 'initial' }">
+            <p>
+              <span class="el-message-box__status" :class="[ typeClass ]"></span>
+              <slot><span :style="{'padding-left': typeClass ? '46px' : '0px'}">{{ message }}</span></slot>
+            </p>
           </div>
           <div class="el-message-box__input" v-show="showInput">
             <el-input v-model="inputValue" @keyup.enter.native="handleAction('confirm')" :placeholder="inputPlaceholder" ref="input"></el-input>
