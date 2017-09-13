@@ -99,6 +99,7 @@
 
     @e message {
       margin: 0;
+      color: var(--color-base-black);
 
       & p {
         margin: 0;
@@ -107,7 +108,7 @@
     }
 
     @e btns {
-      padding: 10px 20px 20px;
+      padding: 0 20px 20px;
       text-align: center;
 
       & button {
