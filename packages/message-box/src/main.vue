@@ -21,19 +21,21 @@
         </div>
         <div class="el-message-box__btns">
           <el-button
-            :loading="cancelButtonLoading"
-            :class="[ cancelButtonClasses ]"
-            v-show="showCancelButton"
-            @click.native="handleAction('cancel')">
-            {{ cancelButtonText || t('el.messagebox.cancel') }}
-          </el-button>
-          <el-button
             :loading="confirmButtonLoading"
             ref="confirm"
+            size="small"
             :class="[ confirmButtonClasses ]"
             v-show="showConfirmButton"
             @click.native="handleAction('confirm')">
             {{ confirmButtonText || t('el.messagebox.confirm') }}
+          </el-button>
+          <el-button
+            :loading="cancelButtonLoading"
+            :class="[ cancelButtonClasses ]"
+            v-show="showCancelButton"
+            size="small"
+            @click.native="handleAction('cancel')">
+            {{ cancelButtonText || t('el.messagebox.cancel') }}
           </el-button>
         </div>
       </div>

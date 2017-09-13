@@ -212,8 +212,10 @@
     
       /* Message Box
       -------------------------- */
-      --msgbox-width: 420px;
+      --msgbox-width: 380px;
+      --msgbox-header-height: 50px;
       --msgbox-border-radius: 3px;
+      --msgbox-border-color: #e5e5e5;
       --msgbox-font-size: 16px;
       --msgbox-content-font-size: 14px;
       --msgbox-content-color: var(--link-color);

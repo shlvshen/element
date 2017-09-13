@@ -34,7 +34,9 @@
 
     @e header {
       position: relative;
-      padding: 20px 20px 0;
+      padding: 0 20px;
+      height: var(--msgbox-header-height);
+      border-bottom: 1px solid var(--msgbox-border-color);
     }
 
     @e headerbtn {
@@ -48,7 +50,7 @@
       cursor: pointer;
 
       .el-message-box__close {
-        color: #999;
+        color: #cbcbcb;
       }
       
       &:focus, &:hover {
@@ -89,7 +91,8 @@
       font-size: var(--msgbox-font-size);
       font-weight: bold;
       height: 18px;
-      color: #333;
+      line-height: var(--msgbox-header-height);
+      color: var(--color-base-black);
     }
 
     @e message {
@@ -102,9 +105,12 @@
     }
 
     @e btns {
-      padding: 10px 20px 15px;
-      text-align: right;
+      padding: 10px 20px 20px;
+      text-align: center;
 
+      & button {
+        min-width: 100px;
+      }
       & button:nth-child(2) {
         margin-left: 10px;
       }
@@ -115,8 +121,10 @@
     }
 
     @e status {
-      position: absolute;
-      top: 50%;
+      position: relative;
+      
+      /* position: absolute; */
+      /* top: 50%; */
       transform: translateY(-50%);
       font-size: 36px !important;
 
