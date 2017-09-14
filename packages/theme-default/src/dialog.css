@@ -81,13 +81,13 @@
     }
 
     @e body {
-      padding: 30px 20px;
+      padding: 20px;
       color: var(--color-extra-light-black);
       font-size: var(--dialog-font-size);
     }
 
     @e footer {
-      padding: 10px 20px 15px;
+      padding: 0 20px 20px;
       text-align: center;
       box-sizing: border-box;
 
