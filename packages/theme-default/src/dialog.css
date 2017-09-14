@@ -22,6 +22,10 @@
       width: var(--dialog-small-width);
     }
 
+    @modifier middle {
+      width: var(--dialog-middle-width);
+    }
+
     @modifier large {
       width: var(--dialog-large-width);
     }
@@ -41,8 +45,11 @@
     }
 
     @e header {
-      padding: 20px 20px 0;
+      padding: 15px 20px 0;
       @utils-clearfix;
+      height: var(--msgbox-header-height);
+      border-bottom: 1px solid var(--msgbox-border-color);
+      box-sizing: border-box;      
     }
 
     @e headerbtn {
@@ -56,6 +63,7 @@
 
       .el-dialog__close {
         color: var(--dialog-close-color);
+        font-size: 14px;
       }
       
       &:focus, &:hover {
@@ -80,8 +88,12 @@
 
     @e footer {
       padding: 10px 20px 15px;
-      text-align: right;
+      text-align: center;
       box-sizing: border-box;
+
+      & button {
+        min-width: 100px;
+      }
     }
   }
 

@@ -422,6 +422,7 @@
       --dialog-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
       --dialog-tiny-width: 30%;
       --dialog-small-width: 50%;
+      --dialog-middle-width: 70%;      
       --dialog-large-width: 90%;
       --dialog-close-color: var(--color-extra-light-silver);
       --dialog-close-hover-color: var(--color-primary);
