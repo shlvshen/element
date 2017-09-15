@@ -93,6 +93,10 @@
 
       & button {
         min-width: 90px;
+        margin: 0;
+        &:nth-child(2) {
+          margin-left: 30px;
+        }
       }
     }
   }

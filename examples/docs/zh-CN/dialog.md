@@ -49,9 +49,9 @@
 
 <style>
   .demo-box.demo-dialog {
-    .dialog-footer button:first-child {
+    /*.dialog-footer button:first-child {
       margin-right: 10px;
-    }
+    }*/
     .full-image {
       width: 100%;
     }
