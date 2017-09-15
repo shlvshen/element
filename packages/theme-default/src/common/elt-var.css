@@ -17,6 +17,7 @@
       --color-warning: #f1c40f;
       --color-danger: #e74c3c;
       --color-info: #3399fe;
+      --color-cancel: #bdc3c7;
 
       --color-secondary: color(var(--color-primary) s(99%) l(*0.9));
       --color-white: #fff;
@@ -394,6 +395,10 @@
       --button-info-border: var(--color-info);
       --button-info-color: var(--color-white);
       --button-info-fill: var(--color-info);
+
+      --button-cancel-border: var(--color-cancel);
+      --button-cancel-color: var(--color-white);
+      --button-cancel-fill: var(--color-cancel);
 
       --button-hover-tint-percent: 20%;
       --button-active-shade-percent: 10%;
