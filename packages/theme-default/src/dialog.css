@@ -84,6 +84,10 @@
       padding: 20px;
       color: var(--color-extra-light-black);
       font-size: var(--dialog-font-size);
+
+      .el-textarea__inner {
+        padding: 20px 16px;        
+      }
     }
 
     @e footer {
