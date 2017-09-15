@@ -125,6 +125,9 @@
     @m info {
       @mixin button-variant var(--button-info-color), var(--button-info-fill), var(--button-info-border);
     }
+    @m cancel {
+      @mixin button-variant var(--button-cancel-color), var(--button-cancel-fill), var(--button-cancel-border);
+    }
     @m large {
       @mixin button-size var(--button-large-padding-vertical), var(--button-large-padding-horizontal), var(--button-large-font-size), var(--button-large-border-radius), var(--button-large-line-height);
     }

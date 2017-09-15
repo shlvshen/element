@@ -36,6 +36,7 @@
             :class="[ cancelButtonClasses ]"
             v-show="showCancelButton"
             size="small"
+            type="cancel"
             @click.native="handleAction('cancel')">
             {{ cancelButtonText || t('el.messagebox.cancel') }}
           </el-button>
