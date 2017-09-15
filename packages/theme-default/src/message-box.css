@@ -112,7 +112,7 @@
       text-align: center;
 
       & button {
-        min-width: 100px;
+        min-width: 90px;
       }
       & button:nth-child(2) {
         margin-left: 10px;
