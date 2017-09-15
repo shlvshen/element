@@ -448,9 +448,9 @@
       --pagination-color: var(--link-color);
       --pagination-border-radius: 4px;
       --pagination-button-color: var(--color-light-silver);
-      --pagination-button-size: 28px;
-      --pagination-button-disabled-color: #e4e4e4;
-      --pagination-button-disabled-fill: var(--color-white);
+      --pagination-button-size: 32px;
+      --pagination-button-disabled-color: #cacfd2;
+      --pagination-button-disabled-fill: #e3e3e3;
       --pagination-border-color: var(--disabled-border-base);
       --pagination-hover-fill: var(--color-primary);
       --pagination-hover-color: var(--color-white);

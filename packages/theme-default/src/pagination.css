@@ -25,7 +25,7 @@
       input {
         padding-right: 25px;
         border-radius: var(--pagination-border-radius);
-        height: 28px;
+        height: var(--pagination-button-size);
       }
     }
 
@@ -135,7 +135,7 @@
     @e editor {
       border: 1px solid var(--pagination-border-color);
       border-radius: var(--pagination-border-radius);
-      line-height: 18px;
+      line-height: 22px;
       padding: 4px 2px;
       width: 30px;
       text-align: center;
