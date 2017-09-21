@@ -88,7 +88,7 @@
         cursor: not-allowed;
 
         &::placeholder {
-          color: var(--input-disabled-placeholder-color);
+          /* color: var(--input-disabled-color); */
         }
       }
     }

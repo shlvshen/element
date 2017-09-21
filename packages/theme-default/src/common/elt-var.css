@@ -86,9 +86,11 @@
 
       /* Disable base
       -------------------------- */
-      --disabled-fill-base: var(--color-extra-light-gray);
-      --disabled-color-base: #bbb;
-      --disabled-border-base: var(--color-base-gray);
+      --disabled-fill-base: #e3e3e3;
+      /* --disabled-fill-base: var(--color-extra-light-gray); */
+      --disabled-color-base: #71808f;
+      /* --disabled-border-base: var(--color-base-gray); */
+      --disabled-border-base: var(--disabled-fill-base);      
 
       /* Icon
       -------------------------- */
