@@ -374,8 +374,8 @@
       --button-ghost-fill: transparent;
       --button-ghost-border: none;
 
-      --button-disabled-color: var(--color-extra-light-silver);
-      --button-disabled-fill: var(--color-extra-light-gray);
+      --button-disabled-color: var(--disabled-color-base);
+      --button-disabled-fill: var(--disabled-fill-base);
       --button-disabled-border: var(--disabled-border-base);
 
       --button-primary-border: var(--color-primary);
