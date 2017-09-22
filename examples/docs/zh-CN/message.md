@@ -8,16 +8,24 @@
       openVn() {
         const h = this.$createElement;
         this.$message({
-          message: h('p', null, [
-            h('span', null, '内容可以是 '),
-            h('i', { style: 'color: teal' }, 'VNode')
+          message: h('div', null, [
+            h('p', null, '内容可以是 '),
+            h('span', { style: 'color: teal' }, 'VNode')
           ])
         });
       },
 
       open2() {
-        this.$message({
+        const h = this.$createElement;
+        /*this.$message({
           message: '恭喜你，这是一条成功消息',
+          type: 'success'
+        });*/
+        this.$message({
+          message: h('div', null, [
+            h('p', null, '恭喜你，这是一条成功消息 '),
+            h('span', { style: 'color: teal' }, 'VNode')
+          ]),
           type: 'success'
         });
       },
@@ -94,8 +102,8 @@
         const h = this.$createElement;
         this.$message({
           message: h('p', null, [
-            h('span', null, '内容可以是 '),
-            h('i', { style: 'color: teal' }, 'VNode')
+            h('p', null, '内容可以是 '),
+            h('span', { style: 'color: teal' }, 'VNode')
           ])
         });
       }
