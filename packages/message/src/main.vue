@@ -42,7 +42,6 @@
 
     computed: {
       typeIcon() {
-        console.log(111, this.type, typeMap);
         return typeMap[this.type];
         // return require(`../assets/${ this.type }.svg`);
       }
