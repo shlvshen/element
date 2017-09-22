@@ -239,9 +239,20 @@
       --message-close-hover-color: var(--color-light-silver);
 
       --message-success-color: var(--color-success);
+      --message-success-fill: #E9F8F5;
+      --message-success-border: #BBEBE1;
+
       --message-info-color: var(--color-info);
+      --message-info-fill: #EBF5FF;
+      --message-info-border: #EBF5FF;
+
       --message-warning-color: var(--color-warning);
+      --message-warning-fill: #FEF5E8;
+      --message-warning-border: #FBE1E8;
+
       --message-danger-color: var(--color-danger);
+      --message-danger-fill: #FDEDEC;
+      --message-danger-border: #F8CAC5;
 
       /* Notification
       -------------------------- */

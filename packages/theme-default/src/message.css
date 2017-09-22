@@ -18,50 +18,14 @@
     overflow: hidden;
     border-radius: 4px;
 
-    &.success {
-      background: #E9F8F5;
-      border: 1px solid #BBEBE1;
-      .el-message__status, .el-message__group *{
-        color: var(--msgbox-success-color);
-      }
-    }
 
-    /* @each $type in (primary, success, warning, danger, info) {
-      .el-button--$type {
-        &:first-child {
-          border-right-color: rgba(var(--color-white), 0.5);
+    @each $type in (primary, success, warning, danger, info) {
+      &.$(type) {
+        background: var(--message-$(type)-fill);
+        border: 1px solid var(--message-$(type)-border);      
+        .el-message__status, .el-message__group *{
+          color: var(--message-$(type)-color);
         }
-        &:last-child {
-          border-left-color: rgba(var(--color-white), 0.5);
-        }
-        &:not(:first-child):not(:last-child) {
-          border-left-color: rgba(var(--color-white), 0.5);
-          border-right-color: rgba(var(--color-white), 0.5);
-        }
-      }
-    } */
-
-    &.warning {
-      background: #FEF5E8;
-      border: 1px solid #FBE1E8;
-      .el-message__status, .el-message__group *{
-        color: var(--msgbox-warning-color);
-      }
-    }
-
-    &.info {
-      background: #EBF5FF;
-      border: 1px solid #EBF5FF;
-      .el-message__status, .el-message__group *{
-        color: var(--msgbox-info-color);
-      }
-    }
-
-    &.danger {
-      background: #FDEDEC;
-      border: 1px solid #F8CAC5;
-      .el-message__status, .el-message__group *{
-        color: var(--msgbox-danger-color);
       }
     }
 
