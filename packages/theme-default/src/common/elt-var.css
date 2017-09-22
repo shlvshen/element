@@ -13,10 +13,10 @@
       -------------------------- */
       --color-primary: #1abc9c;
 
-      --color-success: #2ecc71;
+      --color-success: #1abc9c;
       --color-warning: #f1c40f;
       --color-danger: #e74c3c;
-      --color-info: #3399fe;
+      --color-info: #3399ff;
       --color-cancel: #bdc3c7;
 
       --color-secondary: color(var(--color-primary) s(99%) l(*0.9));
@@ -57,7 +57,7 @@
 
       /* Box-shadow
       -------------------------- */
-      --box-shadow-base: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+      --box-shadow-base: 0 3px 6px rgba(0, 0, 0, .15), 0 0 6px rgba(0, 0, 0, .04);
       --box-shadow-dark: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .12);
 
       /* Fill
@@ -233,7 +233,7 @@
       -------------------------- */
       --message-shadow: var(--box-shadow-base);
       --message-min-width: 300px;
-      --message-padding: 10px 12px;
+      --message-padding: 20px;
       --message-content-color: var(--border-color-hover);
       --message-close-color: var(--color-extra-light-silver);
       --message-close-hover-color: var(--color-light-silver);

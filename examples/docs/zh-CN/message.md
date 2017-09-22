@@ -15,6 +15,13 @@
         });
       },
 
+      open1() {
+        this.$message({
+          message: '这是一条消息提示',
+          type: 'info'
+        });
+      },
+
       open2() {
         const h = this.$createElement;
         /*this.$message({
@@ -38,13 +45,18 @@
       },
 
       open4() {
-        this.$message.error('错了哦，这是一条错误消息');
+        /*this.$message.error('错了哦，这是一条错误消息');*/
+        this.$message({
+          message: '警告哦，这是一条警告消息',
+          type: 'danger'
+        });
       },
 
       open5() {
         this.$message({
           showClose: true,
-          message: '这是一条消息提示'
+          message: '这是一条消息提示',
+          type: 'info'
         });
       },
 
@@ -122,7 +134,7 @@
 <template>
   <el-button :plain="true" @click="open2">成功</el-button>
   <el-button :plain="true" @click="open3">警告</el-button>
-  <el-button :plain="true" @click="open">消息</el-button>
+  <el-button :plain="true" @click="open1">消息</el-button>
   <el-button :plain="true" @click="open4">错误</el-button>
 </template>
 

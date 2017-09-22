@@ -16,12 +16,68 @@
     background-color: var(--color-white);
     transition: opacity 0.3s, transform .4s;
     overflow: hidden;
+    border-radius: 4px;
+
+    &.success {
+      background: #E9F8F5;
+      border: 1px solid #BBEBE1;
+      .el-message__status, .el-message__group *{
+        color: var(--msgbox-success-color);
+      }
+    }
+
+    /* @each $type in (primary, success, warning, danger, info) {
+      .el-button--$type {
+        &:first-child {
+          border-right-color: rgba(var(--color-white), 0.5);
+        }
+        &:last-child {
+          border-left-color: rgba(var(--color-white), 0.5);
+        }
+        &:not(:first-child):not(:last-child) {
+          border-left-color: rgba(var(--color-white), 0.5);
+          border-right-color: rgba(var(--color-white), 0.5);
+        }
+      }
+    } */
+
+    &.warning {
+      background: #FEF5E8;
+      border: 1px solid #FBE1E8;
+      .el-message__status, .el-message__group *{
+        color: var(--msgbox-warning-color);
+      }
+    }
+
+    &.info {
+      background: #EBF5FF;
+      border: 1px solid #EBF5FF;
+      .el-message__status, .el-message__group *{
+        color: var(--msgbox-info-color);
+      }
+    }
+
+    &.danger {
+      background: #FDEDEC;
+      border: 1px solid #F8CAC5;
+      .el-message__status, .el-message__group *{
+        color: var(--msgbox-danger-color);
+      }
+    }
+
+    @e status {
+      position: absolute;
+      top: 50%;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      font-size: 24px !important;
+    }
 
     @e group {
       margin-left: 38px;
       position: relative;
-      height: 20px;
-      line-height: 20px;
+      /* height: 20px;
+      line-height: 20px; */
       display: flex;
       align-items: center;
 
@@ -29,12 +85,16 @@
         margin-left: 0;
       }
 
-      & p {
+      p {
         font-size: var(--font-size-base);
         margin: 0 34px 0 0;
         white-space: nowrap;
         color: var(--message-content-color);
         text-align: justify;
+      }
+
+      p + p {
+        margin-top: 10px;
       }
     }
 

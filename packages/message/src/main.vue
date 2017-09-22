@@ -1,12 +1,14 @@
 <template>
   <transition name="el-message-fade">
+      <!-- :class=""     -->
     <div
       class="el-message"
-      :class="customClass"
+      :class="[ type, customClass ]"
       v-show="visible"
       @mouseenter="clearTimer"
       @mouseleave="startTimer">
-      <img class="el-message__img" :src="typeImg" alt="" v-if="!iconClass">
+      <i class="el-message__status iconfont" v-if="!iconClass" v-html="typeIcon" ></i>
+      <!-- <img class="el-message__img" :src="typeImg" alt="" v-if="!iconClass"> -->
       <div class="el-message__group" :class="{ 'is-with-icon': iconClass }">
         <slot><p><i class="el-message__icon" :class="iconClass" v-if="iconClass"></i>{{ message }}</p></slot>
         <div v-if="showClose" class="el-message__closeBtn el-icon-close" @click="close"></div>
@@ -14,15 +16,21 @@
     </div>
   </transition>
 </template>
-
 <script type="text/babel">
+  let typeMap = {
+    success: '&#xe77f;',
+    info: '&#xe659;',
+    warning: '&#xe65a;',
+    danger: '&#xe695;'
+  };
+
   export default {
     data() {
       return {
         visible: false,
         message: '',
         duration: 3000,
-        type: 'info',
+        type: '',
         iconClass: '',
         customClass: '',
         onClose: null,
@@ -33,8 +41,10 @@
     },
 
     computed: {
-      typeImg() {
-        return require(`../assets/${ this.type }.svg`);
+      typeIcon() {
+        console.log(111, this.type, typeMap);
+        return typeMap[this.type];
+        // return require(`../assets/${ this.type }.svg`);
       }
     },
 
@@ -81,3 +91,22 @@
     }
   };
 </script>
+
+<style type="scss">
+  @font-face {
+    font-family: 'iconfont';  /* project id 313336 */
+    src: url('//at.alicdn.com/t/font_313336_5ilrj33g5b2ihpvi.eot');
+    src: url('//at.alicdn.com/t/font_313336_5ilrj33g5b2ihpvi.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_313336_5ilrj33g5b2ihpvi.woff') format('woff'),
+    url('//at.alicdn.com/t/font_313336_5ilrj33g5b2ihpvi.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_313336_5ilrj33g5b2ihpvi.svg#iconfont') format('svg');
+  }
+  .iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    /* font-size: 18px; */
+  }
+</style>
