@@ -14,7 +14,7 @@
           :key="getValueKey(item)"
           :closable="!disabled"
           :hit="item.hitState"
-          type="primary"
+          :type="tagType"
           @close="deleteTag($event, item)"
           close-transition>
           <span class="el-select__tags-text">{{ item.currentLabel }}</span>
@@ -199,7 +199,8 @@
       valueKey: {
         type: String,
         default: 'value'
-      }
+      },
+      tagType: String
     },
 
     data() {

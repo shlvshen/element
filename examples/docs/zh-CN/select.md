@@ -658,6 +658,7 @@
 | no-data-text | 选项为空时显示的文字 | string | — | 无数据 |
 | popper-class | Select 下拉框的类名 | string | — | — |
 | default-first-option | 在输入框按下回车，选择第一个匹配项。需配合 `filterable` 或 `remote` 使用 | boolean | - | false |
+| tag-type | 定义tag的颜色 | string | - | '' |
 
 ### Select Events
 | 事件名称 | 说明 | 回调参数 |

@@ -30,10 +30,10 @@
       top: -1px;
       right: -2px;
 
-      &:hover {
+      /* &:hover {
         background-color: var(--color-white);
         color: var(--tag-fill);
-      }
+      } */
     }
 
     @m gray {

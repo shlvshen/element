@@ -18,6 +18,7 @@
       --color-danger: #e74c3c;
       --color-info: #3399ff;
       --color-cancel: #bdc3c7;
+      --color-grey: #cacfd2;
 
       --color-secondary: color(var(--color-primary) s(99%) l(*0.9));
       --color-white: #fff;
@@ -464,7 +465,7 @@
       --pagination-border-radius: 4px;
       --pagination-button-color: var(--color-light-silver);
       --pagination-button-size: 32px;
-      --pagination-button-disabled-color: #cacfd2;
+      --pagination-button-disabled-color: var(--color-grey);
       --pagination-button-disabled-fill: #e3e3e3;
       --pagination-border-color: var(--disabled-border-base);
       --pagination-hover-fill: var(--color-primary);
@@ -492,8 +493,8 @@
       /* Tag
       -------------------------- */
       --tag-padding: 0 5px;
-      --tag-fill: var(--border-color-hover);
-      --tag-color: var(--color-white);
+      --tag-fill: var(--color-grey);
+      --tag-color: var(--color-black);
       --tag-close-color: #666;
       --tag-font-size: 12px;
       --tag-border-radius: 4px;
