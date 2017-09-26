@@ -2,6 +2,7 @@
   <div :class="[
     type === 'textarea' ? 'el-textarea' : 'el-input',
     size ? 'el-input--' + size : '',
+    styles ? styles : '',
     {
       'is-disabled': disabled,
       'el-input-group': $slots.prepend || $slots.append,
@@ -110,7 +111,8 @@
         type: Boolean,
         default: true
       },
-      onIconClick: Function
+      onIconClick: Function,
+      styles: String
     },
 
     computed: {

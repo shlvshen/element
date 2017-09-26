@@ -8,6 +8,14 @@
     display: inline-block;
     width: 100%;
 
+    @each $type in (success, warning, danger, info) {
+      &.$(type) {
+        .el-input__inner {
+          border-color: var(--color-$(type));          
+        }
+      }
+    }
+
     @e inner {
       appearance: none;
       background-color: var(--input-fill);
