@@ -89,9 +89,9 @@
       -------------------------- */
       --disabled-fill-base: #e3e3e3;
       /* --disabled-fill-base: var(--color-extra-light-gray); */
-      --disabled-color-base: #71808f;
+      --disabled-color-base: #999;
       /* --disabled-border-base: var(--color-base-gray); */
-      --disabled-border-base: var(--disabled-fill-base);      
+      --disabled-border-base: var(--border-color-base);      
 
       /* Icon
       -------------------------- */
