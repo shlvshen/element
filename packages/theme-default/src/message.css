@@ -19,7 +19,7 @@
     border-radius: 4px;
 
 
-    @each $type in (primary, success, warning, danger, info) {
+    @each $type in (success, warning, danger, info) {
       &.$(type) {
         background: var(--message-$(type)-fill);
         border: 1px solid var(--message-$(type)-border);      
