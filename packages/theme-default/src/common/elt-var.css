@@ -101,8 +101,8 @@
       -------------------------- */
       --checkbox-font-size: 14px;
       --checkbox-color: var(--color-base-black);
-      --checkbox-input-height: 18px;
-      --checkbox-input-width: 18px;
+      --checkbox-input-height: 20px;
+      --checkbox-input-width: 20px;
       --checkbox-input-border-radius: var(--border-radius-base);
       --checkbox-input-fill: var(--color-white);
       --checkbox-input-border: var(--border-base);
