@@ -56,7 +56,7 @@ export default {
     },
     select: {
       loading: '加载中',
-      noMatch: '无匹配数据',
+      noMatch: '暂无数据',
       noData: '无数据',
       placeholder: '请选择'
     },

@@ -48,7 +48,8 @@
       -------------------------- */
       --border-width-base: 1px;
       --border-style-base: solid;
-      --border-color-base: var(--color-extra-light-silver);
+      /* --border-color-base: var(--color-extra-light-silver); */
+      --border-color-base: #bdc3c7;
       --border-color-hover: var(--color-base-silver);
       --border-base: var(--border-width-base) var(--border-style-base) var(--border-color-base);
       --border-radius-base: 4px;
@@ -167,7 +168,7 @@
       --select-font-size: var(--font-size-base);
       --select-close-hover-color: var(--color-light-silver);
 
-      --select-input-color: var(--color-extra-light-silver);
+      --select-input-color: var(--color-base-black      );
       --select-multiple-input-color: #666;
       --select-input-focus-background: var(--color-primary);
       --select-input-font-size: 12px;
@@ -179,7 +180,7 @@
       --select-option-color: var(--link-color);
       --select-option-disabled-color: var(--color-extra-light-silver);
       --select-option-disabled-background: var(--color-white);
-      --select-option-height: 32px;
+      --select-option-height: 36px;
       --select-option-hover-background: var(--color-light-gray);
       --select-option-selected: var(--color-primary);
       --select-option-selected-hover: shade(var(--color-primary), 0.12);
@@ -193,7 +194,7 @@
       --select-dropdown-empty-color: #999;
       --select-dropdown-max-height: 274px;
       --select-dropdown-padding: 0 0;
-      --select-dropdown-empty-padding: 10px 0;
+      --select-dropdown-empty-padding: 10px;
       --select-dropdown-border: solid 1px var(--disabled-border-base);
 
       /* Alert
@@ -287,7 +288,8 @@
       --input-fill-disabled: var(--disabled-fill-base);
       --input-color-disabled: var(--font-color-disabled-base);
       --input-icon-color: var(--color-extra-light-silver);
-      --input-placeholder-color: var(--color-light-silver);
+      /* --input-placeholder-color: var(--color-light-silver); */
+      --input-placeholder-color: #999;
       --input-max-width: 314px;
 
       --input-hover-border: var(--border-color-hover);

@@ -654,7 +654,7 @@
 | remote-method | 远程搜索方法 | function | — | — |
 | loading | 是否正在从远程获取数据 | boolean | — | false |
 | loading-text | 远程加载时显示的文字 | string | — | 加载中 |
-| no-match-text | 搜索条件无匹配时显示的文字 | string | — | 无匹配数据 |
+| no-match-text | 搜索条件无匹配时显示的文字 | string | — | 暂无数据 |
 | no-data-text | 选项为空时显示的文字 | string | — | 无数据 |
 | popper-class | Select 下拉框的类名 | string | — | — |
 | default-first-option | 在输入框按下回车，选择第一个匹配项。需配合 `filterable` 或 `remote` 使用 | boolean | - | false |
