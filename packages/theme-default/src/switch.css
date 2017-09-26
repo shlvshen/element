@@ -37,8 +37,10 @@
         }
       }
       & * {
-        line-height: 1;
-        top: 4px;
+        /* line-height: 1;
+        top: 4px; */
+        top: 0;
+        line-height: var(--switch-height);
         position: absolute;
         font-size: var(--switch-font-size);
         display: inline-block;
@@ -65,6 +67,7 @@
 
       & .el-switch__button {
         position: absolute 0 * * 0;
+        top: calc(( var(--switch-height) - var(--switch-button-size) ) / 4);
         border-radius: var(--border-radius-circle);
         transition: transform .3s;
         size: var(--switch-button-size);

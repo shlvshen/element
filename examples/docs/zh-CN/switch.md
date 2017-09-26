@@ -30,8 +30,8 @@
 ```html
 <el-switch
   v-model="value1"
-  on-text=""
-  off-text="">
+  on-text="开"
+  off-text="关">
 </el-switch>
 <el-switch
   v-model="value2"
