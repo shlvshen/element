@@ -34,6 +34,12 @@
   off-text="关">
 </el-switch>
 <el-switch
+  v-model="value1"
+  on-text="开"
+  off-text="关"
+  size="small">
+</el-switch>
+<el-switch
   v-model="value2"
   on-color="#13ce66"
   off-color="#ff4949">
@@ -124,6 +130,7 @@
 | on-color  | switch 打开时的背景色    | string   | — | #20A0FF |
 | off-color  | switch 关闭时的背景色    | string   | — | #C0CCDA |
 | name  | switch 对应的 name 属性    | string   | — | — |
+| size  | switch 对应的 size 属性, 控制高度   | string   | — | '' |
 
 ### Events
 | 事件名称      | 说明    | 回调参数      |
