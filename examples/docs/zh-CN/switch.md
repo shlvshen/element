@@ -37,12 +37,16 @@
   v-model="value1"
   on-text="开"
   off-text="关"
+  on-color="#34495E"
+  off-color="#003300"
   size="small">
 </el-switch>
 <el-switch
   v-model="value2"
-  on-color="#13ce66"
-  off-color="#ff4949">
+  on-color="#34495E"
+  off-color="#003300"
+  on-button-color="#1ABC9C"
+  off-button-color="#1ABC9C">
 </el-switch>
 
 <script>
@@ -131,6 +135,8 @@
 | off-color  | switch 关闭时的背景色    | string   | — | #C0CCDA |
 | name  | switch 对应的 name 属性    | string   | — | — |
 | size  | switch 对应的 size 属性, 控制高度   | string   | — | '' |
+| on-button-color | switch 打开时按钮的背景色 | string | — | #fff |
+| off-button-color | switch 关闭时按钮的背景色 | string | — | #7F8C9A |
 
 ### Events
 | 事件名称      | 说明    | 回调参数      |

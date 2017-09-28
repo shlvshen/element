@@ -10,14 +10,14 @@
       :true-value="onValue"
       :false-value="offValue"
       :disabled="disabled">
-    <span class="el-switch__core" ref="core" >
-      <span class="el-switch__button" :style="{ transform }"></span>
+    <span class="el-switch__core" ref="core" :style="{ 'width': coreWidth + 'px' }">
+      <span class="el-switch__button" :style="{ transform }" ref="switchBtn"></span>
     </span>
     <transition name="label-fade">
       <div
         class="el-switch__label el-switch__label--left"
         v-show="checked"
-        >
+        :style="{ 'width': coreWidth + 'px' }">
         <i :class="[onIconClass]" v-if="onIconClass"></i>
         <span v-if="!onIconClass && onText">{{ onText }}</span>
       </div>
@@ -26,7 +26,7 @@
       <div
         class="el-switch__label el-switch__label--right"
         v-show="!checked"
-        >
+        :style="{ 'width': coreWidth + 'px' }">
         <i :class="[offIconClass]" v-if="offIconClass"></i>
         <span v-if="!offIconClass && offText">{{ offText }}</span>
       </div>
@@ -74,6 +74,14 @@
         type: String,
         default: ''
       },
+      onButtonColor: {
+        type: String,
+        default: ''
+      },
+      offButtonColor: {
+        type: String,
+        default: '' 
+      },
       onValue: {
         type: [Boolean, String, Number],
         default: true
@@ -109,8 +117,8 @@
         /* istanbul ignore next */
         return this.onText || this.offText;
       },
-      transform() {
-        return this.checked ? `translate(${ this.coreWidth - 20 }px, 2px)` : 'translate(2px, 2px)';
+      transform() { 
+        return this.checked ? `translate(${ this.coreWidth - 24 }px, 2px)` : 'translate(2px, 2px)';
       }
     },
     watch: {
@@ -118,6 +126,9 @@
         this.$refs.input.checked = this.checked;
         if (this.onColor || this.offColor) {
           this.setBackgroundColor();
+        }
+        if(this.onButtonColor || this.offButtonColor) {
+          this.setSwitchBtnColor();
         }
       }
     },
@@ -135,15 +146,22 @@
         let newColor = this.checked ? this.onColor : this.offColor;
         this.$refs.core.style.borderColor = newColor;
         this.$refs.core.style.backgroundColor = newColor;
+      },
+      setSwitchBtnColor() {
+        let newColor = this.checked ? this.onButtonColor : this.offButtonColor;
+        this.$refs.switchBtn.style.backgroundColor = newColor;
       }
     },
     mounted() {
       /* istanbul ignore if */
       if (this.width === 0) {
-        this.coreWidth = this.hasText ? 58 : 46;
+        this.coreWidth = this.hasText ? 60 : 46;
       }
       if (this.onColor || this.offColor) {
         this.setBackgroundColor();
+      }
+      if(this.onButtonColor || this.offButtonColor) {
+        this.setSwitchBtnColor();
       }
       this.$refs.input.checked = this.checked;
     }

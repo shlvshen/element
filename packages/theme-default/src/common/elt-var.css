@@ -435,8 +435,7 @@
 
       --switch-font-size: var(--font-size-base);
       --switch-core-border-radius: 12px;
-      /* --switch-width: 46px; */
-      --switch-width: 60px;      
+      --switch-width: 46px;   
       /* --switch-height: 32px; */
       --switch-height: 26px;      
       /* --switch-button-size: 16px; */
