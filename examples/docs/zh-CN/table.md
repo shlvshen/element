@@ -2,15 +2,36 @@
   export default {
     data() {
       return {
+        options: [
+          {
+            value: '选项1',
+            label: '黄金糕'
+          }, {
+            value: '选项2',
+            label: '双皮奶'
+          }, {
+            value: '选项3',
+            label: '蚵仔煎'
+          }, {
+            value: '选项4',
+            label: '龙须面'
+          }, {
+            value: '选项5',
+            label: '北京烤鸭'
+          }
+        ],
         tableData: [
           {
             date: '2016-05-03',
-            name: '王小虎',
+            name: '王小虎王小虎王小虎王小虎王小虎王小虎王小虎王小虎王小虎',
             province: '上海',
             city: '普陀区',
             address: '上海市普陀区金沙江路 1518 弄',
             zip: 200333,
-            tag: '家'
+            tag: '家',
+            receiver: {
+              name: '张三'
+            }
           },
           {
             date: '2016-05-02',
@@ -19,7 +40,10 @@
             city: '普陀区',
             address: '上海市普陀区金沙江路 1518 弄',
             zip: 200333,
-            tag: '公司'
+            tag: '公司',
+            receiver: {
+              name: '张三'
+            }
           },
           {
             date: '2016-05-04',
@@ -28,7 +52,10 @@
             city: '普陀区',
             address: '上海市普陀区金沙江路 1518 弄',
             zip: 200333,
-            tag: '家'
+            tag: '家',
+            receiver: {
+              name: '张三'
+            }
           },
           {
             date: '2016-05-01',
@@ -37,7 +64,10 @@
             city: '普陀区',
             address: '上海市普陀区金沙江路 1518 弄',
             zip: 200333,
-            tag: '公司'
+            tag: '公司',
+            receiver: {
+              name: '张三'
+            }
           }
         ],
         tableData2: [
@@ -257,6 +287,9 @@
     },
 
     methods: {
+      handleInputChange: function(item) {
+        console.log(111, item);
+      },
       getSummaries(param) {
         const { columns, data } = param;
         const sums = [];
@@ -388,17 +421,48 @@
       style="width: 100%">
       <el-table-column
         prop="date"
-        label="日期"
-        width="180">
+        label="日期">
       </el-table-column>
       <el-table-column
         prop="name"
-        label="姓名"
-        width="180">
+        label="姓名">
       </el-table-column>
       <el-table-column
-        prop="address"
-        label="地址">
+        prop="receiver.name"
+        label="收货人">
+      </el-table-column>
+      <el-table-column
+        label="换行文本">
+        <template scope="scope">
+          <div>{{ scope.row.date }}</div>
+          <span style="color: #005FBD">{{ scope.row.receiver.name }}</span>
+          <el-button size="small">操作按钮</el-button>
+        </template>
+      </el-table-column>
+      <el-table-column
+        label="input">
+        <template scope="scope">
+          <el-input v-model="scope.row.city" @change="handleInputChange(scope.row)"></el-input>
+        </template>
+      </el-table-column>
+      <el-table-column
+        label="input + 文字">
+        <template scope="scope">
+          <el-input v-model="scope.row.city" @change="handleInputChange(scope.row)"></el-input>
+        </template>
+      </el-table-column>
+      <el-table-column
+        label="select下拉">
+        <template scope="scope">
+          <el-select v-model="scope.row.zip" placeholder="请选择">
+          <el-option
+            v-for="item in options"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+          </el-option>
+        </el-select>
+        </template>
       </el-table-column>
     </el-table>
   </template>
@@ -424,6 +488,11 @@
             name: '王小虎',
             address: '上海市普陀区金沙江路 1516 弄'
           }]
+        }
+      },
+      methods: {
+        handleInputChange: function(item) {
+          console.log(111, item);
         }
       }
     }
