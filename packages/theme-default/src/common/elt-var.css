@@ -426,16 +426,21 @@
 
       /* Switch
      -------------------------- */
-      --switch-on-color: var(--color-primary);
+      /* --switch-on-color: var(--color-primary); */
+      --switch-on-color: var(--color-success);
       --switch-off-color: var(--color-extra-light-silver);
       --switch-disabled-color: var(--color-light-gray);
       --switch-disabled-text-color: var(--color-dark-white);
+      --swicth-off-button-color: #7F8C9A;
 
       --switch-font-size: var(--font-size-base);
       --switch-core-border-radius: 12px;
-      --switch-width: 46px;
-      --switch-height: 32px;
-      --switch-button-size: 16px;
+      /* --switch-width: 46px; */
+      --switch-width: 60px;      
+      /* --switch-height: 32px; */
+      --switch-height: 26px;      
+      /* --switch-button-size: 16px; */
+      --switch-button-size: 20px;
 
       /* Dialog
      -------------------------- */
