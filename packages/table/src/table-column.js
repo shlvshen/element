@@ -63,14 +63,15 @@ const forced = {
     sortable: false
   },
   expand: {
-    renderHeader: function(h, {}) {
-      return '';
+    renderHeader: function(h, { column }) {
+      return column.label || '#';
     },
-    renderCell: function(h, { row, store }, proxy) {
+    renderCell: function(h, { row, column, store, $index }, proxy) {
       const expanded = store.states.expandRows.indexOf(row) > -1;
-      return <div class={ 'el-table__expand-icon ' + (expanded ? 'el-table__expand-icon--expanded' : '') }
+      return <div>
+        <div class={ 'el-table__expand-icon ' + (expanded ? 'el-table__expand-icon--expanded' : '') }
                   on-click={ () => proxy.handleExpandClick(row) }>
-        <i class='el-icon el-icon-arrow-right'></i>
+          <i class='el-icon el-icon-caret-bottom'></i>{ $index + 1 }</div>
       </div>;
     },
     sortable: false,
