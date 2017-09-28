@@ -17,9 +17,9 @@ const defaults = {
     className: 'el-table-column--selection'
   },
   expand: {
-    width: 48,
-    minWidth: 48,
-    realWidth: 48,
+    width: 30,
+    minWidth: 30,
+    realWidth: 30,
     order: ''
   },
   index: {
@@ -63,14 +63,14 @@ const forced = {
     sortable: false
   },
   expand: {
-    renderHeader: function(h, {}) {
-      return '';
+    renderHeader: function(h, { column }) {
+      return column.label || '';
     },
     renderCell: function(h, { row, store }, proxy) {
       const expanded = store.states.expandRows.indexOf(row) > -1;
       return <div class={ 'el-table__expand-icon ' + (expanded ? 'el-table__expand-icon--expanded' : '') }
                   on-click={ () => proxy.handleExpandClick(row) }>
-        <i class='el-icon el-icon-arrow-right'></i>
+        <i class='el-icon el-icon-caret-bottom'></i>
       </div>;
     },
     sortable: false,

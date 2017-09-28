@@ -69,13 +69,13 @@
     @e expand-icon {
       position: relative;
       cursor: pointer;
-      color: #666;
+      /* color: #666; */
       font-size: 12px;
       transition: transform 0.2s ease-in-out;
       height: 40px;
 
       @m expanded {
-        transform: rotate(90deg);
+        transform: rotate(180deg);
       }
 
       > .el-icon {
