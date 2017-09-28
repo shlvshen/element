@@ -70,7 +70,7 @@ const forced = {
       const expanded = store.states.expandRows.indexOf(row) > -1;
       return <div class={ 'el-table__expand-icon ' + (expanded ? 'el-table__expand-icon--expanded' : '') }
                   on-click={ () => proxy.handleExpandClick(row) }>
-        <i class='el-icon el-icon-caret-bottom'></i>
+        <i class='el-icon el-icon-caret-right'></i>
       </div>;
     },
     sortable: false,
