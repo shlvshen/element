@@ -27,6 +27,13 @@ const defaults = {
     minWidth: 48,
     realWidth: 48,
     order: ''
+  },
+  selectionIndex: {
+    width: 55,
+    minWidth: 55,
+    realWidth: 55,
+    order: '',
+    className: 'el-table-column--selection'
   }
 };
 
@@ -69,6 +76,23 @@ const forced = {
     sortable: false,
     resizable: false,
     className: 'el-table__expand-column'
+  },
+  selectionIndex: {
+    renderHeader: function(h) {
+      return <el-checkbox
+        nativeOn-click={ this.toggleAllSelection }
+        value={ this.isAllSelected } />;
+    },
+    renderCell: function(h, { row, column, store, $index }) {
+      return <div>
+        <el-checkbox
+          value={ store.isSelected(row) }
+          disabled={ column.selectable ? !column.selectable.call(null, row, $index) : false }
+          on-input={ () => { store.commit('rowSelectedChanged', row); } } >{ $index + 1 }</el-checkbox>
+      </div>;
+    },
+    sortable: false,
+    resizable: false
   }
 };
 
