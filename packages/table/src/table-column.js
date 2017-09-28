@@ -34,6 +34,11 @@ const defaults = {
     realWidth: 55,
     order: '',
     className: 'el-table-column--selection'
+  },
+  input: {
+    minWidth: 55,
+    order: '',
+    className: 'el-table-column--input'
   }
 };
 
@@ -93,6 +98,19 @@ const forced = {
     },
     sortable: false,
     resizable: false
+  },
+  input: {
+    renderHeader: function(h, { column }) {
+      return column.label || '';
+    },
+    renderCell: function(h, { row, column, store, $index }) {
+      return <div>
+        <el-input value={ row[column.property] }
+        placeholder={ column.placeholder }
+        on-input={ () => { store.commit('rowInputChanged', $index, row, column.property); } } >
+        </el-input>
+      </div>;
+    }
   }
 };
 
@@ -172,7 +190,8 @@ export default {
     filterMultiple: {
       type: Boolean,
       default: true
-    }
+    },
+    placeholder: String,
   },
 
   data() {
@@ -262,7 +281,8 @@ export default {
       filterMultiple: this.filterMultiple,
       filterOpened: false,
       filteredValue: this.filteredValue || [],
-      filterPlacement: this.filterPlacement || ''
+      filterPlacement: this.filterPlacement || '',
+      placeholder: this.placeholder || '',
     });
 
     objectAssign(column, forced[type] || {});
