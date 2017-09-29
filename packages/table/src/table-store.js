@@ -240,6 +240,20 @@ TableStore.prototype.mutations = {
     this.updateAllSelected();
   },
 
+  rowInputChange(states, index, row, key) {
+    var val = event.target.value;
+    row[key] = val;
+    const table = this.table;
+    table.$emit('input-change', index, row, key);
+  },
+
+  rowInputBlur(states, index, row, key) {
+    var val = event.target.value;
+    row[key] = val;
+    const table = this.table;
+    table.$emit('input-blur', index, row, key);
+  },
+
   toggleRowExpanded: function(states, row, expanded) {
     const expandRows = states.expandRows;
     if (typeof expanded !== 'undefined') {

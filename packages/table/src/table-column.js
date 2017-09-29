@@ -105,9 +105,9 @@ const forced = {
     },
     renderCell: function(h, { row, column, store, $index }) {
       return <div>
-        <el-input value={ row[column.property] }
-        placeholder={ column.placeholder }
-        on-input={ () => { store.commit('rowInputChanged', $index, row, column.property); } } >
+        <el-input value={ row[column.property] } placeholder={ column.placeholder }
+        on-change={ () => { store.commit('rowInputChange', $index, row, column.property); } }
+        on-blur={ () => { store.commit('rowInputBlur', $index, row, column.property); } }>
         </el-input>
       </div>;
     }
