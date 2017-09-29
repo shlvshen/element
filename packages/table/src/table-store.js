@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import debounce from 'throttle-debounce/debounce';
 import { orderBy, getColumnById, getRowIdentity } from './util';
-import { setValueByPath } from 'thx-knight/src/utils/util';
+// import { setValueByPath } from 'thx-knight/src/utils/util';
 
 const sortData = (data, states) => {
   const sortingColumn = states.sortingColumn;
@@ -241,18 +241,21 @@ TableStore.prototype.mutations = {
     this.updateAllSelected();
   },
 
+  /**
+   * 同时更改对象中对应key值交给用户去处理，因为会存在校验的情况
+   */
   rowInputChange(states, index, row, key) {
     var val = event.target.value;
-    setValueByPath(key, row, val);
+    // setValueByPath(key, row, val);
     const table = this.table;
-    table.$emit('input-change', index, row, key);
+    table.$emit('input-change', index, row, key, val);
   },
 
   rowInputBlur(states, index, row, key) {
     var val = event.target.value;
-    setValueByPath(key, row, val);    
+    // setValueByPath(key, row, val);
     const table = this.table;
-    table.$emit('input-blur', index, row, key);
+    table.$emit('input-blur', index, row, key, val);
   },
 
   rowInputFocus(states, index, row, key) {

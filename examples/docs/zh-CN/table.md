@@ -2,6 +2,7 @@
   export default {
     data() {
       return {
+        placeholder: '请输入222',
         options: [
           {
             value: '选项1',
@@ -281,14 +282,82 @@
             amount3: 15
           }
         ],
+        tableData7: [
+          {
+            index: 1,
+            date: '2016-09-30',
+            name: '王小虎王小虎王小虎王小虎王小虎王小虎王小虎王小虎王小虎',
+            province: '上海',
+            city: '普陀区',
+            address: '上海市普陀区金沙江路 1518 弄',
+            zip: 200333,
+            tag: '家',
+            receiver: {
+              name: '张三'
+            },
+            onEdit: false
+          },
+          {
+            date: '2016-05-02',
+            name: '王小虎',
+            province: '上海',
+            city: '普陀区',
+            address: '上海市普陀区金沙江路 1518 弄',
+            zip: 200333,
+            tag: '公司',
+            receiver: {
+              name: '张三222'
+            },
+            onEdit: false
+          },
+          /*{
+            date: '2016-05-04',
+            name: '王小虎',
+            province: '上海',
+            city: '普陀区',
+            address: '上海市普陀区金沙江路 1518 弄',
+            zip: 200333,
+            tag: '家',
+            receiver: {
+              name: '张三'
+            },
+            onEdit: false
+          },
+          {
+            date: '2016-05-01',
+            name: '王小虎',
+            province: '上海',
+            city: '普陀区',
+            address: '上海市普陀区金沙江路 1518 弄',
+            zip: 200333,
+            tag: '公司',
+            receiver: {
+              name: '张三'
+            },
+            onEdit: false
+          }*/
+        ],
         currentRow: null,
         multipleSelection: []
       };
     },
 
     methods: {
+      inputFocus: function(index, row, key) {
+        console.log('inputFocus', index, row, key);
+      },
+      inputChange: function(index, row, key, val) {
+        console.log('inputChange', index, row, key);
+      },
+      inputBlur: function(index, row, key, val) {
+        event.target.value = row.receiver.name;
+        console.log('inputBlur', index, row, key);
+      },
+      print: function(val) {
+        console.log('print', val);
+      },
       handleInputChange: function(item) {
-        console.log(111, item);
+        console.log('handleInputChange', item);
       },
       getSummaries(param) {
         const { columns, data } = param;
@@ -334,11 +403,11 @@
       },
 
       handleEdit(index, row) {
-        console.log(index, row);
+        console.log('handleEdit', index, row);
       },
 
       handleDelete(index, row) {
-        console.log(index, row);
+        console.log('handleDelete', index, row);
       },
 
       handleSelectionChange(val) {
@@ -416,55 +485,86 @@
 :::demo 当`el-table`元素中注入`data`对象数组后，在`el-table-column`中用`prop`属性来对应对象中的键名即可填入数据，用`label`属性来定义表格的列名。可以使用`width`属性来定义列宽。
 ```html
   <template>
+    <div>
     <el-table
-      :data="tableData"
-      style="width: 100%">
-      <el-table-column
-        prop="date"
-        label="日期">
-      </el-table-column>
-      <el-table-column
-        prop="name"
-        label="姓名">
-      </el-table-column>
-      <el-table-column
-        prop="receiver.name"
-        label="收货人">
-      </el-table-column>
-      <el-table-column
-        label="换行文本">
-        <template scope="scope">
-          <div>{{ scope.row.date }}</div>
-          <span style="color: #005FBD">{{ scope.row.receiver.name }}</span>
-          <el-button size="small">操作按钮</el-button>
-        </template>
-      </el-table-column>
-      <el-table-column
-        label="input">
-        <template scope="scope">
-          <el-input v-model="scope.row.city" @change="handleInputChange(scope.row)"></el-input>
-        </template>
-      </el-table-column>
-      <el-table-column
-        label="input + 文字">
-        <template scope="scope">
-          <el-input v-model="scope.row.city" @change="handleInputChange(scope.row)"></el-input>
-        </template>
-      </el-table-column>
-      <el-table-column
-        label="select下拉">
-        <template scope="scope">
-          <el-select v-model="scope.row.zip" placeholder="请选择">
-          <el-option
-            v-for="item in options"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value">
-          </el-option>
-        </el-select>
-        </template>
-      </el-table-column>
+        :data="tableData"
+        style="width: 100%">
+        <el-table-column
+          prop="date"
+          label="日期">
+        </el-table-column>
+        <el-table-column
+          prop="name"
+          label="姓名">
+        </el-table-column>
+        <el-table-column
+          prop="receiver.name"
+          label="收货人">
+        </el-table-column>
+        <el-table-column
+          label="换行文本">
+          <template scope="scope">
+            <div>{{ scope.row.date }}</div>
+            <span style="color: #005FBD">{{ scope.row.receiver.name }}</span>
+            <el-button size="small">操作按钮</el-button>
+          </template>
+        </el-table-column>
+        <el-table-column
+          label="input"
+          type="edit"
+          edit="scope.row.edit">
+          <template scope="scope">
+            <el-input v-model="scope.row.city" @change="handleInputChange(scope.row)"></el-input>
+          </template>
+        </el-table-column>
+        <el-table-column
+          label="input + 文字">
+          <template scope="scope">
+            <el-input v-model="scope.row.city" @change="handleInputChange(scope.row)"></el-input>{{ scope.row.name }}
+          </template>
+        </el-table-column>
+        <el-table-column
+          label="select下拉">
+          <template scope="scope">
+            <el-select v-model="scope.row.zip" placeholder="请选择">
+            <el-option
+              v-for="item in options"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+            </el-option>
+          </el-select>
+          </template>
+        </el-table-column>
+        <el-table-column label="操作">
+          <template scope="scope">
+            <el-button
+            :type="scope.row.edit?'success':'primary'"
+            @click='scope.row.edit=!scope.row.edit' size="small" icon="edit">
+            {{scope.row.edit?'完成':'编辑'}}</el-button>
+          </template>
+        </el-table-column>
+      </el-table>
+    </div>
+    <div>
+    <p>各类型type展示</p>
+    <el-table
+        :data="tableData7"
+        style="width: 100%"
+        @input-change="inputChange"
+        @input-blur="inputBlur"
+        @input-focus="inputFocus">
+        <el-table-column type="expand" label="expand">
+        </el-table-column>
+        <el-table-column type="index" label="#"></el-table-column>
+         <el-table-column type="selection" label="selection"></el-table-column>
+         <el-table-column type="selectionIndex" label="selectionIndex"></el-table-column>
+         <!-- <el-table-column type="datePicker" property="date" placeholder="收货日期" 
+         :date-type="'date'" :picker-options="pickerOptions"></el-table-column> -->
+         <el-table-column type="input" label="edit" property="receiver.name" width="300" :placeholder="placeholder"></el-table-column>
     </el-table>
+    <el-button @click="print(tableData7)" style="margin-top: 10px;" size="small">打印value</el-button>
+    </div>
   </template>
 
   <script>
