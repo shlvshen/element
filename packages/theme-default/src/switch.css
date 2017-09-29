@@ -67,11 +67,11 @@
 
       & .el-switch__button {
         position: absolute 0 * * 0;
-        top: calc(( var(--switch-height) - var(--switch-button-size) ) / 4);
+        /* top: calc(( var(--switch-height) - var(--switch-button-size) ) / 4); */
         border-radius: var(--border-radius-circle);
         transition: transform .3s;
         size: var(--switch-button-size);
-        background-color: var(--color-white);
+        background-color: var(--swicth-off-button-color);
       }
     }
 
@@ -80,6 +80,9 @@
         border-color: var(--switch-on-color);
         background-color: var(--switch-on-color);
       }
+      & .el-switch__button {
+          background-color: var(--color-white);
+        }
     }
 
     @when disabled {
