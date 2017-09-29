@@ -37,3 +37,16 @@ export const getValueByPath = function(object, prop) {
   }
   return result;
 };
+
+export const setValueByPath = function set(path, obj, value) {
+  if(!path || !obj) return;
+  var current = obj;
+  var paths = path.split('.');
+  var len = paths.length;
+  for(var i = 0; i < len-1; i++) {
+      var elem = paths[i];
+      if( !current[elem] ) current[elem] = {};
+      current = current[elem];
+  }
+  current[paths[len-1]] = value;
+}
