@@ -43,7 +43,7 @@ export const setValueByPath = function set(path, obj, value) {
   let current = obj;
   const paths = path.split('.');
   let len = paths.length;
-  for (let i = 0, j = paths.length; i < j; i++) {
+  for (let i = 0, j = paths.length - 1; i < j; i++) {
     var elem = paths[i];
     if (!current[elem]) current[elem] = {};
     current = current[elem];
