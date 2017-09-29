@@ -112,7 +112,7 @@
     }
 
     & th, td {
-      height: 40px;
+      /* height: 40px; */
       min-width: 0;
       box-sizing: border-box;
       text-overflow: ellipsis;
@@ -137,7 +137,7 @@
     }
 
     @modifier border {
-      & th, td {
+      & td {
         border-right: 1px solid var(--table-border-color);
       }
 
@@ -159,7 +159,7 @@
       display: inline-block;
       padding-left: 18px;
       padding-right: 18px;
-      line-height: 40px;
+      /* line-height: 40px; */
       box-sizing: border-box;
       overflow: hidden;
       white-space: nowrap;
@@ -212,6 +212,8 @@
       }
     }
 
+    
+
     @e fixed-header-wrapper {
       position: absolute;
       left: 0;
@@ -260,8 +262,12 @@
       table-layout: fixed;
     }
 
-    @e header-wrapper, footer-wrapper {
+    @e footer-wrapper {
       overflow: hidden;
+    }
+
+    @e header-wrapper, footer-wrapper {
+      /* overflow: hidden; */
 
       & thead div {
         background-color: var(--table-header-background);
@@ -295,7 +301,7 @@
       word-wrap: normal;
       text-overflow: ellipsis;
       display: inline-block;
-      line-height: 30px;
+      /* line-height: 30px; */
       vertical-align: middle;
       width: 100%;
       box-sizing: border-box;
@@ -375,9 +381,10 @@
       text-overflow: ellipsis;
       white-space: normal;
       word-break: break-all;
-      line-height: 24px;
-      padding-left: 18px;
-      padding-right: 18px;
+      /* text-align: center; */
+      /* line-height: 24px; */
+      /* padding-left: 18px;
+      padding-right: 18px; */
     }
 
     & tr input[type="checkbox"] {
@@ -466,5 +473,34 @@
         overflow: hidden;
       }
     }
+
+    & thead {
+      & tr > th {
+        height: 40px;
+        .cell {
+          color: var(--color-white) !important;
+        }
+      }
+    }
+
+    & tbody {
+      & td {
+        height: 60px;
+        line-height: normal;
+
+        .cell {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+
+  @e header-wrapper{
+    height: 40px !important;
+    overflow-x: hidden;
+    overflow-y: scroll;
   }
 }

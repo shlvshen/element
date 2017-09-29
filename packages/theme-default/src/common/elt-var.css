@@ -456,9 +456,9 @@
 
       /* Table
      -------------------------- */
-      --table-border-color: color(var(--border-color-base) h(-3) s(27%) l(90%));
+      --table-border-color: #f5f5f5;
       --table-text-color: var(--color-base-black);
-      --table-header-background: var(--color-extra-light-gray);
+      --table-header-background: var(--color-base-black);
       --table-footer-background: var(--color-dark-white);
 
       /* Pagination
