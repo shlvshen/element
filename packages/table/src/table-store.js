@@ -255,6 +255,11 @@ TableStore.prototype.mutations = {
     table.$emit('input-blur', index, row, key);
   },
 
+  rowInputFocus(states, index, row, key) {
+    const table = this.table;
+    table.$emit('input-focus', index, row, key);
+  },
+
   toggleRowExpanded: function(states, row, expanded) {
     const expandRows = states.expandRows;
     if (typeof expanded !== 'undefined') {

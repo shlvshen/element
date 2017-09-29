@@ -104,10 +104,12 @@ const forced = {
       return column.label || '';
     },
     renderCell: function(h, { row, column, store, $index }) {
+      const value = DEFAULT_RENDER_CELL(h, { row, column});
       return <div>
-        <el-input value={ row[column.property] } placeholder={ column.placeholder }
+        <el-input value={ value } placeholder={ column.placeholder }
         on-change={ () => { store.commit('rowInputChange', $index, row, column.property); } }
-        on-blur={ () => { store.commit('rowInputBlur', $index, row, column.property); } }>
+        on-blur={ () => { store.commit('rowInputBlur', $index, row, column.property); } }
+        on-focus={ () => { store.commit('rowInputFocus', $index, row, column.property); } }>
         </el-input>
       </div>;
     }
