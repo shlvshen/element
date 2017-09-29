@@ -39,6 +39,11 @@ const defaults = {
     minWidth: 55,
     order: '',
     className: 'el-table-column--input'
+  },
+  operation: {
+    minWidth: 100,
+    order: '',
+    className: 'el-table-column--operation'
   }
 };
 
@@ -111,6 +116,23 @@ const forced = {
         on-blur={ () => { store.commit('rowInputBlur', $index, row, column.property); } }
         on-focus={ () => { store.commit('rowInputFocus', $index, row, column.property); } }>
         </el-input>
+      </div>;
+    }
+  },
+  operation: {
+    renderHeader: function(h, { column }) {
+      return column.label || '';
+    },
+    renderCell: function(h, { row, column, store, $index }) {
+      const items = column.operationList.map((item, index) => {
+        if (typeof item.enable === 'function') {
+          item.enable = item.enable(row, item);
+        }
+        return <el-button class={ item.class } size={ item.size } disabled={ item.enable } type={ item.type }
+          on-click={ () => { store.commit('rowButtonClick', $index, row, item); } }>{ item.label }</el-button>;
+      });
+      return <div>
+        {items}
       </div>;
     }
   }
@@ -194,6 +216,7 @@ export default {
       default: true
     },
     placeholder: String,
+    operationList: Array
   },
 
   data() {
@@ -285,6 +308,7 @@ export default {
       filteredValue: this.filteredValue || [],
       filterPlacement: this.filterPlacement || '',
       placeholder: this.placeholder || '',
+      operationList: this.operationList || [],
     });
 
     objectAssign(column, forced[type] || {});
