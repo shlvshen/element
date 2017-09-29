@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import debounce from 'throttle-debounce/debounce';
 import { orderBy, getColumnById, getRowIdentity } from './util';
+import { setValueByPath } from 'thx-knight/src/utils/util';
 
 const sortData = (data, states) => {
   const sortingColumn = states.sortingColumn;
@@ -242,14 +243,14 @@ TableStore.prototype.mutations = {
 
   rowInputChange(states, index, row, key) {
     var val = event.target.value;
-    row[key] = val;
+    setValueByPath(key, row, val);
     const table = this.table;
     table.$emit('input-change', index, row, key);
   },
 
   rowInputBlur(states, index, row, key) {
     var val = event.target.value;
-    row[key] = val;
+    setValueByPath(key, row, val);    
     const table = this.table;
     table.$emit('input-blur', index, row, key);
   },
