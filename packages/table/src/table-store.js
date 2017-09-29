@@ -263,6 +263,11 @@ TableStore.prototype.mutations = {
     table.$emit('input-focus', index, row, key);
   },
 
+  rowButtonClick(states, index, row, operation) {
+    const table = this.table;
+    table.$emit('select-operation', index, row, operation);
+  },
+
   toggleRowExpanded: function(states, row, expanded) {
     const expandRows = states.expandRows;
     if (typeof expanded !== 'undefined') {

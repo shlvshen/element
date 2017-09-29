@@ -128,6 +128,9 @@ const forced = {
         if (typeof item.enable === 'function') {
           item.enable = item.enable(row, item);
         }
+        if (typeof item.class === 'function') {
+          item.class = item.class(row, item);
+        }
         return <el-button class={ item.class } size={ item.size } disabled={ item.enable } type={ item.type }
           on-click={ () => { store.commit('rowButtonClick', $index, row, item); } }>{ item.label }</el-button>;
       });

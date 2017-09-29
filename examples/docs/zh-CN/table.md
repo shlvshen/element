@@ -343,6 +343,15 @@
     },
 
     methods: {
+      selectOperation: function(index, row, operation) {
+        console.log('selectOperation', index, row, operation);
+      },
+      handelOperationClass: function(row, operation) {
+        return 'danger';
+      },
+      handelEnable: function(row, operation) {
+        return false;
+      },    
       inputFocus: function(index, row, key) {
         console.log('inputFocus', index, row, key);
       },
@@ -553,15 +562,18 @@
         style="width: 100%"
         @input-change="inputChange"
         @input-blur="inputBlur"
-        @input-focus="inputFocus">
+        @input-focus="inputFocus"
+        @select-operation="selectOperation">
         <el-table-column type="expand" label="expand">
         </el-table-column>
         <el-table-column type="index" label="#"></el-table-column>
          <el-table-column type="selection" label="selection"></el-table-column>
          <el-table-column type="selectionIndex" label="selectionIndex"></el-table-column>
-         <!-- <el-table-column type="datePicker" property="date" placeholder="收货日期" 
+         <!-- <el-table-column type="datePicker" property="receiver.date"
+         placeholder="收货日期" width="300"
          :date-type="'date'" :picker-options="pickerOptions"></el-table-column> -->
          <el-table-column type="input" label="edit" property="receiver.name" width="300" :placeholder="placeholder"></el-table-column>
+         <el-table-column type="operation" label="operation" width="300" :operation-list="operationList"></el-table-column>
     </el-table>
     <el-button @click="print(tableData7)" style="margin-top: 10px;" size="small">打印value</el-button>
     </div>
