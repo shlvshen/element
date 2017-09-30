@@ -113,6 +113,10 @@
       color: color(var(--color-primary) s(16%) l(44%));
     }
 
+    @e loading {
+      padding: 55px 0;
+    }
+
     @e expand-column {
       .cell {
         padding: 0;

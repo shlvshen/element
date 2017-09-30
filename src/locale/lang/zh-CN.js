@@ -87,7 +87,8 @@ export default {
       confirmFilter: '筛选',
       resetFilter: '重置',
       clearFilter: '全部',
-      sumText: '合计'
+      sumText: '合计',
+      loadingText: '正在加载中...'
     },
     tree: {
       emptyText: '暂无数据'

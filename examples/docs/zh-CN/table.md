@@ -356,7 +356,7 @@
         tableData8: [
           {
             date: '2016-05-04',
-            name: '王小虎',
+            name: '王小王小虎王小虎王小虎王小虎王小虎王小虎王小虎王小虎王小虎王小虎王小虎王小虎王小虎王小虎王小虎王小虎王小虎虎',
             province: '上海'
           },
           {
@@ -370,6 +370,8 @@
             province: '上海'
           }
         ],
+        tableData9: null,
+        tableData10: [],
         currentRow: null,
         multipleSelection: []
       };
@@ -616,6 +618,30 @@
          <el-table-column type="operation" label="operation" width="300" :operation-list="operationList"></el-table-column>
     </el-table>
     <el-button @click="print(tableData7)" style="margin-top: 10px;" size="small">打印value</el-button>
+    </div>
+    
+    <div>
+    <p>loading</p>
+    <el-table
+        :data="tableData9"
+        style="width: 100%">
+        <el-table-column
+          prop="date"
+          label="日期">
+        </el-table-column>
+    </el-table>
+    </div>
+
+    <div>
+    <p>无结果</p>
+    <el-table
+        :data="tableData10"
+        style="width: 100%">
+        <el-table-column
+          prop="date"
+          label="日期">
+        </el-table-column>
+    </el-table>
     </div>
   </template>
 

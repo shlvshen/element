@@ -38,8 +38,14 @@
         :highlight="highlightCurrentRow"
         :style="{ width: bodyWidth }">
       </table-body>
-      <div :style="{ width: bodyWidth }" class="el-table__empty-block" v-if="!data || data.length === 0">
+      <div :style="{ width: bodyWidth }" class="el-table__empty-block" v-if="!data">
         <span class="el-table__empty-text"><slot name="empty">{{ emptyText || t('el.table.emptyText') }}</slot></span>
+      </div>
+      <div :style="{ width: bodyWidth }" class="el-table__empty-block" v-if="data && data.length === 0">
+       <span class="el-table__loading">
+         <i class="el-icon-loading"></i>
+         <slot name="empty">{{ loadingText || t('el.table.loadingText') }}</slot>
+       </span>
       </div>
     </div>
     <div class="el-table__footer-wrapper" ref="footerWrapper" v-if="showSummary" v-show="data && data.length > 0">
@@ -212,6 +218,8 @@
       currentRowKey: [String, Number],
 
       emptyText: String,
+
+      loadingText: String,
 
       expandRowKeys: Array,
 
