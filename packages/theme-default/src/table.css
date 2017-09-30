@@ -40,7 +40,7 @@
 
     /* size */
     @each $size in (small) {
-      .el-table--$(size) {
+      &.el-table--$(size) {
         & tbody {
           td {
             height: var(--table-row-height-$(size));
@@ -70,7 +70,7 @@
       }
     }
 
-    .el-table--small {
+    &.el-table--small {
       & thead {
         & tr > th {
           border: 0;
@@ -79,6 +79,15 @@
       & tr {
         td {
           border-color: var(--table-border-color-small);
+          /* 控制文本最多只能显示一行 */
+          .cell {
+            -webkit-line-clamp: 1;
+          }
+        }
+        &:last-child {
+          td {
+            border-bottom: 0;
+          }
         }
       }
     }
