@@ -110,6 +110,26 @@
             $positive: true
           }
         ],
+        columnMap: {
+          "date": {
+            isFixed: true
+          },
+          "name": {
+            isFixed: false
+          },
+          "province": {
+            isFixed: false
+          },
+          "city": {
+            isFixed: false
+          },
+          "address": {
+            isFixed: false
+          },
+          "operation": {
+            isFixed: 'right'
+          }
+        },
         tableData3: [
           {
             date: '2016-05-03',
@@ -378,6 +398,25 @@
     },
 
     methods: {
+      handleFixed: function(keyList, val) {
+        var columnMap = this.columnMap;
+        if (keyList === 'all') {
+          for (var key in columnMap) {
+            columnMap[key].isFixed = val;
+          }
+          return;
+        }
+        for (var key in columnMap) {
+          if(keyList.indexOf(key) > -1) {
+            columnMap[key].isFixed = val;
+            continue;
+          }
+          columnMap[key].isFixed = columnMap[key].isFixed || !val;
+        }
+      },
+      toggleRowExpanded: function(row) {
+        /*console.log(999, row)*/
+      },
       selectOperation: function(index, row, operation) {
         console.log('selectOperation', index, row, operation);
       },
@@ -598,10 +637,11 @@
         @input-change="inputChange"
         @input-blur="inputBlur"
         @input-focus="inputFocus"
-        @select-operation="selectOperation">
+        @select-operation="selectOperation"
+        @expand="toggleRowExpanded">
         <el-table-column type="expand" label="expandexpand">
           <template scope="props">
-            <el-table :data="tableData8" style="width: 100%" size="small">
+            <el-table :data="tableData8" style="width: 100%" size="small" border>
               <el-table-column label="name" prop="name"></el-table-column>
               <el-table-column label="province" prop="province"></el-table-column>
               <el-table-column label="date" prop="date"></el-table-column>
@@ -619,7 +659,7 @@
     </el-table>
     <el-button @click="print(tableData7)" style="margin-top: 10px;" size="small">打印value</el-button>
     </div>
-    
+
     <div>
     <p>loading</p>
     <el-table
@@ -1040,6 +1080,7 @@
 :::demo 固定列和表头可以同时使用，只需要将上述两个属性分别设置好即可。
 ```html
 <template>
+<div>
   <el-table
     :data="tableData3"
     border
@@ -1081,12 +1122,86 @@
       </template>
     </el-table-column>
   </el-table>
+</div>
+<div>
+<p>可配置固定表头</p>
+  <el-table
+    :data="tableData3"
+    border
+    style="width: 100%"
+    height="250">
+    <el-table-column
+      :fixed="columnMap.date.isFixed"
+      prop="date"
+      label="日期"
+      width="150">
+    </el-table-column>
+    <el-table-column
+      :fixed="columnMap.name.isFixed"
+      prop="name"
+      label="姓名"
+      width="120">
+    </el-table-column>
+    <el-table-column
+      prop="province"
+      :fixed="columnMap.province.isFixed"
+      label="省份"
+      width="120">
+    </el-table-column>
+    <el-table-column
+      prop="city"
+      :fixed="columnMap.city.isFixed"
+      label="市区"
+      width="120">
+    </el-table-column>
+    <el-table-column
+      prop="address"
+      :fixed="columnMap.address.isFixed"
+      label="地址"
+      width="300">
+    </el-table-column>
+    <el-table-column
+      label="操作"
+      :fixed="columnMap.operation.isFixed"
+      width="120">
+      <template scope="scope">
+        <el-button @click="handleClick" type="text" size="small">查看</el-button>
+        <el-button type="text" size="small">编辑</el-button>
+      </template>
+    </el-table-column>
+  </el-table>
+  <div style="margin-top: 10px">
+    <el-button size="small" @click="handleFixed(['date', 'name'], true)">固定一、二列</el-button>
+    <el-button size="small" @click="handleFixed(['date'], true)">固定一列</el-button>
+    <el-button size="small" @click="handleFixed('all', false)">取消固定</el-button> 
+  </div>
+</div>
 </template>
 
 <script>
   export default {
     data() {
       return {
+        columnMap: {
+          "date": {
+            isFixed: true
+          },
+          "name": {
+            isFixed: false
+          },
+          "province": {
+            isFixed: false
+          },
+          "city": {
+            isFixed: false
+          },
+          "address": {
+            isFixed: false
+          },
+          "operation": {
+            isFixed: 'right'
+          }
+        },
         tableData3: [{
           date: '2016-05-03',
           name: '王小虎',
@@ -1137,6 +1252,24 @@
           address: '上海市普陀区金沙江路 1518 弄',
           zip: 200333
         }]
+      }
+    },
+    methods: {
+      handleFixed: function(keyList, val) {
+        var columnMap = this.columnMap;
+        if (keyList === 'all') {
+          for (var key in columnMap) {
+            columnMap[key].isFixed = val;
+          }
+          return;
+        }
+        for (var key in columnMap) {
+          if(keyList.indexOf(key) > -1) {
+            columnMap[key].isFixed = val;
+            continue;
+          }
+          columnMap[key].isFixed = columnMap[key].isFixed || !val;
+        }
       }
     }
   }
