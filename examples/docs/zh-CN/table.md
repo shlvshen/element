@@ -21,6 +21,11 @@
             label: '北京烤鸭'
           }
         ],
+        pickerOptions: {
+          disabledDate(time) {
+            return time.getTime() < Date.now() - 8.64e7;
+          }
+        },
         operationList: [
           {
             label: '删除',
@@ -348,6 +353,23 @@
             onEdit: false
           }*/
         ],
+        tableData8: [
+          {
+            date: '2016-05-04',
+            name: '王小虎',
+            province: '上海'
+          },
+          {
+            date: '2016-05-04',
+            name: '王小虎',
+            province: '上海'
+          },
+          {
+            date: '2016-05-04',
+            name: '王小虎',
+            province: '上海'
+          }
+        ],
         currentRow: null,
         multipleSelection: []
       };
@@ -576,6 +598,13 @@
         @input-focus="inputFocus"
         @select-operation="selectOperation">
         <el-table-column type="expand" label="expandexpand">
+          <template scope="props">
+            <el-table :data="tableData8" style="width: 100%" size="small">
+              <el-table-column label="name" prop="name"></el-table-column>
+              <el-table-column label="province" prop="province"></el-table-column>
+              <el-table-column label="date" prop="date"></el-table-column>
+            </el-table>
+          </template>
         </el-table-column>
         <el-table-column type="index" label="#"></el-table-column>
          <el-table-column type="text" label="text" prop="receiver.name"></el-table-column>

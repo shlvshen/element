@@ -461,6 +461,11 @@
       --table-header-background: var(--color-base-black);
       --table-footer-background: var(--color-dark-white);
 
+      --table-head-height: 40px;
+      --table-row-height: 60px;
+      --table-head-height-small: 26px;
+      --table-row-height-small: 46px;
+
       /* Pagination
      -------------------------- */
       --pagination-font-size: 13px;

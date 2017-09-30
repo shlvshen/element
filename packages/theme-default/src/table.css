@@ -38,6 +38,24 @@
       z-index: 1;
     }
 
+    /* size */
+    @each $size in (small) {
+      .el-table--$(size) {
+        & tbody {
+          td {
+            height: var(--table-row-height-$(size));
+            overflow: hidden;
+          }
+        }
+
+        & thead {
+          & tr > th {
+            height: var(--table-head-height-$(size));
+          }
+        }
+      }
+    }
+
     .el-tooltip.cell {
       white-space: nowrap;
       min-width: 50px;
@@ -72,7 +90,7 @@
       /* color: #666; */
       font-size: 12px;
       transition: transform 0.2s ease-in-out;
-      height: 40px;
+      height: var(--table-head-height);
 
       @m expanded {
         transform: rotate(90deg);
@@ -475,7 +493,7 @@
     }
     & tbody {
       & td {
-        height: 60px;
+        height: var(--table-row-height);
         line-height: normal;
 
         .cell {
@@ -490,26 +508,15 @@
 
 
     @modifier multi-header {
-      .el-table__header-wrapper {
-        height: auto !important;
-      }
-
       & th {
         border-right: 1px solid var(--table-border-color);
       }
     }
 
-    @e header-wrapper{
-      height: 40px !important;
-      overflow: hidden;
-      /* overflow-x: hidden;
-      overflow-y: scroll; */
-    }
-
     @modifier fit {
       & tbody {
         td {
-          height: 60px;
+          height: var(--table-row-height);
           overflow: hidden;
         }
       }
@@ -526,9 +533,9 @@
 
     & thead {
       & tr > th {
-        height: 40px;
+        height: var(--table-head-height);
         .cell {
-          color: var(--color-white) !important;
+          color: var(--color-white);
           overflow: hidden;
           white-space: nowrap;
           text-overflow: ellipsis;
