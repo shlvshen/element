@@ -96,6 +96,7 @@ export default {
               {
                 this._l(columns, (column, cellIndex) =>
                   <th
+                    title={ column.label }
                     colspan={ column.colSpan }
                     rowspan={ column.rowSpan }
                     on-mousemove={ ($event) => this.handleMouseMove($event, column) }
