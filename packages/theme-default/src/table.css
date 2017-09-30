@@ -68,10 +68,17 @@
           }
         }
       }
+    }
 
-      if ($(size) == 'small') {
-        .el-table--$(size) {
-          background: #000;
+    .el-table--small {
+      & thead {
+        & tr > th {
+          border: 0;
+        }
+      }
+      & tr {
+        td {
+          border-color: var(--table-border-color-small);
         }
       }
     }
@@ -132,6 +139,9 @@
 
       &:hover {
         /* background-color: var(--color-dark-white) !important; */
+      }
+      & .el-table {
+        border: 0;
       }
     }
 
@@ -514,7 +524,25 @@
         overflow: hidden;
       }
     }
+
     & tbody {
+      tr {
+        &.active {
+          td {
+            border: 0;
+            background: var(--table-head-fill-active);
+            color: var(--table-color-active);
+          }
+
+          &:hover > td {
+            background-color: var(--table-head-fill-active) !important;
+          }
+        }
+      }
+
+      /* 当该行展开详情的css */
+    
+
       & td {
         height: var(--table-row-height);
         line-height: normal;
@@ -527,8 +555,6 @@
         }
       }
     }
-
-
 
     @modifier multi-header {
       & th {
@@ -544,15 +570,6 @@
         }
       }
     }
-
-    /* @e fixed-body-wrapper {
-      & tbody {
-        td {
-          height: 40px;
-          overflow: hidden;
-        }
-      }
-    } */
 
     & thead {
       & tr > th {
