@@ -383,8 +383,8 @@
       word-break: break-all;
       /* text-align: center; */
       /* line-height: 24px; */
-      /* padding-left: 18px;
-      padding-right: 18px; */
+      padding-left: 10px;
+      padding-right: 10px;
     }
 
     & tr input[type="checkbox"] {
