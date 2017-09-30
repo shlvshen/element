@@ -115,6 +115,16 @@
 
     @e loading {
       padding: 55px 0;
+      text-align: center;
+    }
+
+    @e loading-icon {
+      font-size: 30px;
+      color: var(--color-primary);
+    }
+
+    @e loading-text {
+      margin-top: 15px;
     }
 
     @e expand-column {
