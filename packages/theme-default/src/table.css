@@ -45,13 +45,24 @@
           td {
             height: var(--table-row-height-$(size));
             overflow: hidden;
+            background: var(--table-row-fill-small);
           }
         }
 
         & thead {
           & tr > th {
             height: var(--table-head-height-$(size));
+            background: var(--table-head-fill-small);
           }
+          div {
+            background: var(--table-head-fill-small);
+          }
+        }
+      }
+
+      if ($(size) == 'small') {
+        .el-table--$(size) {
+          background: #000;
         }
       }
     }
@@ -417,7 +428,7 @@
       & .el-table__body {
         & tr.el-table__row--striped {
           td {
-            background: #FAFAFA;
+            background: var(--table-striped-color);
             background-clip: padding-box;
           }
 

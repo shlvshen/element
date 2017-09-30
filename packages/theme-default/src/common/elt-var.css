@@ -461,10 +461,15 @@
       --table-header-background: var(--color-base-black);
       --table-footer-background: var(--color-dark-white);
 
+      --table-striped-color: #f5f5f5;
+
       --table-head-height: 40px;
       --table-row-height: 60px;
+      
       --table-head-height-small: 26px;
       --table-row-height-small: 46px;
+      --table-head-fill-small: #88c4ff;
+      --table-row-fill-small: #ddedff;
 
       /* Pagination
      -------------------------- */
