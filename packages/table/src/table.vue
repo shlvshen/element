@@ -1,15 +1,18 @@
 <template>
   <div class="el-table"
-    :class="{
-      'el-table--fit': fit,
-      'el-table--striped': stripe,
-      'el-table--border': border,
-      'el-table--multi-header': multiHeader,
-      'el-table--hidden': isHidden,
-      'el-table--fluid-height': maxHeight,
-      'el-table--enable-row-hover': !store.states.isComplex,
-      'el-table--enable-row-transition': (store.states.data || []).length !== 0 && (store.states.data || []).length < 100
-    }"
+    :class="[
+      size ? 'el-table--' + size : '',
+      {
+        'el-table--fit': fit,
+        'el-table--striped': stripe,
+        'el-table--border': border,
+        'el-table--multi-header': multiHeader,
+        'el-table--hidden': isHidden,
+        'el-table--fluid-height': maxHeight,
+        'el-table--enable-row-hover': !store.states.isComplex,
+        'el-table--enable-row-transition': (store.states.data || []).length !== 0 && (store.states.data || []).length < 100
+      }
+    ]"
     @mouseleave="handleMouseLeave($event)">
     <div class="hidden-columns" ref="hiddenColumns"><slot></slot></div>
     <div class="el-table__header-wrapper" ref="headerWrapper" v-if="showHeader">
@@ -216,7 +219,9 @@
 
       defaultSort: Object,
 
-      tooltipEffect: String
+      tooltipEffect: String,
+
+      size: String
     },
 
     components: {
