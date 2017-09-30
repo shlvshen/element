@@ -2246,6 +2246,11 @@
 | current-change | 当表格的当前行发生变化的时候会触发该事件，如果要高亮当前行，请打开表格的 highlight-current-row 属性 | currentRow, oldCurrentRow |
 | header-dragend | 当拖动表头改变了列的宽度的时候会触发该事件 | newWidth, oldWidth, column, event |
 | expand | 当用户对某一行展开或者关闭的上会触发该事件 | row, expanded |
+| input-change | 当input的值发生改变，key会是xx.yy的格式，建议动态设置obj属性方法放在data-conversion中，可以直接使用。是否要更改属性中对应key值交由用的人去处理，若校验后发现错误需要恢复原值，可以通过event.target.val = obj[key]即可 | index, row, key, val |
+| input-blur | input的blur事件 | index, row, key, val |
+| input-focus | input的focus事件 | index, row, key |
+| select-operation | 当用户选择对应操作后即可触发 | index, row, operation |
+
 
 ### Table Methods
 | 方法名 | 说明 | 参数 |
@@ -2258,6 +2263,7 @@
 | name | 说明 |
 |------|--------|
 | append | 插入至表格最后一行之后的内容，仍然位于 `<tbody>` 标签内。如果需要对表格的内容进行无限滚动操作，可能需要用到这个 slot。若表格有合计行，该 slot 会位于合计行之上。 |
+| footer | 用于自定义的footer |
 
 ### Table-column Attributes
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
