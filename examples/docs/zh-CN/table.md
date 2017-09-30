@@ -21,6 +21,16 @@
             label: '北京烤鸭'
           }
         ],
+        operationList: [
+          {
+            label: '删除',
+            class: this.handelOperationClass,
+            id: 'del',
+            enable: this.handelEnable,
+            size: 'small',
+            type: ''
+          }
+        ],
         tableData: [
           {
             date: '2016-05-03',
@@ -306,7 +316,8 @@
             zip: 200333,
             tag: '公司',
             receiver: {
-              name: '张三222'
+              name: '王小虎王小虎王小虎王小虎王小虎王小虎王小虎王小虎王小虎',
+              date: Date.now()
             },
             onEdit: false
           },
@@ -515,7 +526,7 @@
           <template scope="scope">
             <div>{{ scope.row.date }}</div>
             <span style="color: #005FBD">{{ scope.row.receiver.name }}</span>
-            <el-button size="small">操作按钮</el-button>
+            <!-- <el-button size="small">操作按钮</el-button> -->
           </template>
         </el-table-column>
         <el-table-column
@@ -564,10 +575,10 @@
         @input-blur="inputBlur"
         @input-focus="inputFocus"
         @select-operation="selectOperation">
-        <el-table-column type="expand" label="expand">
+        <el-table-column type="expand" label="expandexpand">
         </el-table-column>
         <el-table-column type="index" label="#"></el-table-column>
-         <el-table-column type="selection" label="selection"></el-table-column>
+         <el-table-column type="text" label="text" prop="receiver.name"></el-table-column>
          <el-table-column type="selectionIndex" label="selectionIndex"></el-table-column>
          <!-- <el-table-column type="datePicker" property="receiver.date"
          placeholder="收货日期" width="300"
@@ -867,7 +878,7 @@
 ```
 :::
 
-### 固定列
+<!-- ### 固定列
 
 横向内容过多时，可选择固定列。
 
@@ -965,7 +976,7 @@
   }
 </script>
 ```
-:::
+::: -->
 
 ### 固定列和表头
 
@@ -1006,9 +1017,13 @@
       width="300">
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
-      width="120">
+      label="操作"
+      width="120"
+      fixed="right">
+      <template scope="scope">
+        <el-button @click="handleClick" type="text" size="small">查看</el-button>
+        <el-button type="text" size="small">编辑</el-button>
+      </template>
     </el-table-column>
   </el-table>
 </template>
@@ -1209,7 +1224,8 @@
   <el-table
     :data="tableData3"
     border
-    style="width: 100%">
+    style="width: 100%"
+    multi-header>
     <el-table-column
       prop="date"
       label="日期"

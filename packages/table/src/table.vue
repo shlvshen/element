@@ -4,6 +4,7 @@
       'el-table--fit': fit,
       'el-table--striped': stripe,
       'el-table--border': border,
+      'el-table--multi-header': multiHeader,
       'el-table--hidden': isHidden,
       'el-table--fluid-height': maxHeight,
       'el-table--enable-row-hover': !store.states.isComplex,
@@ -181,6 +182,8 @@
       stripe: Boolean,
 
       border: Boolean,
+
+      multiHeader: Boolean,
 
       rowKey: [String, Function],
 

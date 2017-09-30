@@ -487,21 +487,51 @@
       }
     }
 
+
+
+    @modifier multi-header {
+      .el-table__header-wrapper {
+        height: auto !important;
+      }
+
+      & th {
+        border-right: 1px solid var(--table-border-color);
+      }
+    }
+
     @e header-wrapper{
       height: 40px !important;
       overflow: hidden;
       /* overflow-x: hidden;
       overflow-y: scroll; */
+    }
 
-      & thead {
-        & tr > th {
+    @modifier fit {
+      & tbody {
+        td {
+          height: 60px;
+          overflow: hidden;
+        }
+      }
+    }
+
+    /* @e fixed-body-wrapper {
+      & tbody {
+        td {
           height: 40px;
-          .cell {
-            color: var(--color-white) !important;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-          }
+          overflow: hidden;
+        }
+      }
+    } */
+
+    & thead {
+      & tr > th {
+        height: 40px;
+        .cell {
+          color: var(--color-white) !important;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
         }
       }
     }
