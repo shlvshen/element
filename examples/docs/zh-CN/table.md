@@ -2162,6 +2162,47 @@
 ```
 :::
 
+### 自定义表尾
+若表格展示的是各类数字，可以在表尾显示各列的合计。
+:::demo 因为有些表尾并不是合计行，那么为了兼容这种表尾，由slot将自定义的表尾传入
+
+```html
+<template>
+  <el-table
+    :data="tableData6"
+    border
+    style="width: 100%">
+    <el-table-column
+      prop="id"
+      label="ID"
+      width="180">
+    </el-table-column>
+  </el-table>
+  <div slot="footer" class="el-table__footer-wrapper">
+    <table>
+      <tbody>
+      <tr>
+        <td>这是自定义的表尾</Td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+
+      }
+    },
+    methods: {
+
+    }
+  }
+```
+:::
+
 ### Table Attributes
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
 |---------- |-------------- |---------- |--------------------------------  |-------- |

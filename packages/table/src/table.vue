@@ -57,6 +57,9 @@
         :style="{ width: layout.bodyWidth ? layout.bodyWidth + 'px' : '' }">
       </table-footer>
     </div>
+    <div v-if="$slots.footer">
+      <slot name="footer"></slot>
+    </div>
     <div class="el-table__fixed" ref="fixedWrapper"
       v-if="fixedColumns.length > 0"
       :style="[
