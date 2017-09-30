@@ -269,6 +269,9 @@ TableStore.prototype.mutations = {
   },
 
   toggleRowExpanded: function(states, row, expanded) {
+    var target = event.target;
+    const parent = target.closest('tr');
+    parent.classList.toggle('active');
     const expandRows = states.expandRows;
     if (typeof expanded !== 'undefined') {
       const index = expandRows.indexOf(row);
