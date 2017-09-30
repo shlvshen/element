@@ -80,7 +80,7 @@
       },
       offButtonColor: {
         type: String,
-        default: '' 
+        default: ''
       },
       onValue: {
         type: [Boolean, String, Number],
@@ -117,7 +117,7 @@
         /* istanbul ignore next */
         return this.onText || this.offText;
       },
-      transform() { 
+      transform() {
         return this.checked ? `translate(${ this.coreWidth - 24 }px, 2px)` : 'translate(2px, 2px)';
       }
     },
@@ -127,7 +127,7 @@
         if (this.onColor || this.offColor) {
           this.setBackgroundColor();
         }
-        if(this.onButtonColor || this.offButtonColor) {
+        if (this.onButtonColor || this.offButtonColor) {
           this.setSwitchBtnColor();
         }
       }
@@ -160,7 +160,7 @@
       if (this.onColor || this.offColor) {
         this.setBackgroundColor();
       }
-      if(this.onButtonColor || this.offButtonColor) {
+      if (this.onButtonColor || this.offButtonColor) {
         this.setSwitchBtnColor();
       }
       this.$refs.input.checked = this.checked;
