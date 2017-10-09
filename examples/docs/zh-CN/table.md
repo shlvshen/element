@@ -1248,20 +1248,10 @@
       }
     },
     methods: {
-      handleFixed: function(keyList, val) {
+      handleFixed: function(map) {
         var columnMap = this.columnMap;
-        if (keyList === 'all') {
-          for (var key in columnMap) {
-            columnMap[key].isFixed = val;
-          }
-          return;
-        }
         for (var key in columnMap) {
-          if(keyList.indexOf(key) > -1) {
-            columnMap[key].isFixed = val;
-            continue;
-          }
-          columnMap[key].isFixed = columnMap[key].isFixed || !val;
+          columnMap[key].isFixed = map[key];
         }
       }
     }
