@@ -408,13 +408,13 @@
         top: 9px;
         border-top: none;
         border-right: 5px solid transparent;
-        border-bottom: 5px solid var(--color-light-silver);
+        border-bottom: 5px solid var(--disabled-color-base);
         border-left: 5px solid transparent;
       }
 
       &.descending {
         bottom: 9px;
-        border-top: 5px solid var(--color-light-silver);
+        border-top: 5px solid var(--disabled-color-base);
         border-right: 5px solid transparent;
         border-bottom: none;
         border-left: 5px solid transparent;
@@ -422,11 +422,11 @@
     }
 
     & .ascending .sort-caret.ascending {
-      border-bottom-color: var(--color-extra-light-black);
+      border-bottom-color: var(--color-white);
     }
 
     & .descending .sort-caret.descending {
-      border-top-color: var(--color-extra-light-black);
+      border-top-color: var(--color-white);
     }
 
     & th.gutter, td.gutter {
