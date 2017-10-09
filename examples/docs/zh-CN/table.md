@@ -1432,6 +1432,36 @@
       </el-table-column>
     </el-table-column>
   </el-table>
+  <p>第二种复杂的表头固定</p>
+  <el-table
+    :data="tableData3"
+    border
+    style="width: 100%"
+    multi-header>
+    <el-table-column
+      prop="date"
+      label="日期"
+      width="150">
+    </el-table-column>
+    <el-table-column label="地址">
+        <el-table-column
+          prop="province"
+          label="省份">
+        </el-table-column>
+        <el-table-column
+          prop="city"
+          label="市区">
+        </el-table-column>
+        <el-table-column
+          prop="address"
+          label="地址">
+        </el-table-column>
+        <el-table-column
+          prop="zip"
+          label="邮编">
+        </el-table-column>
+      </el-table-column>
+  </el-table>
 </template>
 
 <script>
