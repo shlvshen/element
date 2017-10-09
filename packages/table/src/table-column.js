@@ -219,7 +219,6 @@ export default {
       default: true
     },
     placeholder: String,
-    operationList: Array
   },
 
   data() {
@@ -312,6 +311,7 @@ export default {
       filterPlacement: this.filterPlacement || '',
       placeholder: this.placeholder || '',
       operationList: this.operationList || [],
+      rowspan: this.rowspan || ''
     });
 
     objectAssign(column, forced[type] || {});
