@@ -2203,6 +2203,48 @@
 ```
 :::
 
+### 表格某列跨行展示
+用于td的跨行展示。
+:::demo 2
+
+```html
+<template>
+  <el-table
+    :data="tableData5"
+    style="width: 100%"
+    :row-spans="[{keyIndex:'12987122',id2:2}]"
+    row-span-key="id">
+    <el-table-column label="#" prop="id2">
+    </el-table-column>
+    <el-table-column
+      label="商品 ID"
+      prop="id">
+    </el-table-column>
+    <el-table-column
+      label="商品名称"
+      prop="name">
+    </el-table-column>
+    <el-table-column
+      label="描述"
+      prop="desc">
+    </el-table-column>
+  </el-table>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+
+      }
+    },
+    methods: {
+
+    }
+  }
+```
+:::
+
 ### Table Attributes
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
 |---------- |-------------- |---------- |--------------------------------  |-------- |
