@@ -398,6 +398,9 @@
     },
 
     methods: {
+      handelCellClick: function(row, column, cell, event) {
+        console.log('handelCellClick');
+      },
       handleFixed: function(keyList, val) {
         var columnMap = this.columnMap;
         if (keyList === 'all') {
@@ -2213,7 +2216,8 @@
     :data="tableData5"
     style="width: 100%"
     :row-spans="[{keyIndex:'12987122',id2:2}]"
-    row-span-key="id">
+    row-span-key="id"
+    @cell-click=handelCellClick>
     <el-table-column label="#" prop="id2">
     </el-table-column>
     <el-table-column
