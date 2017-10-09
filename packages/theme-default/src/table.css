@@ -180,6 +180,7 @@
     & th {
       white-space: nowrap;
       overflow: hidden;
+      font-weight: 400;
     }
 
     & th, td {
