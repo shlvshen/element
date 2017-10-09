@@ -581,8 +581,11 @@
     }
 
     @modifier multi-header {
-      & th {
-        border-right: 1px solid var(--table-border-color);
+      & thead {
+        & tr > th {
+          border-right: 1px solid var(--table-border-color);
+          height: var(--table-multi-head-height);
+        }
       }
     }
 

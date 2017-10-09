@@ -465,6 +465,8 @@
 
       --table-head-height: 40px;
       --table-row-height: 60px;
+
+      --table-multi-head-height: 32px;
       
       --table-head-height-small: 26px;
       --table-row-height-small: 46px;
