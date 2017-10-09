@@ -548,6 +548,10 @@
       width: 50%;
     }
   }
+
+  .bg-dark {
+    background: #999;
+  }
 </style>
 
 ## Table 表格
@@ -567,7 +571,8 @@
         style="width: 100%">
         <el-table-column
           prop="date"
-          label="日期">
+          label="日期"
+          class-name="bg-dark">
         </el-table-column>
         <el-table-column
           prop="name"
