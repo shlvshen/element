@@ -401,20 +401,10 @@
       handelCellClick: function(row, column, cell, event) {
         console.log('handelCellClick');
       },
-      handleFixed: function(keyList, val) {
+      handleFixed: function(map) {
         var columnMap = this.columnMap;
-        if (keyList === 'all') {
-          for (var key in columnMap) {
-            columnMap[key].isFixed = val;
-          }
-          return;
-        }
         for (var key in columnMap) {
-          if(keyList.indexOf(key) > -1) {
-            columnMap[key].isFixed = val;
-            continue;
-          }
-          columnMap[key].isFixed = columnMap[key].isFixed || !val;
+          columnMap[key].isFixed = map[key];
         }
       },
       toggleRowExpanded: function(row) {
@@ -1174,9 +1164,9 @@
     </el-table-column>
   </el-table>
   <div style="margin-top: 10px">
-    <el-button size="small" @click="handleFixed(['date', 'name'], true)">固定一、二列</el-button>
-    <el-button size="small" @click="handleFixed(['date'], true)">固定一列</el-button>
-    <el-button size="small" @click="handleFixed('all', false)">取消固定</el-button> 
+    <el-button size="small" @click="handleFixed({'date': true, 'name': true})">固定一、二列</el-button>
+    <el-button size="small" @click="handleFixed({'date': true, 'name': false})">固定一列</el-button>
+    <el-button size="small" @click="handleFixed({})">取消固定</el-button> 
   </div>
 </div>
 </template>
