@@ -36,7 +36,9 @@
         :row-class-name="rowClassName"
         :row-style="rowStyle"
         :highlight="highlightCurrentRow"
-        :style="{ width: bodyWidth }">
+        :style="{ width: bodyWidth }"
+        :row-spans="rowSpans"
+        :row-span-key="rowSpanKey">
       </table-body>
       <div :style="{ width: bodyWidth }" class="el-table__empty-block" v-if="!data">
         <span class="el-table__empty-text"><slot name="empty">{{ emptyText || t('el.table.emptyText') }}</slot></span>
@@ -87,7 +89,9 @@
           :highlight="highlightCurrentRow"
           :row-class-name="rowClassName"
           :row-style="rowStyle"
-          :style="{ width: layout.fixedWidth ? layout.fixedWidth + 'px' : '' }">
+          :style="{ width: layout.fixedWidth ? layout.fixedWidth + 'px' : '' }"
+          :row-spans="rowSpans"
+          :row-span-key="rowSpanKey">
         </table-body>
       </div>
       <div class="el-table__fixed-footer-wrapper" ref="fixedFooterWrapper" v-if="showSummary" v-show="data && data.length > 0">
@@ -129,7 +133,9 @@
           :row-class-name="rowClassName"
           :row-style="rowStyle"
           :highlight="highlightCurrentRow"
-          :style="{ width: layout.rightFixedWidth ? layout.rightFixedWidth + 'px' : '' }">
+          :style="{ width: layout.rightFixedWidth ? layout.rightFixedWidth + 'px' : '' }"
+          :row-spans="rowSpans"
+          :row-span-key="rowSpanKey">
         </table-body>
       </div>
       <div class="el-table__fixed-footer-wrapper" ref="rightFixedFooterWrapper" v-if="showSummary" v-show="data && data.length > 0">
@@ -175,6 +181,18 @@
         type: Array,
         default: function() {
           return [];
+        }
+      },
+      rowSpans: {
+        type: Array,
+        default: function() {
+          return [];
+        }
+      },
+      rowSpanKey: {
+        type: String,
+        default: function() {
+          return '';
         }
       },
 
