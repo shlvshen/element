@@ -218,7 +218,7 @@ export default {
       type: Boolean,
       default: true
     },
-    placeholder: String,
+    placeholder: String
   },
 
   data() {
