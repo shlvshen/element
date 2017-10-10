@@ -95,6 +95,7 @@
     .el-tooltip.cell {
       white-space: nowrap;
       min-width: 50px;
+      display: inline-block;
     }
 
     @e empty-block {
