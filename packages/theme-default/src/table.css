@@ -339,7 +339,7 @@
     }
 
     @e header-wrapper, footer-wrapper {
-      /* overflow: hidden; */
+      overflow: hidden;
 
       & thead div {
         background-color: var(--table-header-background);
