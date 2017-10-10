@@ -224,7 +224,7 @@
     }
 
     & th {
-      background-color: var(--table-header-background);
+      background-color: var(--table-header-background) !important;
       text-align: left;
     }
 
