@@ -132,6 +132,7 @@
         },
         tableData3: [
           {
+            c_remote_id: '1',
             date: '2016-05-03',
             name: '王小虎',
             province: '上海',
@@ -141,6 +142,7 @@
             zip: 200333
           }, 
           {
+            c_remote_id: '2',
             date: '2016-05-02',
             name: '王小虎',
             province: '上海',
@@ -150,6 +152,7 @@
             zip: 200333
           }, 
           {
+            c_remote_id: '3',
             date: '2016-05-04',
             name: '王小虎',
             province: '上海',
@@ -159,6 +162,7 @@
             zip: 200333
           }, 
           {
+            c_remote_id: '4',
             date: '2016-05-01',
             name: '王小虎',
             province: '上海',
@@ -168,6 +172,7 @@
             zip: 200333
           }, 
           {
+            c_remote_id: '5',
             date: '2016-05-08',
             name: '王小虎',
             province: '上海',
@@ -177,6 +182,7 @@
             zip: 200333
           }, 
           {
+            c_remote_id: '6',
             date: '2016-05-06',
             name: '王小虎',
             province: '上海',
@@ -186,6 +192,7 @@
             zip: 200333
           }, 
           {
+            c_remote_id: '7',
             date: '2016-05-07',
             name: '王小虎',
             province: '上海',
@@ -587,7 +594,6 @@
           <template scope="scope">
             <div>{{ scope.row.date }}</div>
             <span style="color: #005FBD">{{ scope.row.receiver.name }}</span>
-            <!-- <el-button size="small">操作按钮</el-button> -->
           </template>
         </el-table-column>
         <el-table-column
@@ -649,9 +655,6 @@
         <el-table-column type="index" label="#"></el-table-column>
          <el-table-column type="text" label="text" prop="receiver.name"></el-table-column>
          <el-table-column type="selectionIndex" label="selectionIndex"></el-table-column>
-         <!-- <el-table-column type="datePicker" property="receiver.date"
-         placeholder="收货日期" width="300"
-         :date-type="'date'" :picker-options="pickerOptions"></el-table-column> -->
          <el-table-column type="input" label="edit" property="receiver.name" width="300" :placeholder="placeholder"></el-table-column>
          <el-table-column type="operation" label="operation" width="300" :operation-list="operationList"></el-table-column>
     </el-table>
@@ -1622,7 +1625,8 @@
     @selection-change="handleSelectionChange">
     <el-table-column
       type="selection"
-      width="55">
+      width="55"
+      id-key="c_remote_id">
     </el-table-column>
     <el-table-column
       label="日期"
@@ -2383,3 +2387,4 @@
 | operation-list | 需要遍历的操作列表，如果type = `operation`，可能会需要此属性。 | Array | — | [] |
 | placeholder | placeholder，如果type = `input`，可能会需要此属性。 | String | — | '' |
 | size | 用于控制不同尺寸下表格th、td的高度。 | String | small/default | '' |
+| id-key | 用于获取id的key值。 | String | - | '' |

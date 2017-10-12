@@ -55,8 +55,9 @@ const forced = {
         value={ this.isAllSelected } />;
     },
     renderCell: function(h, { row, column, store, $index }) {
+      const id = RENDER_VALUE_BY_PROPERTY(h, { row, column}, 'idKey');
       return <el-checkbox
-        data-id={ row.id }
+        data-id={ id }
         value={ store.isSelected(row) }
         disabled={ column.selectable ? !column.selectable.call(null, row, $index) : false }
         on-input={ () => { store.commit('rowSelectedChanged', row); } } />;
@@ -95,8 +96,9 @@ const forced = {
         value={ this.isAllSelected } />;
     },
     renderCell: function(h, { row, column, store, $index }) {
+      const id = RENDER_VALUE_BY_PROPERTY(h, { row, column}, 'idKey');
       return <el-checkbox
-        data-id={ row.id }
+        data-id={ id }
         value={ store.isSelected(row) }
         disabled={ column.selectable ? !column.selectable.call(null, row, $index) : false }
         on-input={ () => { store.commit('rowSelectedChanged', row); } } >{ $index + 1 }</el-checkbox>;
@@ -175,6 +177,17 @@ const DEFAULT_RENDER_CELL = function(h, { row, column }) {
   return value;
 };
 
+const RENDER_VALUE_BY_PROPERTY = function(h, { row, column }, property) {
+  const key = column[property];
+  const value = key && key.indexOf('.') === -1
+    ? row[key]
+    : getValueByPath(row, key);
+  if (column && column.formatter) {
+    return column.formatter(row, column, value);
+  }
+  return value;
+};
+
 export default {
   name: 'ElTableColumn',
 
@@ -218,7 +231,8 @@ export default {
       type: Boolean,
       default: true
     },
-    placeholder: String
+    placeholder: String,
+    idKey: String
   },
 
   data() {
@@ -311,7 +325,8 @@ export default {
       filterPlacement: this.filterPlacement || '',
       placeholder: this.placeholder || '',
       operationList: this.operationList || [],
-      rowspan: this.rowspan || ''
+      rowspan: this.rowspan || '',
+      idKey: this.idKey || ''
     });
 
     objectAssign(column, forced[type] || {});
