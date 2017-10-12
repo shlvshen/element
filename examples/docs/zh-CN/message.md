@@ -80,7 +80,7 @@
         this.$message({
           showClose: true,
           message: '错了哦，这是一条错误消息',
-          type: 'error'
+          type: 'danger'
         });
       }
     }
@@ -221,7 +221,7 @@
         this.$message({
           showClose: true,
           message: '错了哦，这是一条错误消息',
-          type: 'error'
+          type: 'danger'
         });
       }
     }

@@ -30,7 +30,7 @@
         visible: false,
         message: '',
         duration: 3000,
-        type: '',
+        type: 'info',
         iconClass: '',
         customClass: '',
         onClose: null,
