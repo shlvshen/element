@@ -56,6 +56,7 @@ const forced = {
     },
     renderCell: function(h, { row, column, store, $index }) {
       return <el-checkbox
+        data-id={ row.id }
         value={ store.isSelected(row) }
         disabled={ column.selectable ? !column.selectable.call(null, row, $index) : false }
         on-input={ () => { store.commit('rowSelectedChanged', row); } } />;
@@ -94,12 +95,11 @@ const forced = {
         value={ this.isAllSelected } />;
     },
     renderCell: function(h, { row, column, store, $index }) {
-      return <div>
-        <el-checkbox
-          value={ store.isSelected(row) }
-          disabled={ column.selectable ? !column.selectable.call(null, row, $index) : false }
-          on-input={ () => { store.commit('rowSelectedChanged', row); } } >{ $index + 1 }</el-checkbox>
-      </div>;
+      return <el-checkbox
+        data-id={ row.id }
+        value={ store.isSelected(row) }
+        disabled={ column.selectable ? !column.selectable.call(null, row, $index) : false }
+        on-input={ () => { store.commit('rowSelectedChanged', row); } } >{ $index + 1 }</el-checkbox>;
     },
     sortable: false,
     resizable: false
