@@ -5,14 +5,14 @@
   @b popover {
     position: absolute;
     background: var(--popover-fill);
-    min-width: 150px;
-    border-radius: 2px;
+    min-width: 180px;
+    border-radius: 4px;
     border: 1px solid var(--popover-border-color);
-    padding: var(--popover-padding);
+    /* padding: var(--popover-padding); */
     z-index: var(--index-popper);
     font-size: var(--popover-font-size);
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, .12),
-                0px 0px 6px 0px rgba(0, 0, 0, .04);
+    /* box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, .12),
+                0px 0px 6px 0px rgba(0, 0, 0, .04); */
 
     .popper__arrow,
     .popper__arrow::after {
@@ -113,8 +113,17 @@
     @e title {
       color: var(--popover-title-color);
       font-size: var(--popover-title-font-size);
-      line-height: 1;
-      margin-bottom: 9px;
+      /* line-height: 1; */
+      /* margin-bottom: 9px; */
+      height: 30px;
+      line-height: 30px;
+      padding: 0 var(--popover-padding);
+      color: var(--color-base-black);
+      background: var(--popover-title-fill);
+    }
+
+    @e content {
+      padding: var(--popover-padding);
     }
   }
 }
