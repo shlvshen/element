@@ -13,3 +13,5 @@
     - 修复 `show-overflow-tooltip`影响了文字原本的省略号展示，且无法正常显示的bug
 - Message
     - message的type初始值默认为info
+- Breadcrumb
+    - 按照组件规范更改字体的颜色、hover效果

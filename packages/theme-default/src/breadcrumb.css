@@ -18,11 +18,12 @@
       @e inner {
         &, & a {
           transition: color .15s linear;
-          color:var(--color-extra-light-black);
+          color:var(--color-info);
+          cursor: pointer;
 
           &:hover {
-            color: var(--color-primary);
-            cursor: pointer;
+            /* color: var(--color-primary); */
+            text-decoration: underline;
           }
         }
       }
@@ -33,6 +34,7 @@
           &, &:hover {
             color: var(--color-light-silver);
             cursor: text;
+            text-decoration: none;
           }
         }
 
