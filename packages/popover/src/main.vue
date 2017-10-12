@@ -8,7 +8,7 @@
         v-show="!disabled && showPopper"
         :style="{ width: width + 'px' }">
         <div class="el-popover__title" v-if="title" v-text="title"></div>
-        <slot>{{ content }}</slot>
+        <div class="el-popover__content"><slot>{{ content }}</slot></div>
       </div>
     </transition>
     <slot name="reference"></slot>
