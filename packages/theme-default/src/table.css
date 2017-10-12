@@ -555,8 +555,8 @@
         &.active {
           td {
             border: 0;
-            background: var(--table-head-fill-active);
-            color: var(--table-color-active);
+            background: var(--table-head-fill-active) !important;
+            color: var(--table-color-active) !important;
           }
 
           &:hover > td {
