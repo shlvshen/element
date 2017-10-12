@@ -115,6 +115,7 @@
       font-size: var(--popover-title-font-size);
       /* line-height: 1; */
       /* margin-bottom: 9px; */
+      border-bottom: 1px solid var(--color-cancel);
       height: 30px;
       line-height: 30px;
       padding: 0 var(--popover-padding);

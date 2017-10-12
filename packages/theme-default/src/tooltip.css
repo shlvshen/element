@@ -6,7 +6,8 @@
     @e popper {
       position: absolute;
       border-radius: 4px;
-      padding: var(--tooltip-padding);
+      /* padding: var(--tooltip-padding); */
+      padding: 7px 8px;
       z-index: var(--index-popper);
       font-size: var(--tooltip-font-size);
       line-height: 1.2;
