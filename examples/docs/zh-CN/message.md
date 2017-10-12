@@ -47,7 +47,7 @@
       open4() {
         /*this.$message.error('错了哦，这是一条错误消息');*/
         this.$message({
-          message: '警告哦，这是一条警告消息',
+          message: '错误哦，这是一条错误消息',
           type: 'danger'
         });
       },
@@ -141,12 +141,13 @@
 <script>
   export default {
     methods: {
-      open() {
-        this.$message('这是一条消息提示');
-      },
       open2() {
+        const h = this.$createElement;
         this.$message({
-          message: '恭喜你，这是一条成功消息',
+          message: h('div', null, [
+            h('p', null, '恭喜你，这是一条成功消息 '),
+            h('span', { style: 'color: teal' }, 'VNode')
+          ]),
           type: 'success'
         });
       },
@@ -158,8 +159,18 @@
         });
       },
 
+      open1() {
+        this.$message({
+          message: '这是一条消息提示',
+          type: 'info'
+        });
+      },
+
       open4() {
-        this.$message.error('错了哦，这是一条错误消息');
+        this.$message({
+          message: '错误哦，这是一条错误消息',
+          type: 'danger'
+        });
       }
     }
   }
@@ -238,7 +249,7 @@ import { Message } from 'thx-knight';
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
 |---------- |-------------- |---------- |--------------------------------  |-------- |
 | message | 消息文字 | string / VNode | — | — |
-| type | 主题 | string | success/warning/info/error | info |
+| type | 主题 | string | success/warning/info/danger | info |
 | iconClass | 自定义图标的类名，会覆盖 `type` | string | — | — |
 | customClass | 自定义类名 | string | — | — |
 | duration | 显示时间, 毫秒。设为 0 则不会自动关闭 | number | — | 3000 |
