@@ -248,7 +248,9 @@
 
       tooltipEffect: String,
 
-      size: String
+      size: String,
+
+      accordion: Boolean
     },
 
     components: {
@@ -481,7 +483,8 @@
     data() {
       const store = new TableStore(this, {
         rowKey: this.rowKey,
-        defaultExpandAll: this.defaultExpandAll
+        defaultExpandAll: this.defaultExpandAll,
+        accordion: this.accordion
       });
       const layout = new TableLayout({
         store,

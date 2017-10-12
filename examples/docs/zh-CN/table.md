@@ -1985,8 +1985,9 @@
     <p>手风琴效果</p>
     <el-table
       :data="tableData5"
-      style="width: 100%">
-      <el-table-column type="expand" accordion>
+      style="width: 100%"
+      accordion>
+      <el-table-column type="expand">
         <template scope="props">
           下拉详情
         </template>

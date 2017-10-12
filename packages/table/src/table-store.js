@@ -72,7 +72,8 @@ const TableStore = function(table, initialState = {}) {
     hoverRow: null,
     filters: {},
     expandRows: [],
-    defaultExpandAll: false
+    defaultExpandAll: false,
+    accordion: false
   };
 
   for (let prop in initialState) {
@@ -270,7 +271,8 @@ TableStore.prototype.mutations = {
 
   toggleRowExpanded: function(states, row, expanded) {
     const expandRows = states.expandRows;
-    const accordion = event.currentTarget.getAttribute('accordion');
+    const accordion = states.accordion;
+    // const accordion = event.currentTarget.getAttribute('accordion');
     /* 如果为手风琴效果，那么表格只可以存在一个高亮行 */
     if (accordion && expandRows.length > 0) {
       expandRows.forEach(function(item, index) {
