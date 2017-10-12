@@ -40,10 +40,10 @@
         :row-spans="rowSpans"
         :row-span-key="rowSpanKey">
       </table-body>
-      <div :style="{ width: bodyWidth }" class="el-table__empty-block" v-if="!data">
+      <div :style="{ width: bodyWidth }" class="el-table__empty-block" v-if="data && data.length === 0">
         <span class="el-table__empty-text"><slot name="empty">{{ emptyText || t('el.table.emptyText') }}</slot></span>
       </div>
-      <div :style="{ width: bodyWidth }" class="el-table__loading" v-if="data && data.length === 0">
+      <div :style="{ width: bodyWidth }" class="el-table__loading" v-if="!data">
         <i class="el-icon-loading el-table__loading-icon"></i>
         <div class="el-table__loading-text"><slot name="empty">{{ loadingText || t('el.table.loadingText') }}</slot></div>
       </div>

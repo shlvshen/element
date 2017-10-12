@@ -5,6 +5,7 @@
 
 - Table
     - 修复 body滚动时表头不随之滚动的bug
+    - 修复 加载和暂无数据适用数据情况相反的bug
     - 新增 手风琴效果
 - Table Column
     - 当type为selection/selectionIndex时，checkbox上新增data-id用于快速打印。需求来源@qixuefen@cshen.cn
