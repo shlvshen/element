@@ -1981,6 +1981,30 @@
       prop="desc">
     </el-table-column>
   </el-table>
+  <div>
+    <p>手风琴效果</p>
+    <el-table
+      :data="tableData5"
+      style="width: 100%">
+      <el-table-column type="expand" accordion>
+        <template scope="props">
+          下拉详情
+        </template>
+      </el-table-column>
+      <el-table-column
+        label="商品 ID"
+        prop="id">
+      </el-table-column>
+      <el-table-column
+        label="商品名称"
+        prop="name">
+      </el-table-column>
+      <el-table-column
+        label="描述"
+        prop="desc">
+      </el-table-column>
+    </el-table>
+  </div>
 </template>
 
 <style>
@@ -2329,7 +2353,7 @@
 ### Table-column Attributes
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
 |---------- |-------------- |---------- |--------------------------------  |-------- |
-| type | 对应列的类型。如果设置了 `selection` 则显示多选框；如果设置了 `index` 则显示该行的索引（从 1 开始计算）；如果设置了 `expand` 则显示为一个可展开的按钮 ；如果设置了 `selectionIndex`则显示了checkbox + 序号；如果设置了 `input` 则显示了input输入框；如果设置了 `operation` 则会遍历对应的 operation-list | string | selection/index/expand/selectionIndex/input/operation | — |
+| type | 对应列的类型。如果设置了 `selection` 则显示多选框；如果设置了 `index` 则显示该行的索引（从 1 开始计算）；如果设置了 `expand` 则显示为一个可展开的按钮, `accordion`用于控制是否是手风琴效果 ；如果设置了 `selectionIndex`则显示了checkbox + 序号；如果设置了 `input` 则显示了input输入框；如果设置了 `operation` 则会遍历对应的 operation-list | string | selection/index/expand/selectionIndex/input/operation | — |
 | column-key | column 的 key，如果需要使用 filter-change 事件，则需要此属性标识是哪个 column 的筛选条件 | string | — | — |
 | label | 显示的标题 | string | — | — |
 | prop | 对应列内容的字段名，也可以使用 property 属性 | string | — | — |
