@@ -516,31 +516,35 @@
       /* Tag
       -------------------------- */
       --tag-padding: 0 5px;
-      --tag-fill: var(--color-grey);
-      --tag-color: var(--color-black);
-      --tag-close-color: #666;
+      --tag-fill: var(--color-base-black);
+      --tag-color: var(--color-white);
+      --tag-close-color: var(--color-white);
       --tag-font-size: 12px;
       --tag-border-radius: 4px;
 
-      --tag-gray-fill: var(--color-light-gray);
-      --tag-gray-border: var(--color-light-gray);
-      --tag-gray-color: var(--link-color);
+      --tag-gray-fill: var(--color-cancel);
+      --tag-gray-border: var(--color-cancel);
+      --tag-gray-color: var(--color-white);
 
-      --tag-primary-fill: rgba(var(--color-primary),0.10);
-      --tag-primary-border: rgba(var(--color-primary),0.20);
-      --tag-primary-color: var(--color-primary);
+      /* --tag-primary-fill: rgba(var(--color-primary), 1);
+      --tag-primary-border: rgba(var(--color-primary), 1);
+      --tag-primary-color: var(--color-white); */
 
-      --tag-success-fill: rgba(18,206,102,0.10);
-      --tag-success-border: rgba(18,206,102,0.20);
-      --tag-success-color: var(--color-success);
+      --tag-success-fill: var(--color-success);
+      --tag-success-border: var(--color-success);
+      --tag-success-color: var(--color-white);
 
-      --tag-warning-fill: rgba(247,186,41,0.10);
-      --tag-warning-border: rgba(247,186,41,0.20);
-      --tag-warning-color: var(--color-warning);
+      --tag-warning-fill: var(--color-warning);
+      --tag-warning-border: var(--color-warning);
+      --tag-warning-color: var(--color-white);
 
-      --tag-danger-fill: rgba(255,73,73,0.10);
-      --tag-danger-border: rgba(255,73,73,0.20);
-      --tag-danger-color: var(--color-danger);
+      --tag-danger-fill: var(--color-danger);
+      --tag-danger-border: var(--color-danger);
+      --tag-danger-color: var(--color-white);
+
+      --tag-info-fill: var(--color-info);
+      --tag-info-border: var(--color-info);
+      --tag-info-color: var(--color-white);
 
       /* Dropdown
       -------------------------- */

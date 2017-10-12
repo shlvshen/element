@@ -5,7 +5,7 @@
         tags: [
           { name: '标签一', type: '' },
           { name: '标签二', type: 'gray' },
-          { name: '标签三', type: 'primary' },
+          { name: '标签三', type: 'info' },
           { name: '标签四', type: 'success' },
           { name: '标签五', type: 'warning' },
           { name: '标签六', type: 'danger' }
@@ -73,7 +73,7 @@
 ```html
 <el-tag>标签一</el-tag>
 <el-tag type="gray">标签二</el-tag>
-<el-tag type="primary">标签三</el-tag>
+<el-tag type="info">标签三</el-tag>
 <el-tag type="success">标签四</el-tag>
 <el-tag type="warning">标签五</el-tag>
 <el-tag type="danger">标签六</el-tag>
@@ -101,7 +101,7 @@
         tags: [
           { name: '标签一', type: '' },
           { name: '标签二', type: 'gray' },
-          { name: '标签三', type: 'primary' },
+          { name: '标签三', type: 'info' },
           { name: '标签四', type: 'success' },
           { name: '标签五', type: 'warning' },
           { name: '标签六', type: 'danger' }
@@ -177,7 +177,7 @@
 ### Attributes
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
 |---------- |-------------- |---------- |--------------------------------  |-------- |
-| type | 主题 | string | primary/gray/success/warning/danger | — |
+| type | 主题 | string | gray/success/ warning/danger/info | — |
 | closable | 是否可关闭 | boolean | — | false |
 | close-transition | 是否禁用渐变动画 | boolean | — | false |
 | hit | 是否有边框描边 | boolean | — | false |

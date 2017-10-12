@@ -36,7 +36,18 @@
       } */
     }
 
-    @m gray {
+    @each $type in (gray, success, warning, danger, info) {
+      &.el-tag--$(type) {
+        background-color: var(--tag-$(type)-fill);
+        border-color: var(--tag-$(type)-border);
+        color: var(--tag-$(type)-color);
+        @when hit {
+          border-color: var(--tag-$(type)-color);
+        }
+      }
+    }
+
+    /* @m gray {
       background-color: var(--tag-gray-fill);
       border-color: var(--tag-gray-border);
       color: var(--tag-gray-color);
@@ -100,6 +111,6 @@
         background-color: var(--tag-danger-color);
         color: var(--color-white);
       }
-    }
+    } */
   }
 }
