@@ -76,9 +76,10 @@ const forced = {
     renderHeader: function(h, { column }) {
       return column.label || '';
     },
-    renderCell: function(h, { row, store }, proxy) {
+    renderCell: function(h, { row, column, store }, proxy) {
       const expanded = store.states.expandRows.indexOf(row) > -1;
       return <div class={ 'el-table__expand-icon ' + (expanded ? 'el-table__expand-icon--expanded' : '') }
+                  accordion={ column.accordion }
                   on-click={ () => proxy.handleExpandClick(row) }>
         <i class='el-icon el-icon-caret-right'></i>
       </div>;
@@ -218,7 +219,8 @@ export default {
       type: Boolean,
       default: true
     },
-    placeholder: String
+    placeholder: String,
+    accordion: Boolean
   },
 
   data() {
@@ -311,7 +313,8 @@ export default {
       filterPlacement: this.filterPlacement || '',
       placeholder: this.placeholder || '',
       operationList: this.operationList || [],
-      rowspan: this.rowspan || ''
+      rowspan: this.rowspan || '',
+      accordion: this.accordion
     });
 
     objectAssign(column, forced[type] || {});

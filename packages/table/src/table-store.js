@@ -269,10 +269,19 @@ TableStore.prototype.mutations = {
   },
 
   toggleRowExpanded: function(states, row, expanded) {
-    var target = event.target;
-    const parent = target.closest('tr');
-    parent.classList.toggle('active');
     const expandRows = states.expandRows;
+    const accordion = event.currentTarget.getAttribute('accordion');
+    /* 如果为手风琴效果，那么表格只可以存在一个高亮行 */
+    if (accordion && expandRows.length > 0) {
+      expandRows.forEach(function(item, index) {
+        if (item !== row) {
+          expandRows.splice(index, 1);
+        }
+      });
+    }
+    // const parent = target.closest('tr');
+    // parent.classList.toggle('active');
+
     if (typeof expanded !== 'undefined') {
       const index = expandRows.indexOf(row);
       if (expanded) {

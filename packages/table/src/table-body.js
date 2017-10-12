@@ -65,7 +65,7 @@ export default {
                 on-contextmenu={ ($event) => this.handleContextMenu($event, row) }
                 on-mouseenter={ _ => this.handleMouseEnter($index) }
                 on-mouseleave={ _ => this.handleMouseLeave() }
-                class={ [this.getRowClass(row, $index)] }>
+                class={ [this.getRowClass(row, $index), this.store.states.expandRows.indexOf(row) > -1 ? ' active' : ''] }>
                 {
                   this._l(this.columns, (column, cellIndex) =>
                     <td
