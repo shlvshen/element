@@ -15,3 +15,9 @@
     - message的type初始值默认为info
 - Breadcrumb
     - 按照组件规范更改字体的颜色、hover效果
+- Tag
+    - 重新定义type类型为gray, success, warning, danger, info以及对应的背景色、字体颜色、border色
+- Tooltip
+    - 按照组件规范调整内边距
+- Popover
+    - 更改css
