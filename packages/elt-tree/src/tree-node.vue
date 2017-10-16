@@ -229,9 +229,9 @@
         // node.name = node.data.name;
         node.onEditable = false;
         if (node.id) {
-          this.tree.$emit('node-modify', newVal, node, this);
+          this.tree.$emit('node-modify', data, node, this, newVal);
         } else {
-          this.tree.$emit('node-add', newVal, node, this);          
+          this.tree.$emit('node-add', data, node, this, newVal);          
         }
       },
 
