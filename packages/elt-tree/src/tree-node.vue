@@ -231,7 +231,6 @@
         if (node.id) {
           this.tree.$emit('node-modify', newVal, node, this);
         } else {
-          node.data.label = newVal;
           this.tree.$emit('node-add', newVal, node, this);          
         }
       },
