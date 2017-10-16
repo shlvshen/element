@@ -209,11 +209,13 @@
 
     methods: {
       nodeModify(data, node, tree, newVal) {
-        console.log('nodeModify', newVal);
-        node.data.name = newVal;
+        console.log('nodeModify', newVal, tree.props.label);
+        data[tree.tree.props.label] = newVal;
       },
       nodeAdd(data, node, tree, newVal) {
-        node.data.name = newVal;
+        const props = tree.tree.props || {};
+        const key = props.label || 'label';
+        data[key]= newVal;
         node.data.id = node.parent.id  * 10 
         nodeIdSeed++;
         node.id = node.data.id;
@@ -1060,5 +1062,5 @@
 | node-expand    | 节点被展开时触发的事件    | 共三个参数，依次为：传递给 `data` 属性的数组中该节点所对应的对象、节点对应的 Node、节点组件本身。 |
 | node-collapse  | 节点被关闭时触发的事件    | 共三个参数，依次为：传递给 `data` 属性的数组中该节点所对应的对象、节点对应的 Node、节点组件本身。 |
 | node-del  | 节点被删除时触发的事件    | 共四个参数，依次为：`store`是节点本身封装方法的service, 传递给 `data` 属性的数组中该节点所对应的对象、节点对应的 Node、节点组件本身。 |
-| node-modify  | 更改节点的label    | 共三个参数，依次为：更改后的label值[在事件中用node.data.label修改]、节点对应的 Node、节点组件本身。 |
+| node-modify  | 更改节点的label    | 共三个参数，依次为：更改后的label值[在事件中用node.data[tree.props.label || 'label']修改对应显示的内容]、节点对应的 Node、节点组件本身。 |
 | node-add  | 新增节点    | 共三个参数，依次为：更改后的label值[在事件中用node.data.label修改]、节点对应的 Node、节点组件本身。 |
