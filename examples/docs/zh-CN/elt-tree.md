@@ -959,6 +959,8 @@
   };
 </script>
 ```
+:::
+
 ### 从无到有
 
 动态更改节点。新增节点需要和`node-key`一起使用并且绑定的data必须有id
@@ -974,7 +976,8 @@
         :expand-on-click-node="false"
         :config="config"
         @node-modify="nodeModify"
-        @node-del="handleNodeDel">
+        @node-del="handleNodeDel"
+        @node-add="nodeAdd">
     </elt-tree>
   </div>
   <p>给空数组新增节点</p>

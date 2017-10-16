@@ -261,7 +261,7 @@
         store.append(
           {
             id: '',
-            name: '',
+            label: '',
             onEditable: true,
             isShowEditBar: node.isShowEditBar,
             isAddable: node.isAddable,
