@@ -10,7 +10,8 @@
       </el-col>
     </el-row>
     <!-- search -->
-    <el-row class="el-tree__search" v-if="config.isSearchable">
+    <el-row class="el-tree__search" v-if="config.isSearchable"
+            :style="{'padding-left': indent + 'px', 'padding-right': indent + 'px'}">
       <el-input
         v-model="filterText"
         :placeholder="config.placeholder">
@@ -18,7 +19,7 @@
     </el-row>
 
     <el-collapse-transition>
-      <div style="padding-left: 15px;" v-show="isAddable">
+      <div :style="{'padding-left': indent + 'px'}" v-show="isAddable">
         <div class="el-tree-node__add" @click.stop="handleAppendNode">
           <i class="iconfont">&#xe69b;</i>
           <span>新建目录</span>

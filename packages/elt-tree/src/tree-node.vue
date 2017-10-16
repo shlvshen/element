@@ -8,7 +8,7 @@
       'is-hidden': !node.visible
     }">
     <div class="el-tree-node__content"
-      :style="{ 'padding-left': (node.level - 1) * tree.indent + 'px' }">
+      :style="{ 'padding-left': (node.level) * tree.indent + 'px' }">
       <span
         class="el-tree-node__expand-icon"
         @click.stop="handleExpandIconClick"
