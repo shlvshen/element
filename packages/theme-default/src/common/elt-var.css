@@ -85,6 +85,7 @@
       /* distance
       -------------------------- */
       --distance-normal: 15px;
+      --distance-small: 10px;
 
       /* Disable base
       -------------------------- */

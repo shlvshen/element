@@ -76,7 +76,7 @@ let nodeIdSeed = 0;
 
 export default class Node {
   constructor(options) {
-    this.id = options.data ? options.data.id : nodeIdSeed++;
+    this.id = (options.data && options.data.id) ? options.data.id : nodeIdSeed++;
     this.text = null;
     this.checked = false;
     this.indeterminate = false;
