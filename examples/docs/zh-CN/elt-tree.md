@@ -21,6 +21,7 @@
 </style>
 
 <script>
+  let nodeIdSeed = 1;
   const data = [{
     label: '一级 1',
     children: [{
@@ -197,6 +198,8 @@
     placeholder: '输入关键字'
   };
 
+  const tree = null;
+
   export default {
     watch: {
       filterText(val) {
@@ -205,6 +208,17 @@
     },
 
     methods: {
+      nodeModify(newVal, node, tree) {
+        console.log('nodeModify', newVal);
+        node.data.label = newVal;
+      },
+      nodeAdd(newVal, node, tree) {
+        node.data.label = newVal;
+        node.data.id = nodeIdSeed++;
+        node.id = node.data.id;
+        console.log('nodeAdd', newVal, node);
+        
+      },
       handleCheckChange(data, checked, indeterminate) {
         console.log(data, checked, indeterminate);
       },
@@ -295,6 +309,7 @@
       },
 
       handleNodeDel(store, data, node, tree) {
+        console.log('handleNodeDel', store, data);
         store.remove(data);
       },
 
@@ -308,6 +323,12 @@
         const parent = node.parent;
         node.id = count++;
         console.log('add', node.name, node.parent.label);
+      },
+
+      changeData() {
+        console.log(111, this.data5);
+        this.data5 = [];
+        console.log(this.data5);
       }
     },
 
@@ -317,6 +338,8 @@
         data2,
         data3,
         data4,
+        data5: null,
+        tree,
         regions,
         defaultProps,
         defaultNamePorps,
@@ -327,6 +350,12 @@
         onEditable: null,
         config: config
       };
+    },
+
+    created: function() {
+      setTimeout(() => {
+        this.tree = [];
+      }, 1000);
     }
   };
 </script>
@@ -930,6 +959,51 @@
   };
 </script>
 ```
+### 从无到有
+
+动态更改节点。新增节点需要和`node-key`一起使用并且绑定的data必须有id
+
+::: demo
+```html
+<div>
+  <div>
+    <elt-tree
+        :data="data4"
+        :props="defaultNamePorps"
+        node-key="id"
+        :expand-on-click-node="false"
+        :config="config"
+        @node-modify="nodeModify"
+        @node-del="handleNodeDel">
+    </elt-tree>
+  </div>
+  <p>给空数组新增节点</p>
+  <elt-tree
+        :data="tree"
+        node-key="id"
+        :expand-on-click-node="false"
+        :config="config"
+        @node-modify="nodeModify"
+        @node-add="nodeAdd"
+        @node-del="handleNodeDel">
+    </elt-tree>
+</div>
+
+<script>
+  export default {
+    data() {
+      return {
+        data5: null,
+      }
+    },
+    methods: {
+      handleNodeClick(data) {
+        console.log(data);
+      }
+    }
+  };
+</script>
+```
 :::
 
 ### Attributes
@@ -982,5 +1056,5 @@
 | node-expand    | 节点被展开时触发的事件    | 共三个参数，依次为：传递给 `data` 属性的数组中该节点所对应的对象、节点对应的 Node、节点组件本身。 |
 | node-collapse  | 节点被关闭时触发的事件    | 共三个参数，依次为：传递给 `data` 属性的数组中该节点所对应的对象、节点对应的 Node、节点组件本身。 |
 | node-del  | 节点被删除时触发的事件    | 共四个参数，依次为：`store`是节点本身封装方法的service, 传递给 `data` 属性的数组中该节点所对应的对象、节点对应的 Node、节点组件本身。 |
-| node-modify  | 更改节点的label    | 共三个参数，依次为：传递给 `data` 属性的数组中该节点所对应的对象、节点对应的 Node、节点组件本身。 |
-| node-add  | 新增节点    | 共三个参数，依次为：传递给 `data` 属性的数组中该节点所对应的对象、节点对应的 Node、节点组件本身。 |
+| node-modify  | 更改节点的label    | 共三个参数，依次为：更改后的label值[在事件中用node.data.label修改]、节点对应的 Node、节点组件本身。 |
+| node-add  | 新增节点    | 共三个参数，依次为：更改后的label值[在事件中用node.data.label修改]、节点对应的 Node、节点组件本身。 |
