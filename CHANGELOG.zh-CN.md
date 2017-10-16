@@ -27,3 +27,7 @@
 
 - Table
     - 修复type为small的表格表头颜色不对的问题
+- EltTree
+    - 新增 `loading` 的显示
+    - 新增 新建目录、节点的padding-left、input的左右padding 由indent 控制
+    - 去掉节点icon的margin-left
