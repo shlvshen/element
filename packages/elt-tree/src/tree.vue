@@ -223,8 +223,7 @@
       handleAppendNode() {
         var onEditable = this.store.onEditable;
         if (onEditable) {
-          let data = this.data || [];
-          data.push({
+          this.store.append({
             id: '',
             label: '',
             onEditable: true,
@@ -232,9 +231,8 @@
             isEditable: onEditable && this.config.isEditable,
             isDelable: onEditable && this.config.isDelable,
             isShowEditBar: this.isEditable || this.isDelable,
-            children: []
+            children: null
           });
-          this.store.setData(data);
         }
       }
     },
