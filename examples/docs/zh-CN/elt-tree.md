@@ -208,13 +208,14 @@
     },
 
     methods: {
-      nodeModify(newVal, node, tree) {
+      nodeModify(data, node, tree, newVal) {
         console.log('nodeModify', newVal);
-        node.data.label = newVal;
+        node.data.name = newVal;
       },
-      nodeAdd(newVal, node, tree) {
-        node.data.label = newVal;
-        node.data.id = nodeIdSeed++;
+      nodeAdd(data, node, tree, newVal) {
+        node.data.name = newVal;
+        node.data.id = node.parent.id  * 10 
+        nodeIdSeed++;
         node.id = node.data.id;
         console.log('nodeAdd', newVal, node);
         
