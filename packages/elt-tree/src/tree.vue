@@ -10,9 +10,8 @@
       </el-col>
     </el-row>
     <!-- search -->
-    <el-row class="el-tree__search">
+    <el-row class="el-tree__search" v-if="config.isSearchable">
       <el-input
-        v-if="config.isSearchable"
         v-model="filterText"
         :placeholder="config.placeholder">
       </el-input>
