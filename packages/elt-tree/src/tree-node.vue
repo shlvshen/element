@@ -220,18 +220,18 @@
         const node = this.node;
         const data = node.data;
         const store = node.store;
-        const val = event.target.value;
-        if (!val) {
+        const newVal = event.target.value;
+        if (!newVal) {
           store.remove(data);
           return;
         }
-        node.data.name = val;
-        node.name = node.data.name;
+        // node.data.label = val;
+        // node.name = node.data.name;
         node.onEditable = false;
         if (node.id) {
-          this.tree.$emit('node-modify', node.data, node, this);
+          this.tree.$emit('node-modify', newVal, node, this);
         } else {
-          this.tree.$emit('node-add', node.data, node, this);          
+          this.tree.$emit('node-add', newVal, node, this);          
         }
       },
 
