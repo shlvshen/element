@@ -211,16 +211,20 @@
       },
       handleAppendNode() {
         var onEditable = this.store.onEditable;
-        this.store.data.push({
-          id: '',
-          label: '',
-          onEditable: true,
-          isAddable: onEditable && this.config.isAddable,
-          isEditable: onEditable && this.config.isEditable,
-          isDelable: onEditable && this.config.isDelable,
-          isShowEditBar: this.isEditable || this.isDelable,
-          children: []
-        });
+        if (onEditable) {
+          let data = this.data || [];
+          data.push({
+            id: '',
+            label: '',
+            onEditable: true,
+            isAddable: onEditable && this.config.isAddable,
+            isEditable: onEditable && this.config.isEditable,
+            isDelable: onEditable && this.config.isDelable,
+            isShowEditBar: this.isEditable || this.isDelable,
+            children: []
+          });
+          this.store.setData(data);
+        }
       }
     },
 
