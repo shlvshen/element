@@ -33,7 +33,11 @@
       :render-content="renderContent"
       @node-expand="handleNodeExpand">
     </elt-tree-node>
-    <div class="el-tree__empty-block" v-if="!root.childNodes || root.childNodes.length === 0">
+    <div class="el-tree__loading" v-if="!root.data">
+        <i class="el-icon-loading el-tree__loading-icon"></i>
+        <div class="el-tree__loading-text">{{ loadingText }}</div>
+    </div>
+    <div class="el-tree__empty-block" v-if="root.data && root.childNodes.length === 0">
       <span class="el-tree__empty-text">{{ emptyText }}</span>
     </div>
   </div>
@@ -88,6 +92,12 @@
         type: String,
         default() {
           return t('el.tree.emptyText');
+        }
+      },
+      loadingText: {
+        type: String,
+        default() {
+          return t('el.tree.loadingText');
         }
       },
       nodeKey: String,

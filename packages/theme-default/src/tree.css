@@ -15,6 +15,20 @@
       height: 100%;
     }
 
+    @e loading {
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    @e loading-icon {
+      font-size: 30px;
+      color: var(--color-primary);
+    }
+
+    @e loading-text {
+      margin-top: 15px;
+    }
+
     @e empty-text {
       position: absolute;
       left: 50%;

@@ -91,7 +91,8 @@ export default {
       loadingText: '正在加载中...'
     },
     tree: {
-      emptyText: '暂无数据'
+      emptyText: '暂无数据',
+      loadingText: '正在加载中...'
     },
     transfer: {
       noMatch: '无匹配数据',
