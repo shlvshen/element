@@ -31,3 +31,4 @@
     - 新增 `loading` 的显示
     - 新增 新建目录、节点的padding-left、input的左右padding 由indent 控制
     - 去掉节点icon的margin-left
+    - 修复 新增节点 未添加`parendId`的bug
