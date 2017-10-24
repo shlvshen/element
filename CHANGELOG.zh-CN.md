@@ -1,5 +1,16 @@
 ## 更新日志
 
+### 0.0.10
+*2017-10-13*
+
+- Table
+    - 修复type为small的表格表头颜色不对的问题
+- EltTree
+    - 新增 `loading` 的显示
+    - 新增 新建目录、节点的padding-left、input的左右padding 由indent 控制
+    - 去掉节点icon的margin-left
+    - 修复 新增节点 未添加`parendId`的bug
+
 ### 0.0.9
 *2017-10-10*
 
@@ -21,14 +32,3 @@
     - 按照组件规范调整内边距
 - Popover
     - 更改css
-
-### 0.0.10
-*2017-10-13*
-
-- Table
-    - 修复type为small的表格表头颜色不对的问题
-- EltTree
-    - 新增 `loading` 的显示
-    - 新增 新建目录、节点的padding-left、input的左右padding 由indent 控制
-    - 去掉节点icon的margin-left
-    - 修复 新增节点 未添加`parendId`的bug
