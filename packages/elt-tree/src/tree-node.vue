@@ -261,6 +261,7 @@
         store.append(
           {
             id: '',
+            parendId: data.id,
             label: '',
             onEditable: true,
             isShowEditBar: node.isShowEditBar,

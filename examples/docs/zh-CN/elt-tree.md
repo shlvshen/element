@@ -976,6 +976,7 @@
         :data="data4"
         :props="defaultNamePorps"
         node-key="id"
+        :filter-node-method="filterNode"
         :expand-on-click-node="false"
         :config="config"
         @node-modify="nodeModify"
