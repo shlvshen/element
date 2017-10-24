@@ -399,6 +399,7 @@
         ],
         tableData9: null,
         tableData10: [],
+        tableData11: null,
         currentRow: null,
         multipleSelection: []
       };
@@ -527,6 +528,26 @@
       multipleSelection(val) {
         console.log('selection: ', val);
       }
+    },
+
+    created: function() {
+      setTimeout(() => {
+        this.tableData11 = [
+            {
+                "id": "20784c45-649c-4b60-adf2-7942153700a1",
+                "domain_id": 1132,
+                "code": "HS-BS",
+                "name": "\u767d\u8272",
+                "series": "\u55b7\u6d82",
+                "photo_uri": null,
+                "powder_code": "\u7070\u7c89",
+                "paper_code": null,
+                "supplier": null,
+                "created_at": 1508226361,
+                "updated_at": 1508226361
+            }
+        ];
+      }, 1000);
     }
   };
 </script>
@@ -2276,6 +2297,35 @@
       label="描述"
       prop="desc">
     </el-table-column>
+  </el-table>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+
+      }
+    },
+    methods: {
+
+    }
+  }
+```
+:::
+
+### 表格从无到有
+从无到有
+:::demo 2
+
+```html
+<template>
+  <el-table
+    :data="tableData11"
+    style="width: 100%"
+    @cell-click=handelCellClick>
+    <el-table-column type="selectionIndex" label="序号"></el-table-column>
+    <el-table-column prop="series" label="颜色系列"></el-table-column>
   </el-table>
 </template>
 
