@@ -6,6 +6,7 @@
 - EltTree
     - 扩大icon的可点范围
     - 修复input框再次出现无法focus的bug
+    - 去掉树的border
 
 ### 0.0.10
 *2017-10-13*
