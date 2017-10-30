@@ -5,7 +5,7 @@
   @b tree {
     cursor: default;
     background: var(--color-white);
-    border: 1px solid var(--color-base-gray);
+    /* border: 1px solid var(--color-base-gray); */
 
     @e empty-block {
       position: relative;
