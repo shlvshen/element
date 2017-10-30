@@ -233,7 +233,7 @@
             isShowEditBar: this.isEditable || this.isDelable,
             children: null
           });
-        }
+        };
       }
     },
 

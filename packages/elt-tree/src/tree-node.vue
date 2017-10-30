@@ -9,11 +9,14 @@
     }">
     <div class="el-tree-node__content"
       :style="{ 'padding-left': (node.level) * tree.indent + 'px' }">
-      <span
+      <span style="display: inline-block;" @click.stop="handleExpandIconClick">
+        <i class="el-tree-node__expand-icon" :class="{ 'is-leaf': node.isLeaf, expanded: !node.isLeaf && expanded }"></i>
+      </span>
+      <!-- <span
         class="el-tree-node__expand-icon"
         @click.stop="handleExpandIconClick"
         :class="{ 'is-leaf': node.isLeaf, expanded: !node.isLeaf && expanded }">
-      </span>
+      </span> -->
       <el-checkbox
         v-if="showCheckbox"
         v-model="node.checked"
