@@ -33,7 +33,6 @@
       <span class="el-tree-node__label" v-show="!node.onEditable">{{ node.label }}</span>
       <div class="el-tree-node__edit" v-if="node.onEditable">
         <el-input :value="node.label" placeholder=""
-                  class="" autofocus
                   @blur.stop="handleCompleteEdit" 
                   @keyup.enter.stop="handleCompleteEdit"></el-input>
       </div>
@@ -164,6 +163,16 @@
         if (val) {
           this.childNodeRendered = true;
         }
+      },
+
+      'node': {
+        handler: function(val) {
+          var editNode = document.getElementsByClassName('el-tree-node__edit');
+          if (editNode.length > 0 && editNode[0].getElementsByTagName('input').length > 0) {
+            editNode[0].getElementsByTagName('input')[0].focus();
+          }
+        },
+        deep: true
       }
     },
 
@@ -223,6 +232,7 @@
         const newVal = event.target.value;
         if (!newVal) {
           store.remove(data);
+          event.target.parentNode.removeChild(event.target);
           return;
         }
         // node.data.label = val;
