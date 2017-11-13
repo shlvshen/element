@@ -12,7 +12,7 @@
       <span style="display: inline-block;" @click.stop="handleExpandIconClick">
         <i class="el-tree-node__expand-icon"
            :class="{ 'is-leaf': isLeaf,
-                     expanded: !node.isLeaf && expanded }"></i>
+                     expanded: expanded }"></i>
       </span>
       <!-- <span
         class="el-tree-node__expand-icon"
@@ -229,7 +229,8 @@
       },
 
       handleExpandIconClick() {
-        if (this.node.isLeaf) return;
+        if (this.node.level >= this.maxLevel) return;
+        // if (this.node.isLeaf) return;
         if (this.expanded) {
           this.tree.$emit('node-collapse', this.node.data, this.node, this);
           this.node.collapse();
