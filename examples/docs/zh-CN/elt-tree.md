@@ -195,6 +195,14 @@
     isSearchable: true,
     isAddable: true,
     isDelable: true,
+    placeholder: '输入关键字'
+  };
+
+  const config2 = {
+    isEditable: true,
+    isSearchable: true,
+    isAddable: true,
+    isDelable: true,
     placeholder: '输入关键字',
     maxLevel: 3
   };
@@ -352,7 +360,8 @@
         defaultExpandedKeys: [2, 3],
         filterText: '',
         onEditable: null,
-        config: config
+        config: config,
+        config2: config2
       };
     },
 
@@ -979,7 +988,7 @@
         node-key="id"
         :filter-node-method="filterNode"
         :expand-on-click-node="false"
-        :config="config"
+        :config="config2"
         @node-modify="nodeModify"
         @node-del="handleNodeDel"
         @node-add="nodeAdd">

@@ -10,7 +10,9 @@
     <div class="el-tree-node__content"
       :style="{ 'padding-left': (node.level) * tree.indent + 'px' }">
       <span style="display: inline-block;" @click.stop="handleExpandIconClick">
-        <i class="el-tree-node__expand-icon" :class="{ 'is-leaf': node.isLeaf, expanded: !node.isLeaf && expanded }"></i>
+        <i class="el-tree-node__expand-icon"
+           :class="{ 'is-leaf': isLeaf,
+                     expanded: !node.isLeaf && expanded }"></i>
       </span>
       <!-- <span
         class="el-tree-node__expand-icon"
@@ -150,7 +152,8 @@
         childNodeRendered: false,
         showCheckbox: false,
         oldChecked: null,
-        oldIndeterminate: null
+        oldIndeterminate: null,
+        isLeaf: this.node.isLeaf
       };
     },
 
@@ -167,6 +170,21 @@
         this.expanded = val;
         if (val) {
           this.childNodeRendered = true;
+        }
+      },
+
+      'node.isLeaf'(val) {
+        this.isLeaf = val;
+      },
+
+      'node.isAddable'(val) {
+        const maxLevel = this.maxLevel;
+        const level = this.node.level;
+        const isLeaf = this.node.isLeaf;
+        if (val) {
+          this.isLeaf = isLeaf && (level >= maxLevel);
+        } else {
+          this.isLeaf = isLeaf && val;
         }
       },
 
