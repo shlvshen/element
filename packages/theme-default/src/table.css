@@ -467,7 +467,7 @@
     & tr {
       background-color: var(--color-white);
       &:hover > td {
-        background-color: var(--table-hover-color);
+        background-color: var(--table-hover-color) !important;
       }
     }
 
