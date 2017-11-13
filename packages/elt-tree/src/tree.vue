@@ -19,7 +19,7 @@
     </el-row>
 
     <el-collapse-transition>
-      <div :style="{'padding-left': indent + 'px'}" v-show="isAddable">
+      <div :style="{'padding-left': ( 2 * indent ) + 'px'}" v-show="isAddable">
         <div class="el-tree-node__add" @click.stop="handleAppendNode">
           <i class="iconfont">&#xe69b;</i>
           <span>新建目录</span>
