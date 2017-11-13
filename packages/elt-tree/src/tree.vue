@@ -233,7 +233,7 @@
             isDelable: onEditable && this.config.isDelable,
             isShowEditBar: this.isEditable || this.isDelable,
             children: null
-          });
+          }, null, 0);
         };
       }
     },

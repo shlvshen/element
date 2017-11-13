@@ -218,7 +218,7 @@
 
     methods: {
       nodeModify(data, node, tree, newVal) {
-        console.log('nodeModify', newVal, tree.props.label);
+        console.log('nodeModify', newVal, tree.tree.props.label);
         data[tree.tree.props.label] = newVal;
       },
       nodeAdd(data, node, tree, newVal) {

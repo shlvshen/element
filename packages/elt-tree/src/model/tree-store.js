@@ -118,11 +118,11 @@ export default class TreeStore {
     }
   }
 
-  append(data, parentData) {
+  append(data, parentData, index) {
     const parentNode = parentData ? this.getNode(parentData) : this.root;
 
     if (parentNode) {
-      parentNode.insertChild({ data });
+      parentNode.insertChild({ data }, index);
     }
   }
 

@@ -304,7 +304,7 @@
             isDelable: node.isDelable,
             isEditable: node.isEditable,
             children: []
-          }, data);
+          }, data, 0);
       },
 
       handelDropdownChange(val) {
