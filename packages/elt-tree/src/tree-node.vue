@@ -8,7 +8,8 @@
       'is-hidden': !node.visible
     }">
     <div class="el-tree-node__content"
-      :style="{ 'padding-left': (node.level) * tree.indent + 'px' }">
+         :style="{ 'padding-left': (node.level) * tree.indent + 'px' }"
+         :class="{'is-dropdown': node.isShowEditBar && node.id}">
       <span style="display: inline-block;" @click.stop="handleExpandIconClick">
         <i class="el-tree-node__expand-icon"
            :class="{ 'is-leaf': isLeaf,
@@ -42,11 +43,10 @@
                   @keyup.enter.stop="handleCompleteEdit"></el-input>
       </div>
       <span class="el-tree-node__label" v-if="node.count">({{ node.count }})</span>
-      <el-dropdown style="float: right;"
-                   :style="{'padding-right': tree.indent + 'px'}"
+      <el-dropdown :style="{'right': tree.indent + 'px', 'visibility': isShowEditBar ? 'visible' : 'hidden'}"
                    @click.native.stop
-                   v-show="node.isShowEditBar && node.id"
-                   @command="handleNodeEditable">
+                   @command="handleNodeEditable"
+                   @visible-change="handelDropdownChange">
         <span class="el-dropdown-link"><i class="iconfont">&#xe649;</i></span>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item v-show="node.isEditable" command="onEditable">重命名</el-dropdown-item>
@@ -55,9 +55,9 @@
       </el-dropdown>
     </div>
     <el-collapse-transition>
-      <div :style="{ 'padding-left': (node.level + 2) * tree.indent + 'px' }"
-           v-show="node.isAddable && node.id && ( maxLevel > node.level ) && expanded">
-        <div class="el-tree-node__add" @click.stop="handleAppendNode">
+      <div v-show="node.isAddable && node.id && ( maxLevel > node.level ) && expanded">
+        <div class="el-tree-node__add" @click.stop="handleAppendNode"
+             :style="{ 'padding-left': (node.level + 2) * tree.indent + 'px' }">
           <i class="iconfont">&#xe69b;</i>
           <span>新建目录</span>
         </div>
@@ -153,7 +153,8 @@
         showCheckbox: false,
         oldChecked: null,
         oldIndeterminate: null,
-        isLeaf: this.node.isLeaf
+        isLeaf: this.node.isLeaf,
+        isShowEditBar: null
       };
     },
 
@@ -304,6 +305,10 @@
             isEditable: node.isEditable,
             children: []
           }, data);
+      },
+
+      handelDropdownChange(val) {
+        this.isShowEditBar = val;
       }
     },
 

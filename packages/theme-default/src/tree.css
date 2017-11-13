@@ -57,6 +57,15 @@
       line-height: 36px;
       height: 36px;
       cursor: pointer;
+      position: relative;
+
+      &.is-dropdown {
+        &:hover {
+          .el-dropdown {
+            visibility: visible !important;
+          }
+        }
+      }
 
       & > .el-checkbox,
       & .el-tree-node__expand-icon {
@@ -67,6 +76,11 @@
       }
       &:hover {
         background: var(--color-light-gray);
+      }
+
+      & .el-dropdown {
+        visibility: hidden;
+        position: absolute;
       }
     }
 
