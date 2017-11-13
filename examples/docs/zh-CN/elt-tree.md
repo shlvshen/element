@@ -195,7 +195,8 @@
     isSearchable: true,
     isAddable: true,
     isDelable: true,
-    placeholder: '输入关键字'
+    placeholder: '输入关键字',
+    maxLevel: 3
   };
 
   const tree = null;
@@ -1017,7 +1018,7 @@
 | 参数                    | 说明                                       | 类型                          | 可选值  | 默认值   |
 | --------------------- | ---------------------------------------- | --------------------------- | ---- | ----- |
 | data                  | 展示数据                                     | array                       | —    | —     |
-| config                  | 配置是否可搜索、是否可编辑、是否可新建、是否可删除、是否重命名                                     | Object                       | —    | —     |
+| config                  | 配置是否可搜索、是否可编辑、是否可新建、是否可删除、是否重命名,最大级数。`maxLevel`表示此树节点的最大级数                                     | Object                       | —    | —     |
 | empty-text            | 内容为空的时候展示的文本                             | String                      | —    | —     |
 | node-key              | 每个树节点用来作为唯一标识的属性，整颗树应该是唯一的               | String                      | —    | —     |
 | props                 | 配置选项，具体看下表                               | object                      | —    | —     |

@@ -32,6 +32,7 @@
       :props="props"
       :key="getNodeKey(child)"
       :render-content="renderContent"
+      :max-level="config.maxLevel"
       @node-expand="handleNodeExpand">
     </elt-tree-node>
     <div class="el-tree__loading" v-if="!root.data">

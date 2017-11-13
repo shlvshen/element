@@ -54,7 +54,7 @@
     </div>
     <el-collapse-transition>
       <div :style="{ 'padding-left': (node.level + 2) * tree.indent + 'px' }"
-           v-show="node.isAddable && node.id">
+           v-show="node.isAddable && node.id && ( maxLevel ? maxLevel > node.level : true )">
         <div class="el-tree-node__add" @click.stop="handleAppendNode">
           <i class="iconfont">&#xe69b;</i>
           <span>新建目录</span>
@@ -70,6 +70,7 @@
           v-for="child in node.childNodes"
           :key="getNodeKey(child)"
           :node="child"
+          :max-level="maxLevel"
           @node-expand="handleChildNodeExpand">
         </elt-tree-node>
       </div>
@@ -115,6 +116,7 @@
         }
       },
       props: {},
+      maxLevel: [String, Number],
       renderContent: Function
     },
 
