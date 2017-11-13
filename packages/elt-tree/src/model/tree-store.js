@@ -73,7 +73,8 @@ export default class TreeStore {
     var onEditable = this.onEditable;
     const config = this.config || {};
     const traverse = function(node) {
-      node.expanded = true && onEditable;
+      node.expanded = node.expanded;
+      // node.expanded = true && onEditable;
       node.isAddable = onEditable && config.isAddable;
       node.isEditable = onEditable && config.isEditable;
       node.isDelable = onEditable && config.isDelable;
