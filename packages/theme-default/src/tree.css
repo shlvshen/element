@@ -16,10 +16,15 @@
         left: 0;
         right: 0;
         background: var(--tree-box-color);
-        opacity: 0.6;
-        filter: Alpha(opacity=60);
         z-index: 9;
-        *zoom: 1;
+
+        i {
+          position: absolute;
+          top: 45%;
+          left: 50%;
+          font-size: 36px;
+          color: var(--color-info);
+        }
       }
     }
 
