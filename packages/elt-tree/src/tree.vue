@@ -37,7 +37,14 @@
       @node-expand="handleNodeExpand">
     </elt-tree-node>
     <div class="el-tree__loading" v-if="!root.data">
-        <i class="el-icon-loading el-tree__loading-icon"></i>
+        <div class="el-loading-mask">
+          <div class="el-loading-spinner">
+            <svg class="circular" viewBox="25 25 50 50">
+              <circle class="path" cx="50" cy="50" r="20" fill="none"/>
+            </svg>
+          </div>
+        </div>
+        <!-- <i class="el-icon-loading el-tree__loading-icon"></i> -->
         <div class="el-tree__loading-text">{{ loadingText }}</div>
     </div>
     <div class="el-tree__empty-block" v-if="root.data && root.childNodes.length === 0">

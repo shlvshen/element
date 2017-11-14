@@ -26,8 +26,18 @@
     }
 
     @e loading {
+      position: relative;
       padding: var(--distance-normal) 0;
       text-align: center;
+      color: var(--color-info);
+
+      .el-loading-mask {
+        background: inherit;
+
+        .el-loading-spinner {
+          top: 40%;
+        }
+      }
     }
 
     @e loading-icon {
@@ -36,7 +46,8 @@
     }
 
     @e loading-text {
-      margin-top: var(--distance-normal);
+      margin-top: 60px;
+      font-size: var(--font-size-base);
     }
 
     @e empty-text {
