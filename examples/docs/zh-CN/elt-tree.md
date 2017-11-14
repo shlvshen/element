@@ -1054,6 +1054,8 @@
 | filter-node-method    | 对树节点进行筛选时执行的方法，返回 true 表示这个节点可以显示，返回 false 则表示这个节点会被隐藏 | Function(value, data, node) | —    | —     |
 | accordion             | 是否每次只打开一个同级树节点展开                         | boolean                     | —    | false |
 | indent                | 相邻级节点间的水平缩进，单位为像素                        | number                     | —    | 16 |
+| on-load                  | 控制树的遮罩层展示,使用者可以在`node-modify`,`node-del`,`node-add`中自行控制                                     | Boolean                       | —    | false     |
+ 
 
 ### props
 | 参数       | 说明                | 类型     | 可选值  | 默认值  |
