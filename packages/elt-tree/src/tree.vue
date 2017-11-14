@@ -149,7 +149,8 @@
         default() {
           return {};
         }
-      }
+      },
+      onLoad: Boolean
     },
 
     computed: {

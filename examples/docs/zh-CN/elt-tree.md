@@ -218,10 +218,15 @@
 
     methods: {
       nodeModify(data, node, tree, newVal) {
-        console.log('nodeModify', newVal, tree.tree.props.label);
+        // console.log('nodeModify', newVal, tree);
+        this.onLoad = true;
         data[tree.tree.props.label] = newVal;
+        setTimeout(() => {
+            this.onLoad = false;
+        }, 200);
       },
       nodeAdd(data, node, tree, newVal) {
+        this.onLoad = true;
         const props = tree.tree.props || {};
         const key = props.label || 'label';
         data[key]= newVal;
@@ -229,7 +234,9 @@
         nodeIdSeed++;
         node.id = node.data.id;
         console.log('nodeAdd', newVal, node);
-        
+        setTimeout(() => {
+            this.onLoad = false;
+        }, 200);
       },
       handleCheckChange(data, checked, indeterminate) {
         console.log(data, checked, indeterminate);
@@ -361,7 +368,8 @@
         filterText: '',
         onEditable: null,
         config: config,
-        config2: config2
+        config2: config2,
+        onLoad: false
       };
     },
 
@@ -989,6 +997,7 @@
         :filter-node-method="filterNode"
         :expand-on-click-node="false"
         :config="config2"
+        :on-load="onLoad"
         @node-modify="nodeModify"
         @node-del="handleNodeDel"
         @node-add="nodeAdd">
