@@ -223,7 +223,7 @@
         data[tree.tree.props.label] = newVal;
         setTimeout(() => {
             this.onLoad = false;
-        }, 200);
+        }, 500);
       },
       nodeAdd(data, node, tree, newVal) {
         this.onLoad = true;
@@ -236,7 +236,7 @@
         console.log('nodeAdd', newVal, node);
         setTimeout(() => {
             this.onLoad = false;
-        }, 200);
+        }, 500);
       },
       handleCheckChange(data, checked, indeterminate) {
         console.log(data, checked, indeterminate);

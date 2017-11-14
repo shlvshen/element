@@ -8,28 +8,12 @@
     background: var(--color-white);
     /* border: 1px solid var(--color-base-gray); */
 
-    .box {
-      display: none;
-    }
+    .el-loading-mask {
+      background: var(--tree-box-color);
+      z-index: 9;
 
-    &.loading {
-      .box {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: var(--tree-box-color);
-        z-index: 9;
-        display: block;
-
-        i {
-          position: absolute;
-          top: 45%;
-          left: 50%;
-          font-size: 36px;
-          color: var(--color-info);
-        }
+      .el-loading-spinner .path {
+        stroke: var(--color-info);
       }
     }
 
