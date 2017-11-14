@@ -13,6 +13,7 @@
     - 添加`onLoad`变量用于控制树的遮罩
     - 修复点击编辑立即出现编辑条而不是鼠标悬浮才出现的bug
     - 修复编辑`padding-right`与其他不统一的bug
+    - 更改加载时的loading效果
 - Table
     - 修复双行色有striped时悬浮色失效的bug
 
