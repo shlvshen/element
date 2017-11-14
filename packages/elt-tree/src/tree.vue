@@ -3,7 +3,8 @@
     <!-- onEditable -->
     <el-row v-if="config.isEditable">
       <el-col :span="24">
-        <div class="el-tree__edit" @click.stop="handleOnEdit()">
+        <div class="el-tree__edit" @click.stop="handleOnEdit()"
+             :style="{'padding-right': indent + 'px'}">
           <span v-if="!store.onEditable"><i class="iconfont" style="margin-right: 5px;">&#xe648;</i>编辑</span>
           <span v-if="store.onEditable">取消编辑</span>
         </div>
