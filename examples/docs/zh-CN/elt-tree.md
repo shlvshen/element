@@ -21,6 +21,257 @@
 </style>
 
 <script>
+  const catalog = [
+        {
+            "id": "dd8c52c2-2c1e-447d-a783-16ce45d52824",
+            "domain_id": 1132,
+            "form": 1,
+            "name": "\u4e00\u7ea7\u5206\u7c7b",
+            "parent_id": null,
+            "ancestor_list": [],
+            "created_at": 1508205178,
+            "updated_at": 1508901895,
+            "children": [
+                {
+                    "id": "40591909-08ca-44f3-82d9-9955e8d8a3e5",
+                    "domain_id": 1132,
+                    "form": 1,
+                    "name": "\u4e8c\u7ea7\u5206\u7c7b",
+                    "parent_id": "dd8c52c2-2c1e-447d-a783-16ce45d52824",
+                    "ancestor_list": [
+                        {
+                            "_id": "dd8c52c2-2c1e-447d-a783-16ce45d52824",
+                            "name": "\u4e00\u7ea7\u5206\u7c7b2"
+                        }
+                    ],
+                    "created_at": 1508899933,
+                    "updated_at": 1508899934,
+                    "children": [
+                        {
+                            "id": "ec6cfc1b-4260-4f85-868c-89a8fed4ac98",
+                            "domain_id": 1132,
+                            "form": 1,
+                            "name": "\u4e09\u7ea7\u5206\u7c7b222",
+                            "parent_id": "40591909-08ca-44f3-82d9-9955e8d8a3e5",
+                            "ancestor_list": [
+                                {
+                                    "_id": "40591909-08ca-44f3-82d9-9955e8d8a3e5",
+                                    "name": "\u4e8c\u7ea7\u5206\u7c7b"
+                                },
+                                {
+                                    "_id": "dd8c52c2-2c1e-447d-a783-16ce45d52824",
+                                    "name": "\u4e00\u7ea7\u5206\u7c7b"
+                                }
+                            ],
+                            "created_at": 1508900496,
+                            "updated_at": 1508984305,
+                            "children": [
+                                {
+                                    "id": "fb33cef7-7d63-4ed6-bc10-37220800980b",
+                                    "domain_id": 1132,
+                                    "form": 1,
+                                    "name": "555",
+                                    "parent_id": "ec6cfc1b-4260-4f85-868c-89a8fed4ac98",
+                                    "ancestor_list": [
+                                        {
+                                            "_id": "ec6cfc1b-4260-4f85-868c-89a8fed4ac98",
+                                            "name": "\u4e09\u7ea7\u5206\u7c7b"
+                                        },
+                                        {
+                                            "_id": "40591909-08ca-44f3-82d9-9955e8d8a3e5",
+                                            "name": "\u4e8c\u7ea7\u5206\u7c7b"
+                                        },
+                                        {
+                                            "_id": "dd8c52c2-2c1e-447d-a783-16ce45d52824",
+                                            "name": "\u4e00\u7ea7\u5206\u7c7b"
+                                        }
+                                    ],
+                                    "created_at": 1508984298,
+                                    "updated_at": 1508984298
+                                }
+                            ]
+                        },
+                        {
+                            "id": "c7d6075d-5da8-4109-8392-7a0584fe9381",
+                            "domain_id": 1132,
+                            "form": 1,
+                            "name": "\u6d4b\u8bd5\u5b50\u5206\u7c7b2",
+                            "parent_id": "40591909-08ca-44f3-82d9-9955e8d8a3e5",
+                            "ancestor_list": [
+                                {
+                                    "_id": "40591909-08ca-44f3-82d9-9955e8d8a3e5",
+                                    "name": "\u4e8c\u7ea7\u5206\u7c7b"
+                                },
+                                {
+                                    "_id": "dd8c52c2-2c1e-447d-a783-16ce45d52824",
+                                    "name": "\u4e00\u7ea7\u5206\u7c7b"
+                                }
+                            ],
+                            "created_at": 1509001283,
+                            "updated_at": 1509001283
+                        }
+                    ]
+                },
+                {
+                    "id": "dde6ce28-6661-4133-b71e-a3386710ecd0",
+                    "domain_id": 1132,
+                    "form": 1,
+                    "name": "\u6d4b\u8bd5\u5b50\u5206\u7c7b1",
+                    "parent_id": "dd8c52c2-2c1e-447d-a783-16ce45d52824",
+                    "ancestor_list": [
+                        {
+                            "_id": "dd8c52c2-2c1e-447d-a783-16ce45d52824",
+                            "name": "\u4e00\u7ea7\u5206\u7c7b"
+                        }
+                    ],
+                    "created_at": 1509001098,
+                    "updated_at": 1509001215
+                }
+            ]
+        },
+        {
+            "id": "1f1bf7cb-69ce-417d-8568-9ae279ba4e12",
+            "domain_id": 1132,
+            "form": 1,
+            "name": "222",
+            "parent_id": null,
+            "ancestor_list": [],
+            "created_at": 1508206495,
+            "updated_at": 1508206495,
+            "children": [
+                {
+                    "id": "cf15b03e-d2dd-42bc-90b2-55ed44e767bd",
+                    "domain_id": 1132,
+                    "form": 1,
+                    "name": "444444",
+                    "parent_id": "1f1bf7cb-69ce-417d-8568-9ae279ba4e12",
+                    "ancestor_list": [
+                        {
+                            "_id": "1f1bf7cb-69ce-417d-8568-9ae279ba4e12",
+                            "name": "222"
+                        }
+                    ],
+                    "created_at": 1510538683,
+                    "updated_at": 1510538683
+                }
+            ]
+        },
+        {
+            "id": "c00fc9fb-9f9e-40bf-9df9-5e633fcf8657",
+            "domain_id": 1132,
+            "form": 1,
+            "name": "333",
+            "parent_id": null,
+            "ancestor_list": [],
+            "created_at": 1508313555,
+            "updated_at": 1508313555
+        },
+        {
+            "id": "145a211d-f354-491a-89ee-036242a60af5",
+            "domain_id": 1132,
+            "form": 1,
+            "name": "2222",
+            "parent_id": null,
+            "ancestor_list": [],
+            "created_at": 1508901044,
+            "updated_at": 1508901044
+        },
+        {
+            "id": "d85ea632-59e6-4430-af84-7ac0eb01ee04",
+            "domain_id": 1132,
+            "form": 1,
+            "name": "2222222",
+            "parent_id": null,
+            "ancestor_list": [],
+            "created_at": 1508983947,
+            "updated_at": 1508983947
+        },
+        {
+            "id": "68fbaf43-750e-4dd2-a5dd-907c1c5b7684",
+            "domain_id": 1132,
+            "form": 1,
+            "name": "\u6d4b\u8bd5\u4e00\u7ea7\u5206\u7c7b",
+            "parent_id": null,
+            "ancestor_list": [],
+            "created_at": 1508999926,
+            "updated_at": 1508999926
+        },
+        {
+            "id": "8f895e3e-731f-4ca4-b933-23312a5bef22",
+            "domain_id": 1132,
+            "form": 1,
+            "name": "\u63a8\u62c9",
+            "parent_id": null,
+            "ancestor_list": [],
+            "created_at": 1509000248,
+            "updated_at": 1509000294,
+            "children": [
+                {
+                    "id": "8b6c4a7c-70fe-43b1-82c7-dc9592c870ec",
+                    "domain_id": 1132,
+                    "form": 1,
+                    "name": "test80\u5f69\u94dd\u63a8\u62c9",
+                    "parent_id": "8f895e3e-731f-4ca4-b933-23312a5bef22",
+                    "ancestor_list": [
+                        {
+                            "_id": "8f895e3e-731f-4ca4-b933-23312a5bef22",
+                            "name": "\u63a8\u62c9"
+                        }
+                    ],
+                    "created_at": 1509000303,
+                    "updated_at": 1509000303
+                }
+            ]
+        },
+        {
+            "id": "26547216-fbc6-4f4c-8857-39f65709c461",
+            "domain_id": 1132,
+            "form": 1,
+            "name": "\u5e73\u5f00",
+            "parent_id": null,
+            "ancestor_list": [],
+            "created_at": 1509022088,
+            "updated_at": 1509022088,
+            "children": [
+                {
+                    "id": "9cb02a6a-9bc8-4d3e-97ae-8b7fe712c299",
+                    "domain_id": 1132,
+                    "form": 1,
+                    "name": "test85\u5e73\u5f00\u7cfb\u5217",
+                    "parent_id": "26547216-fbc6-4f4c-8857-39f65709c461",
+                    "ancestor_list": [
+                        {
+                            "_id": "26547216-fbc6-4f4c-8857-39f65709c461",
+                            "name": "\u5e73\u5f00"
+                        }
+                    ],
+                    "created_at": 1509022160,
+                    "updated_at": 1509022160,
+                    "children": [
+                        {
+                            "id": "8ce5fcd9-1d18-4b27-aa6e-cfca27e984e1",
+                            "domain_id": 1132,
+                            "form": 1,
+                            "name": "111",
+                            "parent_id": "9cb02a6a-9bc8-4d3e-97ae-8b7fe712c299",
+                            "ancestor_list": [
+                                {
+                                    "_id": "9cb02a6a-9bc8-4d3e-97ae-8b7fe712c299",
+                                    "name": "test85\u5e73\u5f00\u7cfb\u5217"
+                                },
+                                {
+                                    "_id": "26547216-fbc6-4f4c-8857-39f65709c461",
+                                    "name": "\u5e73\u5f00"
+                                }
+                            ],
+                            "created_at": 1509091071,
+                            "updated_at": 1509091071
+                        }
+                    ]
+                }
+            ]
+        }
+    ];
   let nodeIdSeed = 1;
   const data = [{
     label: '一级 1',
@@ -369,13 +620,15 @@
         onEditable: null,
         config: config,
         config2: config2,
-        onLoad: false
+        onLoad: false,
+        catalog: null
       };
     },
 
     created: function() {
       setTimeout(() => {
         this.tree = [];
+        this.catalog = catalog
       }, 1000);
     }
   };
@@ -991,7 +1244,7 @@
 <div>
   <div>
     <elt-tree
-        :data="data4"
+        :data="catalog"
         :props="defaultNamePorps"
         node-key="id"
         :filter-node-method="filterNode"

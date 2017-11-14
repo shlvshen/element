@@ -55,7 +55,7 @@
       </el-dropdown>
     </div>
     <el-collapse-transition>
-      <div v-show="node.isAddable && node.id && ( maxLevel > node.level ) && expanded">
+      <div v-show="node.isAddable && node.id && ( maxLevel ? maxLevel > node.level : true ) && expanded">
         <div class="el-tree-node__add" @click.stop="handleAppendNode"
              :style="{ 'padding-left': (node.level + 2) * tree.indent + 'px' }">
           <i class="iconfont">&#xe69b;</i>
