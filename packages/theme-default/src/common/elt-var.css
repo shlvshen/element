@@ -480,6 +480,10 @@
       --table-head-fill-active: #5eaeff;
       --table-color-active: var(--color-white);
 
+      /* Tree
+     -------------------------- */
+      --tree-box-color: #eee;
+
       /* Pagination
      -------------------------- */
       --pagination-font-size: 13px;
