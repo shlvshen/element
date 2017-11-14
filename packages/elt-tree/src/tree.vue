@@ -1,6 +1,8 @@
 <template>
   <div class="el-tree" :class="{ 'el-tree--highlight-current': highlightCurrent, 'loading': onLoad }">
-    <div class="box"></div>
+    <div class="box">
+      <i class="el-icon-loading"></i>
+    </div>
     <el-row v-if="config.isEditable">
       <el-col :span="24">
         <div class="el-tree__edit" @click.stop="handleOnEdit()"

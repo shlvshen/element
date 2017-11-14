@@ -8,6 +8,10 @@
     background: var(--color-white);
     /* border: 1px solid var(--color-base-gray); */
 
+    .box {
+      display: none;
+    }
+
     &.loading {
       .box {
         position: absolute;
@@ -17,6 +21,7 @@
         right: 0;
         background: var(--tree-box-color);
         z-index: 9;
+        display: block;
 
         i {
           position: absolute;
