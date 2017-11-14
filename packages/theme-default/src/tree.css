@@ -3,9 +3,23 @@
 
 @component-namespace el {
   @b tree {
+    position: relative;
     cursor: default;
     background: var(--color-white);
     /* border: 1px solid var(--color-base-gray); */
+
+    &.loading {
+      .box {
+        position:absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #eee;
+        opacity: 0.6;
+        z-index: 9;
+      }
+    }
 
     @e empty-block {
       position: relative;
