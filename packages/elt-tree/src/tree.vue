@@ -235,13 +235,16 @@
           this.store.append({
             id: '',
             label: '',
-            onEditable: true,
+            onEditable: false,
             isAddable: onEditable && this.config.isAddable,
             isEditable: onEditable && this.config.isEditable,
             isDelable: onEditable && this.config.isDelable,
             isShowEditBar: this.isEditable || this.isDelable,
             children: null
           }, null, 0);
+          setTimeout(() => {
+              this.root.childNodes[0].onEditable = true;
+          }, 0);
         };
       }
     },

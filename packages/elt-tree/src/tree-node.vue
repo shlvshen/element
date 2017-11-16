@@ -189,15 +189,26 @@
         }
       },
 
-      'node': {
-        handler: function(val) {
-          var editNode = document.getElementsByClassName('el-tree-node__edit');
-          if (editNode.length > 0 && editNode[0].getElementsByTagName('input').length > 0) {
-            editNode[0].getElementsByTagName('input')[0].focus();
-          }
-        },
-        deep: true
+      'node.onEditable'(val) {
+        if (val) {
+          setTimeout(() => {
+            var editNode = document.getElementsByClassName('el-tree-node__edit');
+            if (editNode.length > 0 && editNode[0].getElementsByTagName('input').length > 0) {
+              editNode[0].getElementsByTagName('input')[0].focus();
+            }
+          }, 0);
+        }
       }
+
+      // 'node': {
+      //   handler: function(val) {
+      //     var editNode = document.getElementsByClassName('el-tree-node__edit');
+      //     if (editNode.length > 0 && editNode[0].getElementsByTagName('input').length > 0) {
+      //       editNode[0].getElementsByTagName('input')[0].focus();
+      //     }
+      //   },
+      //   deep: true
+      // }
     },
 
     methods: {
@@ -282,7 +293,7 @@
             break;
           //rename
           case 'onEditable':
-            this.node.onEditable = true;
+            node.onEditable = true;
             break;
           default:
             break;
@@ -298,13 +309,16 @@
             id: '',
             parendId: data.id,
             label: '',
-            onEditable: true,
+            onEditable: false,
             isShowEditBar: node.isShowEditBar,
             isAddable: node.isAddable,
             isDelable: node.isDelable,
             isEditable: node.isEditable,
             children: []
           }, data, 0);
+          setTimeout(() => {
+              node.childNodes[0].onEditable = true;
+          }, 0);
       },
 
       handelDropdownChange(val) {
