@@ -246,6 +246,11 @@
               this.root.childNodes[0].onEditable = true;
           }, 0);
         };
+      },
+      resetFields() { //重置,清除所有节点的编辑状态
+        this.store.onEditable = false;
+        this.isAddable = false;
+        this.store.edit();
       }
     },
 

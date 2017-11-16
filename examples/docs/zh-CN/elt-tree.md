@@ -469,14 +469,19 @@
 
     methods: {
       nodeModify(data, node, tree, newVal) {
-        // console.log('nodeModify', newVal, tree);
+        console.log('nodeModify', newVal);
         this.onLoad = true;
         data[tree.tree.props.label] = newVal;
         setTimeout(() => {
             this.onLoad = false;
+            this.catalog = null;
+            this.$set(this, 'catalog', data4);
+            tree.tree.resetFields();
+            // this.catalog = data4;
         }, 500);
       },
       nodeAdd(data, node, tree, newVal) {
+        console.log('nodeAdd', newVal, node);        
         this.onLoad = true;
         const props = tree.tree.props || {};
         const key = props.label || 'label';
@@ -484,9 +489,10 @@
         node.data.id = node.parent.id  * 10 
         nodeIdSeed++;
         node.id = node.data.id;
-        console.log('nodeAdd', newVal, node);
         setTimeout(() => {
             this.onLoad = false;
+            this.$set(this, 'catalog', data4);
+            tree.tree.resetFields();
         }, 500);
       },
       handleCheckChange(data, checked, indeterminate) {
