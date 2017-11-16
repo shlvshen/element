@@ -39,8 +39,8 @@
       <span class="el-tree-node__label" v-show="!node.onEditable">{{ node.label }}</span>
       <div class="el-tree-node__edit" v-if="node.onEditable">
         <el-input :value="node.label" placeholder=""
-                  @blur.stop="handleCompleteEdit" 
-                  @keyup.enter.stop="handleCompleteEdit"></el-input>
+                  @blur.stop="handleCompleteEdit"></el-input>
+                  <!-- @keyup.enter.native.stop="handleCompleteEdit" -->
       </div>
       <span class="el-tree-node__label" v-if="node.count">({{ node.count }})</span>
       <el-dropdown :style="{'right': tree.indent + 'px', 'visibility': isShowEditBar ? 'visible' : 'hidden'}"
