@@ -27,9 +27,10 @@
 
     @e loading {
       position: relative;
-      padding: var(--distance-normal) 0;
+      /* padding: var(--distance-normal) 0; */
       text-align: center;
       color: var(--color-info);
+      min-height: 100px;
 
       .el-loading-mask {
         background: inherit;
