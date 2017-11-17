@@ -248,7 +248,7 @@
           }, 0);
         };
       },
-      resetFields(val) { //重置,清除所有节点的编辑状态
+      resetFields(val) {
         this.store.onEditable = val;
         this.isAddable = val;
         this.store.edit();
