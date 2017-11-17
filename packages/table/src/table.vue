@@ -44,8 +44,16 @@
         <span class="el-table__empty-text"><slot name="empty">{{ emptyText || t('el.table.emptyText') }}</slot></span>
       </div>
       <div :style="{ width: bodyWidth }" class="el-table__loading" v-if="!data">
-        <i class="el-icon-loading el-table__loading-icon"></i>
-        <div class="el-table__loading-text"><slot name="empty">{{ loadingText || t('el.table.loadingText') }}</slot></div>
+        <div class="el-loading-mask">
+          <div class="el-loading-spinner">
+            <svg class="circular" viewBox="25 25 50 50">
+              <circle class="path" cx="50" cy="50" r="20" fill="none"/>
+            </svg>
+            <p><slot name="empty">{{ loadingText || t('el.table.loadingText') }}</slot></p>
+          </div>
+        </div>
+        <!-- <i class="el-icon-loading el-table__loading-icon"></i> -->
+        <!-- <div class="el-table__loading-text"><slot name="empty">{{ loadingText || t('el.table.loadingText') }}</slot></div> -->
       </div>
     </div>
     <div class="el-table__footer-wrapper" ref="footerWrapper" v-if="showSummary" v-show="data && data.length > 0">
