@@ -494,7 +494,6 @@
 
         setTimeout(() => {
             this.onLoad = false;
-            this.$set(this, 'catalog', data4);
             tree.tree.resetFields();
         }, 500);
       },
