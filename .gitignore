@@ -13,3 +13,4 @@ fe.element/thx-knight
 .npmrc
 coverage
 waiter.config.js
+.vscode/**/*
