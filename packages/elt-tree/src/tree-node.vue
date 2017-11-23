@@ -185,7 +185,7 @@
         if (val) {
           this.isLeaf = isLeaf && (level >= maxLevel);
         } else {
-          this.isLeaf = isLeaf && val;
+          this.isLeaf = isLeaf;
         }
       },
 
