@@ -2,11 +2,12 @@
 @import "./common/elt-var.css";
 
 @component-namespace el {
+  $radius: 4px;
   @b popover {
     position: absolute;
     background: var(--popover-fill);
     min-width: 180px;
-    border-radius: 4px;
+    border-radius: $radius;
     border: 1px solid var(--popover-border-color);
     /* padding: var(--popover-padding); */
     z-index: var(--index-popper);
@@ -121,6 +122,8 @@
       padding: 0 var(--popover-padding);
       color: var(--color-base-black);
       background: var(--popover-title-fill);
+      border-top-left-radius: $radius;
+      border-top-right-radius: $radius;
     }
 
     @e content {
