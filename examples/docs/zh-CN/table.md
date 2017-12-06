@@ -1,6 +1,22 @@
 <script>
   export default {
     data() {
+      const tableData12 = new Array(10)
+      const sub = new Array(5)
+      sub.fill({
+          code: 'EFG12312424',
+          name: '配件',
+      })
+      tableData12.fill({
+          code: 'ABC123456',
+          name: '把手',
+          sub: [
+{
+          code: 'EFG12312424',
+          name: '配件',
+      }
+          ],
+      })
       return {
         placeholder: '请输入222',
         options: [
@@ -400,6 +416,7 @@
         tableData9: null,
         tableData10: [],
         tableData11: null,
+        tableData12,
         currentRow: null,
         multipleSelection: []
       };
@@ -2342,6 +2359,7 @@
   }
 ```
 :::
+
 
 ### Table Attributes
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |

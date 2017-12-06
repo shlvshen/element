@@ -71,11 +71,6 @@
     }
 
     &.el-table--small {
-      & thead {
-        & tr > th {
-          border: 0;
-        }
-      }
       & tr {
         td {
           border-color: var(--table-border-color-small);
@@ -557,6 +552,11 @@
             border: 0;
             background: var(--table-head-fill-active) !important;
             color: var(--table-color-active) !important;
+            border-right: 1px solid var(--table-border-color);
+          }
+          
+          th {
+            border-bottom: 1px solid var(--table-border-color);
           }
 
           &:hover > td {

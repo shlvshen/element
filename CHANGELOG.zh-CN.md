@@ -3,7 +3,7 @@
 ### 0.0.16
 - Table
     - 修复cell里文字overflow的问题
-
+    - 修复当table的size设置为small时，multiHeader失效的问题
 ### 0.0.15
 - Popover
     - 修复在有title的情况，radius会被覆盖的问题

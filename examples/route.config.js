@@ -1,5 +1,6 @@
 import navConfig from './nav.config.json';
 import langs from './i18n/route.json';
+import Test from './components/test.vue'
 
 const LOAD_MAP = {
   'zh-CN': name => {
@@ -142,6 +143,9 @@ route = route.concat([{
 }, {
   path: '*',
   redirect: defaultPath
+}, {
+  path: '/test',
+  component: Test,
 }]);
 
 export default route;
