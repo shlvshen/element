@@ -2367,6 +2367,7 @@
 | sum-text | 合计行第一列的文本 | String | — | 合计 |
 | summary-method | 自定义的合计计算方法 | Function({ columns, data }) | — | — |
 | accordion | 表格的收缩是否是手风琴效果 | Boolean | — | false |
+| size | 当表格是嵌套在其他表格里用作expand时，会将size设置为small | String | small | 暂无数据
 
 ### Table Events
 | 事件名 | 说明 | 参数 |
@@ -2436,5 +2437,4 @@
 | filtered-value | 选中的数据过滤项，如果需要自定义表头过滤的渲染方式，可能会需要此属性。 | Array | — | — |
 | operation-list | 需要遍历的操作列表，如果type = `operation`，可能会需要此属性。 | Array | — | [] |
 | placeholder | placeholder，如果type = `input`，可能会需要此属性。 | String | — | '' |
-| size | 用于控制不同尺寸下表格th、td的高度。 | String | small/default | '' |
 | id-key | 用于获取id的key值。 | String | - | '' |
