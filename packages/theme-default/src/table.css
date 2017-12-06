@@ -573,6 +573,7 @@
         line-height: normal;
 
         .cell {
+          text-overflow: initial;
           -webkit-line-clamp: 2;
           overflow: hidden;
         }

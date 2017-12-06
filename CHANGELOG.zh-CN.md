@@ -1,5 +1,9 @@
 ## 更新日志
 
+### 0.0.16
+- Table
+    - 修复cell里文字overflow的问题
+
 ### 0.0.15
 - Popover
     - 修复在有title的情况，radius会被覆盖的问题
