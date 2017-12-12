@@ -1,5 +1,9 @@
 ## 更新日志
 
+### 0.1.0
+- Tree
+    - Tree支持scrollbar
+    
 ### 0.0.16
 - Table
     - 修复cell里文字overflow的问题

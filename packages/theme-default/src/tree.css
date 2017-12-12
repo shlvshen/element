@@ -6,6 +6,8 @@
     position: relative;
     cursor: default;
     background: var(--color-white);
+    display: flex;
+    flex-direction: column;
     /* border: 1px solid var(--color-base-gray); */
 
     .el-loading-mask {
@@ -15,6 +17,11 @@
       .el-loading-spinner .path {
         stroke: var(--color-info);
       }
+    }
+
+    @e node-wrapper {
+      overflow: auto;
+      padding: 5px;
     }
 
     @e empty-block {
