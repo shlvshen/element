@@ -3,6 +3,8 @@
 ### 0.1.0
 - Tree
     - Tree支持scrollbar
+- Dialog
+    - 新添了拖动功能
     
 ### 0.0.16
 - Table

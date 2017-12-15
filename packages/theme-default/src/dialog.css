@@ -50,6 +50,11 @@
       height: var(--msgbox-header-height);
       border-bottom: 1px solid var(--msgbox-border-color);
       box-sizing: border-box;      
+
+        @when dragging {
+          cursor: move;
+        }
+
     }
 
     @e headerbtn {
@@ -103,6 +108,7 @@
         }
       }
     }
+
   }
 
   .dialog-fade-enter-active {
