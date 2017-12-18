@@ -29,7 +29,7 @@
       return {
         visible: false,
         message: '',
-        duration: 3000,
+        duration: 2000,
         type: 'info',
         iconClass: '',
         customClass: '',

@@ -1,6 +1,8 @@
 ## 更新日志
 
 ### 0.1.0
+- Message
+    - 默认duration修改为2000ms
 - DateTimePicker
     - 修复组件在和其他ui框架混用时，内部元素对不齐的问题
 - Tree
