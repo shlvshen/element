@@ -5,6 +5,14 @@
     &.has-seconds {
       .el-time-spinner__wrapper {
         width: 33%;
+
+        & * {
+          /**
+           * 在和其他ui框架混用时（比如Bootstrap），它会把所有元素的box-sizing设置为border-box
+           * 导致DateTimePicker的一些元素对不齐，所以这里显示地设置一下
+           */
+          box-sizing: content-box;
+        }
       }
 
       .el-time-spinner__wrapper:nth-child(2) {

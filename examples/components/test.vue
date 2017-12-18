@@ -1,24 +1,6 @@
 <template>
   <div>
-    <el-table
-      :data="tableData"
-      border
-    >
-      <el-table-column type="expand">
-        <template scope="scope">
-          <el-table :data="scope.row.sub" size="small" border multi-header>
-            <el-table-column label="名字" prop="name"></el-table-column>
-            <el-table-column label="编号" prop="code"></el-table-column>
-            <el-table-column label="其他">
-              <el-table-column label="颜色" prop="color"></el-table-column>
-              <el-table-column label="长度" prop="length"></el-table-column>
-            </el-table-column>
-          </el-table>
-        </template>
-      </el-table-column>
-      <el-table-column label="名字" prop="name"></el-table-column>
-      <el-table-column label="编号" prop="code"></el-table-column>
-    </el-table>
+    <el-date-picker type="datetime"></el-date-picker>
   </div>
 </template>
 
