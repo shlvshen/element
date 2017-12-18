@@ -24,6 +24,8 @@
       --color-white: #fff;
       --color-dark-white: color(var(--color-white) blend(var(--color-primary) 2%));
       --color-black: #000;
+      --color-green: #2ecc71;
+      --color-orange: #f39c12;
 
       --color-border: #ddd;
 
@@ -550,6 +552,10 @@
       --tag-info-fill: var(--color-info);
       --tag-info-border: var(--color-info);
       --tag-info-color: var(--color-white);
+
+      --tag-green-fill: var(--color-green);
+      --tag-green-border: var(--color-green);
+      --tag-green-color: var(--color-white);
 
       /* Dropdown
       -------------------------- */

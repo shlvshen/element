@@ -1,6 +1,8 @@
 ## 更新日志
 
 ### 0.1.0
+- Tag
+    - 添加了一种色调
 - Message
     - 默认duration修改为2000ms
 - DateTimePicker

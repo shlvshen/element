@@ -8,7 +8,8 @@
           { name: 'Tag 3', type: 'primary' },
           { name: 'Tag 4', type: 'success' },
           { name: 'Tag 5', type: 'warning' },
-          { name: 'Tag 6', type: 'danger' }
+          { name: 'Tag 6', type: 'danger' },
+          { name: 'Tag 7', type: 'green' },
         ],
         dynamicTags: ['Tag 1', 'Tag 2', 'Tag 3'],
         inputVisible: false,
@@ -77,6 +78,7 @@ Used for marking and selection.
 <el-tag type="success">Tag Four</el-tag>
 <el-tag type="warning">Tag Five</el-tag>
 <el-tag type="danger">Tag Six</el-tag>
+<el-tag type="green">Tag Seven</el-tag>
 ```
 :::
 
