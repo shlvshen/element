@@ -89,6 +89,18 @@
                 @click="prevMonth"
                 class="el-picker-panel__icon-btn el-icon-arrow-left"></button>
               <div>{{ leftLabel }}</div>
+              <button
+                type="button"
+                class="el-picker-panel__icon-btn el-icon-d-arrow-right addon"
+                :class="{ 'is-addon': unlinkPanels }"
+              >
+              </button>
+              <button
+                type="button"
+                class="el-picker-panel__icon-btn el-icon-arrow-right addon"
+                :class="{ 'is-addon': unlinkPanels }"
+              >
+              </button>
             </div>
             <date-table
               selection-mode="range"
@@ -115,6 +127,18 @@
                 @click="nextMonth"
                 class="el-picker-panel__icon-btn el-icon-arrow-right"></button>
               <div>{{ rightLabel }}</div>
+              <button
+                type="button"
+                class="el-picker-panel__icon-btn el-icon-arrow-left addon"
+                :class="{ 'is-addon': unlinkPanels }"
+              >
+              </button>
+              <button
+                type="button"
+                class="el-picker-panel__icon-btn el-icon-d-arrow-left addon"
+                :class="{ 'is-addon': unlinkPanels }"
+              >
+              </button>
             </div>
             <date-table
               selection-mode="range"
@@ -238,7 +262,8 @@
         firstDayOfWeek: 7,
         minTimePickerVisible: false,
         maxTimePickerVisible: false,
-        width: 0
+        width: 0,
+        unlinkPanels: false,
       };
     },
 
