@@ -47,6 +47,11 @@
         visibility: visible;
       }
 
+      .is-addon[disabled] {
+        color: #cccccc;
+        cursor: not-allowed;
+      }
+
       div {
         font-size: 14px;
         display: inline-block;

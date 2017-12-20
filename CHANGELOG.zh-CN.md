@@ -1,6 +1,8 @@
 ## 更新日志
 
 ### 0.1.0
+- DatePicker
+    - 添加了unlinkPanels
 - Tag
     - 添加了一种色调
 - Message
