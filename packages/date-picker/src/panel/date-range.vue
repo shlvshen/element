@@ -259,7 +259,7 @@
         const next = new Date(this.leftDate);
         next.setFullYear(next.getFullYear() + 1);
         return this.rightDate > next;
-      },
+      }
     },
 
     data() {
@@ -286,7 +286,7 @@
         minTimePickerVisible: false,
         maxTimePickerVisible: false,
         width: 0,
-        unlinkPanels: false,
+        unlinkPanels: false
       };
     },
 
@@ -339,7 +339,7 @@
           if (this.maxDate) this.rightDate = new Date(this.maxDate);
           this.handleConfirm(true);
         }
-      },
+      }
     },
 
     methods: {
@@ -543,7 +543,7 @@
       rightPrevMonth() {
         if (!this.unlinkPanels) return;
 
-        this.rightDate = prevMonth(this.rightDate)
+        this.rightDate = prevMonth(this.rightDate);
       },
 
       rightPrevYear() {
@@ -561,10 +561,10 @@
       resetDate() {
         this.leftDate = new Date(this.leftDate);
         this.rightDate = new Date(this.rightDate);
-      },
+      }
 
     },
 
-    components: { TimePicker, DateTable, ElInput },
+    components: { TimePicker, DateTable, ElInput }
   };
 </script>

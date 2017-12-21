@@ -26,8 +26,8 @@
 </template>
 
 <script>
-import Popup from "thx-knight/src/utils/popup";
-import Emitter from "thx-knight/src/mixins/emitter";
+import Popup from 'thx-knight/src/utils/popup';
+import Emitter from 'thx-knight/src/mixins/emitter';
 
 function initData() {
   return {
@@ -35,48 +35,48 @@ function initData() {
     dialogOriginLeft: 0,
     dialogOriginTop: 0,
     mouseOriginX: 0,
-    mouseOriginY: 0,
-  }
+    mouseOriginY: 0
+  };
 }
 
 function initDraggable() {
-  const wrapper = this.$el
-  const dlg = this.$refs.dialog
-  const header = this.$refs.header
+  const wrapper = this.$el;
+  const dlg = this.$refs.dialog;
+  const header = this.$refs.header;
   header.onmousedown = (ev) => {
     if (!this.draggable || ev.button !== 0) {
-      return
+      return;
     }
 
-    this.isDragging = true
-    header.classList.add('is-dragging')
-    this.dialogOriginLeft = dlg.offsetLeft
-    this.dialogOriginTop = dlg.offsetTop
-    this.mouseOriginX = ev.clientX
-    this.mouseOriginY = ev.clientY
-  }
+    this.isDragging = true;
+    header.classList.add('is-dragging');
+    this.dialogOriginLeft = dlg.offsetLeft;
+    this.dialogOriginTop = dlg.offsetTop;
+    this.mouseOriginX = ev.clientX;
+    this.mouseOriginY = ev.clientY;
+  };
 
   wrapper.onmousemove = (ev) => {
     if (!this.draggable || !this.isDragging) {
-      return
+      return;
     }
-    const style = dlg.style
-    style.left = this.dialogOriginLeft + ev.clientX - this.mouseOriginX + 'px'
-    style.top = this.dialogOriginTop + ev.clientY - this.mouseOriginY + 'px'
-  }
+    const style = dlg.style;
+    style.left = this.dialogOriginLeft + ev.clientX - this.mouseOriginX + 'px';
+    style.top = this.dialogOriginTop + ev.clientY - this.mouseOriginY + 'px';
+  };
 
   wrapper.onmouseup = (ev) => {
     if (!this.draggable || !this.isDragging) {
-      return
+      return;
     }
 
-    this.isDragging = false
-    header.classList.remove('is-dragging')
-  }
+    this.isDragging = false;
+    header.classList.remove('is-dragging');
+  };
 }
 
 export default {
-  name: "ElDialog",
+  name: 'ElDialog',
 
   mixins: [Popup, Emitter],
 
@@ -85,7 +85,7 @@ export default {
   props: {
     title: {
       type: String,
-      default: ""
+      default: ''
     },
 
     modal: {
@@ -98,7 +98,7 @@ export default {
      */
     draggable: {
       type: Boolean,
-      default: false,
+      default: false
     },
 
     modalAppendToBody: {
@@ -128,33 +128,33 @@ export default {
 
     size: {
       type: String,
-      default: "small"
+      default: 'small'
     },
 
     customClass: {
       type: String,
-      default: ""
+      default: ''
     },
 
     top: {
       type: String,
-      default: "15%"
+      default: '15%'
     },
     beforeClose: Function
   },
 
   watch: {
     visible(val) {
-      this.$emit("update:visible", val);
+      this.$emit('update:visible', val);
       if (val) {
-        this.$emit("open");
-        this.$el.addEventListener("scroll", this.updatePopper);
+        this.$emit('open');
+        this.$el.addEventListener('scroll', this.updatePopper);
         this.$nextTick(() => {
           this.$refs.dialog.scrollTop = 0;
         });
       } else {
-        this.$el.removeEventListener("scroll", this.updatePopper);
-        this.$emit("close");
+        this.$el.removeEventListener('scroll', this.updatePopper);
+        this.$emit('close');
       }
     }
   },
@@ -164,7 +164,7 @@ export default {
       return `el-dialog--${this.size}`;
     },
     style() {
-      return this.size === "full" ? {} : { top: this.top };
+      return this.size === 'full' ? {} : { top: this.top };
     }
   },
 
@@ -174,7 +174,7 @@ export default {
       this.handleClose();
     },
     handleClose() {
-      if (typeof this.beforeClose === "function") {
+      if (typeof this.beforeClose === 'function') {
         this.beforeClose(this.hide);
       } else {
         this.hide();
@@ -182,16 +182,16 @@ export default {
     },
     hide(cancel) {
       if (cancel !== false) {
-        this.$emit("update:visible", false);
-        this.$emit("visible-change", false);
+        this.$emit('update:visible', false);
+        this.$emit('visible-change', false);
       }
     },
     updatePopper() {
-      this.broadcast("ElSelectDropdown", "updatePopper");
-      this.broadcast("ElDropdownMenu", "updatePopper");
+      this.broadcast('ElSelectDropdown', 'updatePopper');
+      this.broadcast('ElDropdownMenu', 'updatePopper');
     },
     initData,
-    initDraggable,
+    initDraggable
   },
 
   mounted() {
@@ -200,7 +200,7 @@ export default {
       this.open();
     }
 
-    this.initDraggable()
+    this.initDraggable();
   }
 };
 </script>
