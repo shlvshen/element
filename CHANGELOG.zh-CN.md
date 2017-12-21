@@ -3,6 +3,7 @@
 ### 0.1.0
 - DatePicker
     - 添加了unlinkPanels
+    - 🐞修复部分浏览器DateTimePicker的第二个picker显示白线的问题
 - Tag
     - 添加了一种色调
 - Message
