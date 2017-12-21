@@ -17,7 +17,7 @@
       --color-warning: #f1c40f;
       --color-danger: #e74c3c;
       --color-info: #3399ff;
-      --color-cancel: #bdc3c7;
+      --color-cancel: #878d99;
       --color-grey: #cacfd2;
 
       --color-secondary: color(var(--color-primary) s(99%) l(*0.9));

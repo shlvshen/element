@@ -111,6 +111,7 @@
     <el-button type="warning">警告按钮</el-button>
     <el-button type="danger">危险按钮</el-button>
     <el-button type="info">信息按钮</el-button>
+    <el-button type="cancel">取消按钮</el-button>
   </span>
 </div>
 <div class="block">
@@ -120,6 +121,7 @@
     <el-button :plain="true" type="warning">警告按钮</el-button>
     <el-button :plain="true" type="danger">危险按钮</el-button>
     <el-button :plain="true" type="info">信息按钮</el-button>
+    <el-button :plain="true" type="cancel">取消按钮</el-button>
   </span>
 </div>
 ```
@@ -188,7 +190,7 @@ Button 组件提供除了默认值以外的三种尺寸，可以在不同场景�
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
 | size     | 尺寸   | string  |   large,small,mini            |    —     |
-| type     | 类型   | string    |   primary,success,warning,danger,info,text |     —    |
+| type     | 类型   | string    |   primary,success,warning,danger,cancel,info,text |     —    |
 | plain     | 是否朴素按钮   | Boolean    | — | false   |
 | loading     | 是否加载中状态   | Boolean    | — | false   |
 | disabled  | 是否禁用状态    | boolean   | —   | false   |
