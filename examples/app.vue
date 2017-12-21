@@ -187,7 +187,7 @@
           const elm = document.querySelector(anchor[0]);
           if (!elm) return;
 
-          setTimeout(_ => {
+          setTimeout(() => {
             document.documentElement.scrollTop = document.body.scrollTop = elm.offsetTop + 120;
           }, 50);
         }
