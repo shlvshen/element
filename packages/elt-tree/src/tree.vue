@@ -26,15 +26,17 @@
         </div>
       </div>
     </el-collapse-transition>
-    <elt-tree-node
-      v-for="child in root.childNodes"
-      :node="child"
-      :props="props"
-      :key="getNodeKey(child)"
-      :render-content="renderContent"
-      :max-level="config.maxLevel"
-      @node-expand="handleNodeExpand">
-    </elt-tree-node>
+    <div class="el-tree__node-wrapper">
+      <elt-tree-node
+        v-for="child in root.childNodes"
+        :node="child"
+        :props="props"
+        :key="getNodeKey(child)"
+        :render-content="renderContent"
+        :max-level="config.maxLevel"
+        @node-expand="handleNodeExpand">
+      </elt-tree-node>
+    </div>
     <div class="el-tree__loading" v-if="!root.data">
         <div class="el-loading-mask">
           <div class="el-loading-spinner">

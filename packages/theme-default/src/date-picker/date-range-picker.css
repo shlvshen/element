@@ -38,9 +38,23 @@
         float: left;
       }
 
+      button[class~="addon"] {
+        float: right;
+        visibility: hidden;
+      }
+
+      .is-addon[class~="addon"] {
+        visibility: visible;
+      }
+
+      .is-addon[disabled] {
+        color: #cccccc;
+        cursor: not-allowed;
+      }
+
       div {
         font-size: 14px;
-        margin-right: 50px;
+        display: inline-block;
       }
     }
 
@@ -61,10 +75,10 @@
             float: right;
           }
 
-          div {
-            margin-left: 50px;
-            margin-right: 50px;
+          button[class~="addon"] {
+            float: left;
           }
+
         }
       }
     }

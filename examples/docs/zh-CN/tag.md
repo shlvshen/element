@@ -8,7 +8,8 @@
           { name: '标签三', type: 'info' },
           { name: '标签四', type: 'success' },
           { name: '标签五', type: 'warning' },
-          { name: '标签六', type: 'danger' }
+          { name: '标签六', type: 'danger' },
+          { name: '标签七', type: 'green' }
         ],
         dynamicTags: ['标签一', '标签二', '标签三'],
         inputVisible: false,
@@ -77,6 +78,7 @@
 <el-tag type="success">标签四</el-tag>
 <el-tag type="warning">标签五</el-tag>
 <el-tag type="danger">标签六</el-tag>
+<el-tag type="green">标签七</el-tag>
 ```
 :::
 
@@ -177,7 +179,7 @@
 ### Attributes
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
 |---------- |-------------- |---------- |--------------------------------  |-------- |
-| type | 主题 | string | gray/success/ warning/danger/info | — |
+| type | 主题 | string | gray/success/ warning/danger/info/green | — |
 | closable | 是否可关闭 | boolean | — | false |
 | close-transition | 是否禁用渐变动画 | boolean | — | false |
 | hit | 是否有边框描边 | boolean | — | false |

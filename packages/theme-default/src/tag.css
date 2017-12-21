@@ -36,7 +36,7 @@
       } */
     }
 
-    @each $type in (gray, success, warning, danger, info) {
+    @each $type in (gray, success, warning, danger, info, green) {
       &.el-tag--$(type) {
         background-color: var(--tag-$(type)-fill);
         border-color: var(--tag-$(type)-border);

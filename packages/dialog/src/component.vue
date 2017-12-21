@@ -5,8 +5,9 @@
         class="el-dialog"
         :class="[sizeClass, customClass]"
         ref="dialog"
-        :style="style">
-        <div class="el-dialog__header">
+        :style="style"
+      >
+        <div class="el-dialog__header" ref="header">
           <slot name="title">
             <span class="el-dialog__title">{{title}}</span>
           </slot>
@@ -25,121 +26,181 @@
 </template>
 
 <script>
-  import Popup from 'thx-knight/src/utils/popup';
-  import Emitter from 'thx-knight/src/mixins/emitter';
+import Popup from "thx-knight/src/utils/popup";
+import Emitter from "thx-knight/src/mixins/emitter";
 
-  export default {
-    name: 'ElDialog',
+function initData() {
+  return {
+    isDragging: false,
+    dialogOriginLeft: 0,
+    dialogOriginTop: 0,
+    mouseOriginX: 0,
+    mouseOriginY: 0,
+  }
+}
 
-    mixins: [Popup, Emitter],
+function initDraggable() {
+  const wrapper = this.$el
+  const dlg = this.$refs.dialog
+  const header = this.$refs.header
+  header.onmousedown = (ev) => {
+    if (!this.draggable || ev.button !== 0) {
+      return
+    }
 
-    props: {
-      title: {
-        type: String,
-        default: ''
-      },
+    this.isDragging = true
+    header.classList.add('is-dragging')
+    this.dialogOriginLeft = dlg.offsetLeft
+    this.dialogOriginTop = dlg.offsetTop
+    this.mouseOriginX = ev.clientX
+    this.mouseOriginY = ev.clientY
+  }
 
-      modal: {
-        type: Boolean,
-        default: true
-      },
-  
-      modalAppendToBody: {
-        type: Boolean,
-        default: true
-      },
+  wrapper.onmousemove = (ev) => {
+    if (!this.draggable || !this.isDragging) {
+      return
+    }
+    const style = dlg.style
+    style.left = this.dialogOriginLeft + ev.clientX - this.mouseOriginX + 'px'
+    style.top = this.dialogOriginTop + ev.clientY - this.mouseOriginY + 'px'
+  }
 
-      lockScroll: {
-        type: Boolean,
-        default: true
-      },
+  wrapper.onmouseup = (ev) => {
+    if (!this.draggable || !this.isDragging) {
+      return
+    }
 
-      closeOnClickModal: {
-        type: Boolean,
-        default: true
-      },
+    this.isDragging = false
+    header.classList.remove('is-dragging')
+  }
+}
 
-      closeOnPressEscape: {
-        type: Boolean,
-        default: true
-      },
+export default {
+  name: "ElDialog",
 
-      showClose: {
-        type: Boolean,
-        default: true
-      },
+  mixins: [Popup, Emitter],
 
-      size: {
-        type: String,
-        default: 'small'
-      },
+  data: initData,
 
-      customClass: {
-        type: String,
-        default: ''
-      },
-
-      top: {
-        type: String,
-        default: '15%'
-      },
-      beforeClose: Function
+  props: {
+    title: {
+      type: String,
+      default: ""
     },
 
-    watch: {
-      visible(val) {
-        this.$emit('update:visible', val);
-        if (val) {
-          this.$emit('open');
-          this.$el.addEventListener('scroll', this.updatePopper);
-          this.$nextTick(() => {
-            this.$refs.dialog.scrollTop = 0;
-          });
-        } else {
-          this.$el.removeEventListener('scroll', this.updatePopper);
-          this.$emit('close');
-        }
-      }
+    modal: {
+      type: Boolean,
+      default: true
     },
 
-    computed: {
-      sizeClass() {
-        return `el-dialog--${ this.size }`;
-      },
-      style() {
-        return this.size === 'full' ? {} : { 'top': this.top };
-      }
+    /** 
+     * 是否可以拖动 
+     */
+    draggable: {
+      type: Boolean,
+      default: false,
     },
 
-    methods: {
-      handleWrapperClick() {
-        if (!this.closeOnClickModal) return;
-        this.handleClose();
-      },
-      handleClose() {
-        if (typeof this.beforeClose === 'function') {
-          this.beforeClose(this.hide);
-        } else {
-          this.hide();
-        }
-      },
-      hide(cancel) {
-        if (cancel !== false) {
-          this.$emit('update:visible', false);
-          this.$emit('visible-change', false);
-        }
-      },
-      updatePopper() {
-        this.broadcast('ElSelectDropdown', 'updatePopper');
-        this.broadcast('ElDropdownMenu', 'updatePopper');
-      }
+    modalAppendToBody: {
+      type: Boolean,
+      default: true
     },
 
-    mounted() {
-      if (this.visible) {
-        this.rendered = true;
-        this.open();
+    lockScroll: {
+      type: Boolean,
+      default: true
+    },
+
+    closeOnClickModal: {
+      type: Boolean,
+      default: true
+    },
+
+    closeOnPressEscape: {
+      type: Boolean,
+      default: true
+    },
+
+    showClose: {
+      type: Boolean,
+      default: true
+    },
+
+    size: {
+      type: String,
+      default: "small"
+    },
+
+    customClass: {
+      type: String,
+      default: ""
+    },
+
+    top: {
+      type: String,
+      default: "15%"
+    },
+    beforeClose: Function
+  },
+
+  watch: {
+    visible(val) {
+      this.$emit("update:visible", val);
+      if (val) {
+        this.$emit("open");
+        this.$el.addEventListener("scroll", this.updatePopper);
+        this.$nextTick(() => {
+          this.$refs.dialog.scrollTop = 0;
+        });
+      } else {
+        this.$el.removeEventListener("scroll", this.updatePopper);
+        this.$emit("close");
       }
     }
-  };
+  },
+
+  computed: {
+    sizeClass() {
+      return `el-dialog--${this.size}`;
+    },
+    style() {
+      return this.size === "full" ? {} : { top: this.top };
+    }
+  },
+
+  methods: {
+    handleWrapperClick() {
+      if (!this.closeOnClickModal) return;
+      this.handleClose();
+    },
+    handleClose() {
+      if (typeof this.beforeClose === "function") {
+        this.beforeClose(this.hide);
+      } else {
+        this.hide();
+      }
+    },
+    hide(cancel) {
+      if (cancel !== false) {
+        this.$emit("update:visible", false);
+        this.$emit("visible-change", false);
+      }
+    },
+    updatePopper() {
+      this.broadcast("ElSelectDropdown", "updatePopper");
+      this.broadcast("ElDropdownMenu", "updatePopper");
+    },
+    initData,
+    initDraggable,
+  },
+
+  mounted() {
+    if (this.visible) {
+      this.rendered = true;
+      this.open();
+    }
+
+    this.initDraggable()
+  }
+};
 </script>

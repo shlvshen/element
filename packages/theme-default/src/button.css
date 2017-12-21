@@ -122,6 +122,7 @@
     @m danger {
       @mixin button-variant var(--button-danger-color), var(--button-danger-fill), var(--button-danger-border);
     }
+
     @m info {
       @mixin button-variant var(--button-info-color), var(--button-info-fill), var(--button-info-border);
     }

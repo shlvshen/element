@@ -89,10 +89,26 @@
                 @click="prevMonth"
                 class="el-picker-panel__icon-btn el-icon-arrow-left"></button>
               <div>{{ leftLabel }}</div>
+              <button
+                type="button"
+                class="el-picker-panel__icon-btn el-icon-d-arrow-right addon"
+                :class="{ 'is-addon': unlinkPanels }"
+                @click="leftNextYear"
+                :disabled="!canYearChange"
+              >
+              </button>
+              <button
+                type="button"
+                class="el-picker-panel__icon-btn el-icon-arrow-right addon"
+                :class="{ 'is-addon': unlinkPanels }"
+                @click="leftNextMonth"
+                :disabled="!canMonthChange"
+              >
+              </button>
             </div>
             <date-table
               selection-mode="range"
-              :date="date"
+              :date="leftDate"
               :year="leftYear"
               :month="leftMonth"
               :min-date="minDate"
@@ -115,6 +131,22 @@
                 @click="nextMonth"
                 class="el-picker-panel__icon-btn el-icon-arrow-right"></button>
               <div>{{ rightLabel }}</div>
+              <button
+                type="button"
+                class="el-picker-panel__icon-btn el-icon-d-arrow-left addon"
+                :class="{ 'is-addon': unlinkPanels }"
+                @click="rightPrevYear"
+                :disabled="!canYearChange"
+              >
+              </button>
+              <button
+                type="button"
+                class="el-picker-panel__icon-btn el-icon-arrow-left addon"
+                :class="{ 'is-addon': unlinkPanels }"
+                @click="rightPrevMonth"
+                :disabled="!canMonthChange"
+              >
+              </button>
             </div>
             <date-table
               selection-mode="range"
@@ -153,6 +185,23 @@
   import DateTable from '../basic/date-table';
   import ElInput from 'thx-knight/packages/input';
 
+  /**
+   * 根据左边panel的日期创建右边的日期
+   */
+  function createRightDate(date) {
+    const newDate = new Date(date);
+    const month = newDate.getMonth();
+    newDate.setDate(1);
+
+    if (month === 11) {
+      newDate.setFullYear(newDate.getFullYear() + 1);
+      newDate.setMonth(0);
+    } else {
+      newDate.setMonth(month + 1);
+    }
+    return newDate;
+  }
+
   export default {
     mixins: [Locale],
 
@@ -162,7 +211,7 @@
       },
 
       leftLabel() {
-        return this.date.getFullYear() + ' ' + this.t('el.datepicker.year') + ' ' + this.t(`el.datepicker.month${ this.date.getMonth() + 1 }`);
+        return this.leftDate.getFullYear() + ' ' + this.t('el.datepicker.year') + ' ' + this.t(`el.datepicker.month${ this.leftDate.getMonth() + 1 }`);
       },
 
       rightLabel() {
@@ -170,11 +219,11 @@
       },
 
       leftYear() {
-        return this.date.getFullYear();
+        return this.leftDate.getFullYear();
       },
 
       leftMonth() {
-        return this.date.getMonth();
+        return this.leftDate.getMonth();
       },
 
       rightYear() {
@@ -201,19 +250,16 @@
         return (this.maxDate || this.minDate) ? formatDate(this.maxDate || this.minDate, 'HH:mm:ss') : '';
       },
 
-      rightDate() {
-        const newDate = new Date(this.date);
-        const month = newDate.getMonth();
-        newDate.setDate(1);
+      canMonthChange() {
+        const next = nextMonth(new Date(this.leftDate));
+        return this.rightDate > next;
+      },
 
-        if (month === 11) {
-          newDate.setFullYear(newDate.getFullYear() + 1);
-          newDate.setMonth(0);
-        } else {
-          newDate.setMonth(month + 1);
-        }
-        return newDate;
-      }
+      canYearChange() {
+        const next = new Date(this.leftDate);
+        next.setFullYear(next.getFullYear() + 1);
+        return this.rightDate > next;
+      },
     },
 
     data() {
@@ -221,7 +267,8 @@
         popperClass: '',
         minPickerWidth: 0,
         maxPickerWidth: 0,
-        date: new Date(),
+        leftDate: new Date(),
+        rightDate: createRightDate(new Date()),
         minDate: '',
         maxDate: '',
         rangeState: {
@@ -238,7 +285,8 @@
         firstDayOfWeek: 7,
         minTimePickerVisible: false,
         maxTimePickerVisible: false,
-        width: 0
+        width: 0,
+        unlinkPanels: false,
       };
     },
 
@@ -287,10 +335,11 @@
         } else if (Array.isArray(newVal)) {
           this.minDate = newVal[0] ? toDate(newVal[0]) : null;
           this.maxDate = newVal[1] ? toDate(newVal[1]) : null;
-          if (this.minDate) this.date = new Date(this.minDate);
+          if (this.minDate) this.leftDate = new Date(this.minDate);
+          if (this.maxDate) this.rightDate = new Date(this.maxDate);
           this.handleConfirm(true);
         }
-      }
+      },
     },
 
     methods: {
@@ -383,7 +432,8 @@
       },
 
       changeToToday() {
-        this.date = new Date();
+        this.leftDate = new Date();
+        this.rightDate = createRightDate(new Date());
       },
 
       handleShortcutClick(shortcut) {
@@ -437,22 +487,70 @@
       },
 
       prevMonth() {
-        this.date = prevMonth(this.date);
+        this.leftDate = prevMonth(this.leftDate);
+
+        if (!this.unlinkPanels) {
+          this.rightDate = prevMonth(this.rightDate);
+        }
       },
 
       nextMonth() {
-        this.date = nextMonth(this.date);
+        this.rightDate = nextMonth(this.rightDate);
+
+        if (!this.unlinkPanels) {
+          this.leftDate = nextMonth(this.leftDate);
+        }
       },
 
       nextYear() {
-        const date = this.date;
-        date.setFullYear(date.getFullYear() + 1);
+        if (!this.unlinkPanels) {
+          const leftDate = this.leftDate;
+          leftDate.setFullYear(leftDate.getFullYear() + 1);
+        }
+
+        const rightDate = this.rightDate;
+        rightDate.setFullYear(rightDate.getFullYear() + 1);
+  
         this.resetDate();
       },
 
       prevYear() {
-        const date = this.date;
-        date.setFullYear(date.getFullYear() - 1);
+        const leftDate = this.leftDate;
+        leftDate.setFullYear(leftDate.getFullYear() - 1);
+
+        if (!this.unlinkPanels) {
+          const rightDate = this.rightDate;
+          rightDate.setFullYear(rightDate.getFullYear() - 1);
+        }
+
+        this.resetDate();
+      },
+
+      leftNextMonth() {
+        if (!this.unlinkPanels) return;
+
+        this.leftDate = nextMonth(this.leftDate);
+      },
+
+      leftNextYear() {
+        if (!this.unlinkPanels) return;
+        
+        const leftDate = this.leftDate;
+        leftDate.setFullYear(leftDate.getFullYear() + 1);
+        this.resetDate();
+      },
+
+      rightPrevMonth() {
+        if (!this.unlinkPanels) return;
+
+        this.rightDate = prevMonth(this.rightDate)
+      },
+
+      rightPrevYear() {
+        if (!this.unlinkPanels) return;
+
+        const rightDate = this.rightDate;
+        rightDate.setFullYear(rightDate.getFullYear() - 1);
         this.resetDate();
       },
 
@@ -461,10 +559,12 @@
       },
 
       resetDate() {
-        this.date = new Date(this.date);
-      }
+        this.leftDate = new Date(this.leftDate);
+        this.rightDate = new Date(this.rightDate);
+      },
+
     },
 
-    components: { TimePicker, DateTable, ElInput }
+    components: { TimePicker, DateTable, ElInput },
   };
 </script>

@@ -223,7 +223,11 @@ export default {
     rangeSeparator: {
       default: ' - '
     },
-    pickerOptions: {}
+    pickerOptions: {},
+    unlinkPanels: {
+      type: Boolean,
+      default: true,
+    }
   },
 
   components: { ElInput },
@@ -453,6 +457,7 @@ export default {
       this.picker.width = this.reference.getBoundingClientRect().width;
       this.picker.showTime = this.type === 'datetime' || this.type === 'datetimerange';
       this.picker.selectionMode = this.selectionMode;
+      this.picker.unlinkPanels = this.unlinkPanels
       if (this.format) {
         this.picker.format = this.format;
       }
