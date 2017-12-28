@@ -20,7 +20,7 @@
       type: String,
       hit: Boolean,
       closeTransition: Boolean,
-      color: String
+      color: String,
     },
     methods: {
       handleClose(event) {

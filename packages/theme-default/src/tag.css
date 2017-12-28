@@ -47,6 +47,15 @@
       }
     }
 
+    @each $type in (green, blue, orange, red) {
+      &.el-tag--plain-$(type) {
+        background: var(--tag-plain-$(type)-fill);
+        border-color: var(--tag-plain-$(type)-border);
+        color: var(--tag-plain-$(type)-color);
+      }
+    }
+
+
     /* @m gray {
       background-color: var(--tag-gray-fill);
       border-color: var(--tag-gray-border);

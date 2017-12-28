@@ -522,7 +522,7 @@
 
       /* Tag
       -------------------------- */
-      --tag-padding: 0 5px;
+      --tag-padding: 0 10px 0 10px;
       --tag-fill: var(--color-base-black);
       --tag-color: var(--color-white);
       --tag-close-color: var(--color-white);
@@ -556,6 +556,22 @@
       --tag-green-fill: var(--color-green);
       --tag-green-border: var(--color-green);
       --tag-green-color: var(--color-white);
+
+      --tag-plain-green-fill: #e9f8f5;
+      --tag-plain-green-border: #bbebe1;
+      --tag-plain-green-color: #314a5d;
+
+      --tag-plain-blue-fill: #ebf5ff;
+      --tag-plain-blue-border: #c2e1ff;
+      --tag-plain-blue-color: #314a5d;
+
+      --tag-plain-orange-fill: #fef5e8;
+      --tag-plain-orange-border: #f8cac5;
+      --tag-plain-orange-color: #314a5d;
+
+      --tag-plain-red-fill: #fdedec;
+      --tag-plain-red-border: #f8cac5;
+      --tag-plain-red-color: #314a5d;
 
       /* Dropdown
       -------------------------- */
