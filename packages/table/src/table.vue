@@ -432,7 +432,7 @@
 
         if (this.maxHeight) {
           style = {
-            bottom: (this.layout.scrollX && this.data.length) ? this.layout.gutterWidth + 'px' : ''
+            bottom: (this.layout.scrollX && this.data && this.data.length) ? this.layout.gutterWidth + 'px' : ''
           };
         } else {
           style = {

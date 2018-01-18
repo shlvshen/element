@@ -703,6 +703,7 @@
     <p>loading</p>
     <el-table
         :data="tableData9"
+        max-height="200"
         style="width: 100%">
         <el-table-column
           prop="date"
