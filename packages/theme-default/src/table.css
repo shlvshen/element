@@ -313,6 +313,11 @@
       top: 37px;
       overflow: hidden;
       z-index: 3;
+
+      .el-table__expanded-cell {
+        visibility: hidden;
+        background: red;
+      }
     }
 
     @e header-wrapper, body-wrapper, footer-wrapper {
@@ -351,6 +356,11 @@
     @e body-wrapper {
       overflow: auto;
       position: relative;
+
+      .el-table__expanded-cell {
+        z-index: 999;
+        background: inherit;
+      }
     }
 
     & th.required > div::before {
