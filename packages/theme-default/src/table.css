@@ -316,7 +316,6 @@
 
       .el-table__expanded-cell {
         visibility: hidden;
-        background: red;
       }
     }
 
