@@ -344,7 +344,9 @@ export default {
       };
 
       column.renderCell = function(h, data) {
-        return <div class="cell">{ renderCell(h, data, this._renderProxy) }</div>;
+        if (!data.row.unExpandable) {
+          return <div class="cell">{ renderCell(h, data, this._renderProxy) }</div>;
+        }
       };
 
       return;
