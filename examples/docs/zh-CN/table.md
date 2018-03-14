@@ -7,16 +7,16 @@
           code: 'EFG12312424',
           name: '配件',
       })
-      tableData12.fill({
+      tableData12.fill(
+        {
           code: 'ABC123456',
           name: '把手',
           sub: [
-      {
-          code: 'EFG12312424',
-          name: '配件',
-      }
-          ],
-      })
+            {
+              code: 'EFG12312424',
+              name: '配件',
+            }],
+        })
       return {
         placeholder: '请输入222',
         options: [
@@ -575,6 +575,16 @@
 
       deleteRow(index, rows) {
         rows.splice(index, 1);
+      },
+
+      arraySpanMethod({ row, column, rowIndex, columnIndex }) {
+        if (rowIndex % 2 === 0) {
+          if (columnIndex === 0) {
+            return [1, 2];
+          } else if (columnIndex === 1) {
+            return [0, 0];
+          }
+        }
       }
     },
 
@@ -2293,20 +2303,16 @@
 ```
 :::
 
-### 表格某列跨行展示
-用于td的跨行展示。
+### 合并行或列
+多行或多列共用一个数据时，可以合并行或列。
 :::demo 2
 
 ```html
   <template>
     <el-table
+      border
       :data="tableData5"
-      style="width: 100%"
-      :row-spans="[{keyIndex:'12987122',id2:2}]"
-      row-span-key="id"
-      @cell-click=handelCellClick>
-      <el-table-column label="#" prop="id2">
-      </el-table-column>
+      :span-method="arraySpanMethod">
       <el-table-column
         label="商品 ID"
         prop="id">

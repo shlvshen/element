@@ -258,7 +258,9 @@
 
       size: String,
 
-      accordion: Boolean
+      accordion: Boolean,
+
+      spanMethod: Function
     },
 
     components: {
