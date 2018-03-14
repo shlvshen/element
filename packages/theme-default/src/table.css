@@ -38,6 +38,10 @@
       z-index: 1;
     }
 
+    & .el-table__header-wrapper {
+      background-color: var(--table-header-background) !important;
+    }
+
     /* size */
     @each $size in (small) {
       &.el-table--$(size) {
@@ -216,6 +220,10 @@
 
     @modifier hidden {
       visibility: hidden;
+    }
+  
+    & thead tr {
+      background-color: var(--table-header-background) !important;
     }
 
     & th {
