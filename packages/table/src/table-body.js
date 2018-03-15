@@ -72,49 +72,21 @@ export default {
                     if (!rowspan || !colspan) {
                       return '';
                     } else {
-                      if (rowspan === 1 && colspan === 1) {
-                        return (
-                          <td
-                            class={ [column.id, column.align, column.className || '', columnsHidden[cellIndex] ? 'is-hidden' : '' ] }
-                            on-mouseenter={ ($event) => this.handleCellMouseEnter($event, row) }
-                            on-mouseleave={ this.handleCellMouseLeave }
-                            rowspan = {this.getRowSpan(row, $index, column, cellIndex)}
-                            style={ this.getColumnStyle(row, $index, column, cellIndex)}>
-                            {
-                              column.renderCell.call(this._renderProxy, h, { row, column, $index, store: this.store, _self: this.context || this.table.$vnode.context }, columnsHidden[cellIndex])
-                            }
-                          </td>
-                        )
-                      } else {
-                        return (
-                          <td
-                            class={ [column.id, column.align, column.className || '', columnsHidden[cellIndex] ? 'is-hidden' : '' ] }
-                            rowspan={ rowspan }
-                            colspan={ colspan }
-                            on-mouseenter={ ($event) => this.handleCellMouseEnter($event, row) }
-                            on-mouseleave={ this.handleCellMouseLeave }
-                            rowspan = {this.getRowSpan(row, $index, column, cellIndex)}
-                            style={ this.getColumnStyle(row, $index, column, cellIndex)}>
-                            {
-                              column.renderCell.call(this._renderProxy, h, { row, column, $index, store: this.store, _self: this.context || this.table.$vnode.context }, columnsHidden[cellIndex])
-                            }
-                          </td>
-                        )
-                      }
+                      return (
+                        <td
+                          class={ [column.id, column.align, column.className || '', columnsHidden[cellIndex] ? 'is-hidden' : '' ] }
+                          on-mouseenter={ ($event) => this.handleCellMouseEnter($event, row) }
+                          on-mouseleave={ this.handleCellMouseLeave }
+                          rowspan={ rowspan }
+                          colspan={ colspan }
+                          style={ this.getColumnStyle(row, $index, column, cellIndex)}>
+                          {
+                            column.renderCell.call(this._renderProxy, h, { row, column, $index, store: this.store, _self: this.context || this.table.$vnode.context }, columnsHidden[cellIndex])
+                          }
+                        </td>
+                      )
                     }
                   })
-                  /*this._l(this.columns, (column, cellIndex) =>
-                    <td
-                      class={ [column.id, column.align, column.className || '', columnsHidden[cellIndex] ? 'is-hidden' : '' ] }
-                      on-mouseenter={ ($event) => this.handleCellMouseEnter($event, row) }
-                      on-mouseleave={ this.handleCellMouseLeave }
-                      rowspan = {this.getRowSpan(row, $index, column, cellIndex)}
-                      style={ this.getColumnStyle(row, $index, column, cellIndex)}>
-                      {
-                        column.renderCell.call(this._renderProxy, h, { row, column, $index, store: this.store, _self: this.context || this.table.$vnode.context }, columnsHidden[cellIndex])
-                      }
-                    </td>
-                  )*/
                 }
                 {
                   !this.fixed && this.layout.scrollY && this.layout.gutterWidth ? <td class="gutter" /> : ''

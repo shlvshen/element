@@ -585,6 +585,22 @@
             return [0, 0];
           }
         }
+      },
+
+      objectSpanMethod({ row, column, rowIndex, columnIndex }) {
+        if (columnIndex === 0) {
+          if (rowIndex % 2 === 0) {
+            return {
+              rowspan: 2,
+              colspan: 1
+            };
+          } else {
+            return {
+              rowspan: 0,
+              colspan: 0
+            };
+          }
+        }
       }
     },
 
@@ -2309,10 +2325,29 @@
 
 ```html
   <template>
+    <p>合并行</p>
     <el-table
       border
       :data="tableData5"
       :span-method="arraySpanMethod">
+      <el-table-column
+        label="商品 ID"
+        prop="id">
+      </el-table-column>
+      <el-table-column
+        label="商品名称"
+        prop="name">
+      </el-table-column>
+      <el-table-column
+        label="描述"
+        prop="desc">
+      </el-table-column>
+    </el-table>
+    <p>合并列</p>
+    <el-table
+      border
+      :data="tableData5"
+      :span-method="objectSpanMethod">
       <el-table-column
         label="商品 ID"
         prop="id">
@@ -2332,11 +2367,69 @@
     export default {
       data() {
         return {
-
+          tableData5: [
+            {
+              id: '12987122',
+              name: '好滋好味鸡蛋仔',
+              category: '江浙小吃、小吃零食',
+              desc: '荷兰优质淡奶，奶香浓而不腻',
+              address: '上海市普陀区真北路',
+              shop: '王小虎夫妻店',
+              shopId: '10333'
+            }, {
+              id: '12987123',
+              name: '好滋好味鸡蛋仔',
+              category: '江浙小吃、小吃零食',
+              desc: '荷兰优质淡奶，奶香浓而不腻',
+              address: '上海市普陀区真北路',
+              shop: '王小虎夫妻店',
+              shopId: '10333'
+            }, {
+              id: '12987125',
+              name: '好滋好味鸡蛋仔',
+              category: '江浙小吃、小吃零食',
+              desc: '荷兰优质淡奶，奶香浓而不腻',
+              address: '上海市普陀区真北路',
+              shop: '王小虎夫妻店',
+              shopId: '10333'
+            }, {
+              id: '12987126',
+              name: '好滋好味鸡蛋仔',
+              category: '江浙小吃、小吃零食',
+              desc: '荷兰优质淡奶，奶香浓而不腻',
+              address: '上海市普陀区真北路',
+              shop: '王小虎夫妻店',
+              shopId: '10333'
+            }
+          ]
         }
       },
       methods: {
+        arraySpanMethod({ row, column, rowIndex, columnIndex }) {
+          if (rowIndex % 2 === 0) {
+            if (columnIndex === 0) {
+              return [1, 2];
+            } else if (columnIndex === 1) {
+              return [0, 0];
+            }
+          }
+        },
 
+        objectSpanMethod({ row, column, rowIndex, columnIndex }) {
+          if (columnIndex === 0) {
+            if (rowIndex % 2 === 0) {
+              return {
+                rowspan: 2,
+                colspan: 1
+              };
+            } else {
+              return {
+                rowspan: 0,
+                colspan: 0
+              };
+            }
+          }
+        }
       }
     }
   </script>
