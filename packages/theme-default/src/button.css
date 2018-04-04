@@ -133,10 +133,10 @@
       @mixin button-size var(--button-large-padding-vertical), var(--button-large-padding-horizontal), var(--button-large-font-size), var(--button-large-border-radius), var(--button-large-line-height);
     }
     @m small {
-      @mixin button-size var(--button-small-padding-vertical), var(--button-small-padding-horizontal), var(--button-small-font-size), var(--button-border-radius), var(--button-small-line-height);
+      @mixin button-size var(--button-small-padding-vertical), var(--button-small-padding-horizontal), var(--button-small-font-size), var(--button-border-radius), var(--button-small-line-height), var(--button-small-min-width);
     }
     @m mini {
-      @mixin button-size var(--button-mini-padding-vertical), var(--button-mini-padding-horizontal), var(--button-mini-font-size), var(--button-mini-border-radius), var(--button-mini-line-height);
+      @mixin button-size var(--button-mini-padding-vertical), var(--button-mini-padding-horizontal), var(--button-mini-font-size), var(--button-mini-border-radius), var(--button-mini-line-height), var(--button-mini-min-width);
     }
     @m text {
       border: none;

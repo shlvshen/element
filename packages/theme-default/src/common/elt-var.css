@@ -376,11 +376,13 @@
       --button-small-padding-vertical: 6px;
       --button-small-padding-horizontal: 9px;
       --button-small-line-height: 1.385;
+      --button-small-min-width: 90px;
 
       --button-mini-font-size: 12px;
       --button-mini-padding-vertical: 5px;
       --button-mini-padding-horizontal: 9px;
       --button-mini-line-height: 1.083;
+      --button-mini-min-width: 70px;
       --button-mini-border-radius: 3px;
 
       --button-default-color: var(--color-base-black);
