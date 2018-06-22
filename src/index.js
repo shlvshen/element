@@ -25,6 +25,7 @@ import OptionGroup from '../packages/option-group/index.js';
 import Button from '../packages/button/index.js';
 import ButtonGroup from '../packages/button-group/index.js';
 import Table from '../packages/table/index.js';
+import Table2 from '../packages/table2/index.js';
 import TableColumn from '../packages/table-column/index.js';
 import DatePicker from '../packages/date-picker/index.js';
 import TimeSelect from '../packages/time-select/index.js';
@@ -94,6 +95,7 @@ const components = [
   Button,
   ButtonGroup,
   Table,
+  Table2,
   TableColumn,
   DatePicker,
   TimeSelect,
@@ -191,6 +193,7 @@ module.exports = {
   Button,
   ButtonGroup,
   Table,
+  Table2,
   TableColumn,
   DatePicker,
   TimeSelect,

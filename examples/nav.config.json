@@ -152,6 +152,10 @@
               "title": "Table 表格"
             },
             {
+              "path": "/table2",
+              "title": "Table2 表格2号"
+            },
+            {
               "path": "/tag",
               "title": "Tag 标签"
             },
