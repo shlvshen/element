@@ -1,0 +1,46 @@
+table {
+    border-collapse: collapse !important;
+}
+
+.el-table2 {
+    border: 0;
+    background: none;
+}
+
+.el-table2 tbody > td {
+    height: 90px;
+}
+
+.el-table2 .el-table-container,
+.el-table2 .el-table-container > tbody,
+.el-table2 .el-table-container > tbody > tr,
+.el-table2 .el-table-container > tbody > tr > td {
+    background: none;
+    border: 0px;
+    box-sizing: border-box;
+}
+
+.el-table2 .el-table-container > tbody > tr:hover > td {
+    background: none !important;
+}
+
+.el-table-row {
+    margin-top: 15px;
+}
+
+.el-table-row thead tr,
+.el-table-row thead tr th,
+.el-table-row thead tr th .cell {
+    background: #ecf0f1 !important;
+    color: #34495e !important;
+}
+
+.el-table-row thead tr th,
+.el-table-row tbody tr td {
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.el-table-row tbody tr td {
+    height: 90px;
+}
