@@ -2,8 +2,6 @@
     export default {
         data() {
             return {
-                nulla: null,
-                nullArray: [],
                 tableData: [
                     {
                         date: '2016-05-03',
@@ -113,7 +111,7 @@
 <template>
     <div>
         <el-table2
-            :data="nulla"
+            :data="tableData"
             :column-config="columnConfig"
             style="width: 100%">
             <div
