@@ -1,12 +1,12 @@
 <template>
-    <div class="el-table el-table2">
+    <div>
         <table 
             cellspacing="0"
             cellpadding="0"
             border="0"
             width="100%"
-            class="el-table-container">
-            <thead>
+            class="el-table2">
+            <thead class="thead-dark">
                 <tr>
                     <th v-if="expandable" width="40"></th>
                     <th 
@@ -23,14 +23,16 @@
             <tbody>
                 <tr 
                     v-for="(item, index) in data"
-                    :key="item.id">
+                    :key="item.id"
+                    class="tr-first">
                     <td colspan="999" :class="{'active': item.isExpand}">
-                        <div class="el-table-row">
+                        <div class="table-row">
                             <table 
                                 cellspacing="0"
                                 cellpadding="0"
                                 border="0"
-                                width="100%">
+                                width="100%"
+                                class="table-sub">
                                 <thead>
                                     <tr>
                                         <th colspan="999">
@@ -69,8 +71,10 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <div v-if="expandable && item.isExpand" class="expand-con">
-                                afdsafasfe法法师沙发上分为二位二位
+                            <div 
+                                v-if="expandable && item.isExpand"
+                                class="expand-con">
+                                <slot :name="'expand' + index"></slot>
                             </div>
                         </div>
                     </td>

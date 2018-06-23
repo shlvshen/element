@@ -1,14 +1,64 @@
 table {
     border-collapse: collapse !important;
 }
+.el-table2 {
+    font-size: 14px;
+}
+.el-table2 th {
+    font-weight: lighter;
+    text-align: left;
+}
+.el-table2 td {
+    border: 1px solid #ddd;
+    padding: 0;
+}
+
+.el-table2 .thead-dark {
+    background: #34495e;
+    line-height: 40px;
+    color: #fff;
+}
+
+.el-table2 .cell {
+    padding: 0 10px;
+}
+
+.el-table2 .tr-first>td {
+    border: 0;
+}
+
+.el-table2 .table-row {
+    margin-top: 15px;
+    margin-left: -1px;
+}
+
+.table-sub > thead tr {
+    border: 1px solid #ddd;
+    height: 40px;
+    background: #ecf0f1;
+    color: #34495e;
+}
+
+.table-sub > tbody tr td {
+    height: 90px;
+}
+
+.table-sub > tbody tr:hover {
+    background: #EAF0F6;
+}
+
+/* table {
+    border-collapse: collapse !important;
+}
 
 .el-table2 {
     border: 0;
     background: none;
 }
 
-.el-table2 tbody > td {
+.el-table2 tbody td {
     height: 90px;
+    border: 1px solid #ddd;
 }
 
 .el-table2 .el-table-container,
@@ -39,10 +89,10 @@ table {
 
 .el-table-row tbody tr td {
     height: 90px;
-}
+} */
 
 /* 展开active */
-.el-table2 .active .el-table-row {
+/* .el-table2 .active .el-table-row {
     border: 2px solid #3399ff !important;
 }
 
@@ -55,8 +105,23 @@ table {
 }
 
 .el-table2 .active .el-table-row th,
-.el-table2 .active .el-table-row th * {
+.el-table2 .active .el-table-row th .cell{
     background: #3399ff !important;
     color: #fff !important;
     border-color: #3399ff;
+} */
+
+/* 扩展的表格样式 */
+/* .el-table2 .el-table-row .expand-con table tr th,
+.el-table2 .el-table-row .expand-con table tr th .cell {
+    height: 26px;
+    line-height: 26px;
+    color: #fff;
+    background: #88c4ff !important;
+    text-align: center;
+    border: 0;
 }
+
+.el-table2 .el-table-row .expand-con table tr td {
+    height: 45px;
+} */

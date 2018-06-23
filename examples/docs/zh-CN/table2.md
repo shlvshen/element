@@ -24,6 +24,44 @@
                         remark: '备注2'
                     }
                 ],
+                tableData2: [
+                    {
+                        date: '2016-05-03',
+                        name: '王小虎',
+                        gender: '男',
+                        province: '上海',
+                        city: '普陀区',
+                        address: '上海市普陀区金沙江路 1518 弄',
+                        tag: '家',
+                        remark: '备注1',
+                        detail: [
+                            {
+                                color: '红色',
+                                food: '西瓜'
+                            },
+                            {
+                                color: '白色',
+                                food: '糖'
+                            }
+                        ]
+                    },
+                    {
+                        date: '2016-05-04',
+                        name: '王小跳',
+                        gender: '女',
+                        province: '上海',
+                        city: '浦东新区',
+                        address: '上海市浦东新区江路 1518 弄',
+                        tag: '公司',
+                        remark: '备注2',
+                        detail: [
+                            {
+                                color: '黄色',
+                                food: '草莓'
+                            }
+                        ]
+                    }
+                ],
                 columnConfig: [
                     {
                         label: '个人信息',
@@ -310,12 +348,12 @@
 <template>
     <div>
         <el-table2
-            :data="tableData"
+            :data="tableData2"
             :column-config="columnConfig2"
             expandable
             style="width: 100%">
             <div
-                v-for="(item, index) in tableData"
+                v-for="(item, index) in tableData2"
                 :key="item.id"
                 :slot="'th' + index">
                 <span style="padding-right: 10px;">{{ item.date }}</span>
@@ -323,14 +361,14 @@
             </div>
 
             <div
-                v-for="(item, index) in tableData"
+                v-for="(item, index) in tableData2"
                 :key="item.id"
                 :slot="'td' + index + '个人信息'">
                 <div>姓名：{{item.name}}</div>
                 <div>性别：{{item.gender}}</div>
             </div>
             <div
-                v-for="(item, index) in tableData"
+                v-for="(item, index) in tableData2"
                 :key="item.id"
                 :slot="'td' + index + '住址'">
                 <div>省：{{item.province}}</div>
@@ -338,10 +376,22 @@
                 <div>详细：{{item.address}}</div>
             </div>
             <div
-                v-for="(item, index) in tableData"
+                v-for="(item, index) in tableData2"
                 :key="item.id"
                 :slot="'td' + index + '备注'">
                 {{item.remark}}
+            </div>
+
+            <div
+                v-for="(item, index) in tableData2"
+                :key="item.id"
+                :slot="'expand' + index">
+                <el-table
+                    :data="item.detail"
+                    style="width: 100%;">
+                    <el-table-column prop="color" label="最喜欢的颜色" width="200"></el-table-column>
+                    <el-table-column prop="food" label="最喜欢的食物"></el-table-column>
+                </el-table>
             </div>
         </el-table2>
     </div>
@@ -366,6 +416,40 @@
                     },
                     {
                         label: '备注'
+                    }
+                ],
+                tableData2: [
+                    {
+                        date: '2016-05-03',
+                        name: '王小虎',
+                        gender: '男',
+                        province: '上海',
+                        city: '普陀区',
+                        address: '上海市普陀区金沙江路 1518 弄',
+                        tag: '家',
+                        remark: '备注1',
+                        detail: [
+                            {
+                                color: '红色',
+                                food: '西瓜'
+                            }
+                        ]
+                    },
+                    {
+                        date: '2016-05-04',
+                        name: '王小跳',
+                        gender: '女',
+                        province: '上海',
+                        city: '浦东新区',
+                        address: '上海市浦东新区江路 1518 弄',
+                        tag: '公司',
+                        remark: '备注2',
+                        detail: [
+                            {
+                                color: '红色',
+                                food: '西瓜'
+                            }
+                        ]
                     }
                 ]
             }
