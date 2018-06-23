@@ -32,96 +32,63 @@ table {
     margin-left: -1px;
 }
 
-.table-sub > thead tr {
+.el-table2 .table-row > table thead tr {
     border: 1px solid #ddd;
     height: 40px;
     background: #ecf0f1;
     color: #34495e;
 }
 
-.table-sub > tbody tr td {
+.el-table2 .table-row > table tbody tr td {
     height: 90px;
 }
 
-.table-sub > tbody tr:hover {
+.el-table2 .table-row > table tbody tr:hover {
     background: #EAF0F6;
 }
 
-/* table {
-    border-collapse: collapse !important;
+/* expand表格 */
+.el-table2 .expand-con {
+    margin-top: -1px;
 }
-
-.el-table2 {
+.el-table2 .expand-con table thead tr,
+.el-table2 .expand-con table thead tr th,
+.el-table2 .expand-con table thead div {
+    height: 26px;
+    line-height: 26px;
     border: 0;
-    background: none;
+    background: #88c4ff !important;
 }
 
-.el-table2 tbody td {
-    height: 90px;
-    border: 1px solid #ddd;
+.el-table2 .expand-con table tbody tr td {
+    height: 40px;
+    background: #ddedff;
+    border-left: 0;
 }
 
-.el-table2 .el-table-container,
-.el-table2 .el-table-container > tbody,
-.el-table2 .el-table-container > tbody > tr,
-.el-table2 .el-table-container > tbody > tr > td {
-    background: none;
-    border: 0px;
-    box-sizing: border-box;
+/* active */
+.el-table2 .active {
+    border: 2px solid #3399ff;
 }
 
-.el-table2 .el-table-container > tbody > tr:hover > td {
-    background: none !important;
+.el-table2 .active > table thead tr {
+    background: #3399ff;
+    color: #fff;
 }
 
-.el-table-row {
-    margin-top: 15px;
-    border: 1px solid #ddd;
-    border-bottom: 0;
-}
-
-.el-table-row thead tr,
-.el-table-row thead tr th,
-.el-table-row thead tr th .cell {
-    background: #ecf0f1 !important;
-    color: #34495e !important;
-}
-
-.el-table-row tbody tr td {
-    height: 90px;
-} */
-
-/* 展开active */
-/* .el-table2 .active .el-table-row {
-    border: 2px solid #3399ff !important;
-}
-
-.el-table2 .active .el-table-row table tbody tr {
+.el-table2 .active > table tbody {
     background: #ddedff;
 }
 
-.el-table2 .active .el-table-row .expand-con {
-    border-bottom: 1px solid #3399ff !important;
-}
-
-.el-table2 .active .el-table-row th,
-.el-table2 .active .el-table-row th .cell{
-    background: #3399ff !important;
-    color: #fff !important;
-    border-color: #3399ff;
-} */
-
-/* 扩展的表格样式 */
-/* .el-table2 .el-table-row .expand-con table tr th,
-.el-table2 .el-table-row .expand-con table tr th .cell {
-    height: 26px;
-    line-height: 26px;
-    color: #fff;
-    background: #88c4ff !important;
-    text-align: center;
+.el-table2 .active > table thead tr {
     border: 0;
 }
 
-.el-table2 .el-table-row .expand-con table tr td {
-    height: 45px;
-} */
+.el-table2 .active > table tbody td {
+    border-right: 0;
+}
+
+.el-table2 .active .expand-con table thead tr {
+    border: 0;
+}
+

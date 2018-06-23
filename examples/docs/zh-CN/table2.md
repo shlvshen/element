@@ -343,7 +343,7 @@
 
 可展开的表格用法
 
-:::demo 此处与基础表格不同的就是`el-table2`添加了一个配置项`optional`，该配置为`true`代表表格需要可选择，此功能未完善
+:::demo 添加了一个`slot`，name为`expand`
 ```html
 <template>
     <div>
@@ -432,6 +432,10 @@
                             {
                                 color: '红色',
                                 food: '西瓜'
+                            },
+                            {
+                                color: '黄色',
+                                food: '糖'
                             }
                         ]
                     },

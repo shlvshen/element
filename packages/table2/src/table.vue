@@ -25,14 +25,13 @@
                     v-for="(item, index) in data"
                     :key="item.id"
                     class="tr-first">
-                    <td colspan="999" :class="{'active': item.isExpand}">
-                        <div class="table-row">
+                    <td colspan="999">
+                        <div :class="{'active': item.isExpand, 'table-row': true}">
                             <table 
                                 cellspacing="0"
                                 cellpadding="0"
                                 border="0"
-                                width="100%"
-                                class="table-sub">
+                                width="100%">
                                 <thead>
                                     <tr>
                                         <th colspan="999">
