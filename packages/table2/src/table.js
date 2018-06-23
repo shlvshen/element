@@ -29,6 +29,10 @@ export default {
     },
     methods: {
         init() {
+            console.log(this.data);
+            if (!this.data) {
+                this.data = [{}];
+            }
             this.data.forEach(item => {
                 this.$set(item, 'isExpand', false);
             });

@@ -20,9 +20,8 @@
                     </th>
                 </tr>
             </thead>
-            <tbody>
-                <tr 
-                    v-for="(item, index) in data"
+            <tbody v-if="data && data.length > 0">
+                <tr v-for="(item, index) in data"
                     :key="item.id"
                     class="tr-first">
                     <td colspan="999">
@@ -80,6 +79,13 @@
                 </tr>
             </tbody>
         </table>
+        <div class="el-table2-no-data" v-if="data && data.length <= 0">暂无数据</div>
+        <div class="el-table2-loding" v-if="!data">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none"/>
+            </svg>
+            <p>正在加载中...</p>
+        </div>
     </div>
 </template>
 

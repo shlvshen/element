@@ -92,3 +92,37 @@ table {
     border: 0;
 }
 
+/* 特殊处理 */
+.el-table2-no-data {
+    text-align: center;
+    color: #999;
+    line-height: 60px;
+    border: 1px solid #ddd;
+}
+
+.el-table2-loding {
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 33px 0;
+}
+
+.el-table2-loding .circular {
+    width: 42px;
+    height: 42px;
+    animation: loading-rotate 2s linear infinite;
+}
+
+.el-table2-loding .path {
+    animation: loading-dash 1.5s ease-in-out infinite;
+    stroke-dasharray: 90,150;
+    stroke-dashoffset: 0;
+    stroke-width: 2;
+    stroke: #1abc9c;
+    stroke-linecap: round;
+}
+
+.el-table2-loding p {
+    font-size: 18px !important;
+    line-height: 1.722 !important;
+}
+
