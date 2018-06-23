@@ -26,6 +26,8 @@ table {
 
 .el-table-row {
     margin-top: 15px;
+    border: 1px solid #ddd;
+    border-bottom: 0;
 }
 
 .el-table-row thead tr,
@@ -35,12 +37,26 @@ table {
     color: #34495e !important;
 }
 
-.el-table-row thead tr th,
-.el-table-row tbody tr td {
-    border: 1px solid #ddd;
-    box-sizing: border-box;
-}
-
 .el-table-row tbody tr td {
     height: 90px;
+}
+
+/* 展开active */
+.el-table2 .active .el-table-row {
+    border: 2px solid #3399ff !important;
+}
+
+.el-table2 .active .el-table-row table tbody tr {
+    background: #ddedff;
+}
+
+.el-table2 .active .el-table-row .expand-con {
+    border-bottom: 1px solid #3399ff !important;
+}
+
+.el-table2 .active .el-table-row th,
+.el-table2 .active .el-table-row th * {
+    background: #3399ff !important;
+    color: #fff !important;
+    border-color: #3399ff;
 }

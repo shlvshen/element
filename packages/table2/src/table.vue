@@ -8,11 +8,15 @@
             class="el-table-container">
             <thead>
                 <tr>
+                    <th v-if="expandable" width="40"></th>
                     <th 
                         v-for="col in columnConfig"
                         :key="col.label"
                         :width="col.width">
-                        <div class="cell" :style="'width:' + col.width + 'px'">{{col.label}}</div>
+                        <div class="cell" :style="'width:' + col.width + 'px'">
+                            <el-checkbox v-if="col.type=='index' && optional"></el-checkbox>
+                            {{col.label}}
+                        </div>
                     </th>
                 </tr>
             </thead>
@@ -20,37 +24,55 @@
                 <tr 
                     v-for="(item, index) in data"
                     :key="item.id">
-                    <td colspan="999">
-                        <!-- v-for="col in columnConfig"
-                        :key="col.label" -->
-                        <table 
-                            class="el-table-row"
-                            cellspacing="0"
-                            cellpadding="0"
-                            border="0"
-                            width="100%">
-                            <thead>
-                                <tr>
-                                    <th colspan="999">
-                                        <div class="cell">
-                                            <slot :name="'th' + index"></slot>
-                                        </div>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td 
-                                        v-for="(col2, colIndex) in columnConfig"
-                                        :key="col2.label"
-                                        :width="col2.width">
-                                        <div class="cell" :style="'width:' + col2.width + 'px'">
-                                            <slot :name="'td' + index + colIndex"></slot>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <td colspan="999" :class="{'active': item.isExpand}">
+                        <div class="el-table-row">
+                            <table 
+                                cellspacing="0"
+                                cellpadding="0"
+                                border="0"
+                                width="100%">
+                                <thead>
+                                    <tr>
+                                        <th colspan="999">
+                                            <div class="cell">
+                                                <slot :name="'th' + index"></slot>
+                                            </div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td
+                                            v-if="expandable" 
+                                            width="40"
+                                            @click="expand(item)">
+                                            <div class="cell">
+                                                <div :class="item.isExpand ? 'el-table__expand-icon--expanded' : 'el-table__expand-icon'">
+                                                    <i class="el-icon el-icon-caret-right"></i>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td 
+                                            v-for="col in columnConfig"
+                                            :key="col.label"
+                                            :width="col.width">
+                                            <div class="cell" :style="'width:' + col.width + 'px'">
+                                                <!-- 普通slot -->
+                                                <slot :name="'td' + index + col.label"></slot>
+                                                <!-- 序号 -->
+                                                <div v-if="col.type == 'index'">
+                                                    <el-checkbox v-if="optional"></el-checkbox>
+                                                    {{index + 1}}
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div v-if="expandable && item.isExpand" class="expand-con">
+                                afdsafasfe法法师沙发上分为二位二位
+                            </div>
+                        </div>
                     </td>
                 </tr>
             </tbody>

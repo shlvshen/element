@@ -12,12 +12,32 @@ export default {
             default: function() {
               return [];
             }
-          }
+        },
+        optional: {
+            type: Boolean,
+            default: false
+        },
+        expandable: {
+            type: Boolean,
+            default: false
+        }
+    },
+    data() {
+        return {
+            
+        }
     },
     methods: {
-
+        init() {
+            this.data.forEach(item => {
+                this.$set(item, 'isExpand', false);
+            });
+        },
+        expand(item) {
+            item.isExpand = !item.isExpand;
+        }
     },
     mounted() {
-        
+        this.init();
     }
 }
