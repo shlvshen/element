@@ -24,12 +24,11 @@ export default {
     },
     data() {
         return {
-            
+            expandWidthList: []
         }
     },
     methods: {
         init() {
-            console.log(this.data);
             if (!this.data) {
                 this.data = [{}];
             }
@@ -39,9 +38,16 @@ export default {
         },
         expand(item) {
             item.isExpand = !item.isExpand;
+        },
+        renderExpand() {
+            this.expandWidthList = [];
+            this.$refs.tablerow.forEach(dom => {
+                this.expandWidthList.push(dom.clientWidth);
+            })
         }
     },
     mounted() {
         this.init();
+        this.renderExpand();
     }
 }

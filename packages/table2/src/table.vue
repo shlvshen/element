@@ -25,7 +25,7 @@
                     :key="item.id"
                     class="tr-first">
                     <td colspan="999">
-                        <div :class="{'active': item.isExpand, 'table-row': true}">
+                        <div :class="{'active': item.isExpand, 'table-row': true}" ref="tablerow">
                             <table 
                                 cellspacing="0"
                                 cellpadding="0"
@@ -71,7 +71,8 @@
                             </table>
                             <div 
                                 v-if="expandable && item.isExpand"
-                                class="expand-con">
+                                class="expand-con"
+                                :style="'width:' + expandWidthList[index] + 'px'">
                                 <slot :name="'expand' + index"></slot>
                             </div>
                         </div>

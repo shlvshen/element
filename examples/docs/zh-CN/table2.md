@@ -390,6 +390,13 @@
                     :data="item.detail"
                     style="width: 100%;">
                     <el-table-column prop="color" label="最喜欢的颜色" width="200"></el-table-column>
+                    <el-table-column prop="color" label="最喜欢的颜色" width="200"></el-table-column>
+                    <el-table-column prop="color" label="最喜欢的颜色" width="200"></el-table-column>
+                    <el-table-column prop="color" label="最喜欢的颜色" width="200"></el-table-column>
+                    <el-table-column prop="color" label="最喜欢的颜色" width="200"></el-table-column>
+                    <el-table-column prop="color" label="最喜欢的颜色" width="200"></el-table-column>
+                    <el-table-column prop="color" label="最喜欢的颜色" width="200"></el-table-column>
+                    <el-table-column prop="color" label="最喜欢的颜色" width="200"></el-table-column>
                     <el-table-column prop="food" label="最喜欢的食物"></el-table-column>
                 </el-table>
             </div>
