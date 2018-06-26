@@ -45,7 +45,7 @@
                                         <td
                                             v-if="expandable" 
                                             width="40"
-                                            @click="expand(item)">
+                                            @click="expand(item, $event)">
                                             <div class="cell">
                                                 <div :class="item.isExpand ? 'el-table__expand-icon--expanded' : 'el-table__expand-icon'">
                                                     <i class="el-icon el-icon-caret-right"></i>

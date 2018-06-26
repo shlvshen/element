@@ -74,14 +74,15 @@ table {
 .el-table2 .active > table thead tr {
     background: #3399ff;
     color: #fff;
+    border: 0;
+}
+
+.el-table2 .active > table thead tr * {
+    color: #fff !important;
 }
 
 .el-table2 .active > table tbody {
     background: #ddedff;
-}
-
-.el-table2 .active > table thead tr {
-    border: 0;
 }
 
 .el-table2 .active > table tbody td {

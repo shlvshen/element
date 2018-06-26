@@ -20,7 +20,8 @@ export default {
         expandable: {
             type: Boolean,
             default: false
-        }
+        },
+        expandEvent: Function
     },
     data() {
         return {
@@ -36,8 +37,9 @@ export default {
                 this.$set(item, 'isExpand', false);
             });
         },
-        expand(item) {
+        expand(item, e) {
             item.isExpand = !item.isExpand;
+            this.$emit('table-expand-event', item, e);
         },
         renderExpand() {
             this.expandWidthList = [];

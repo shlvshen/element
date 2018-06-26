@@ -94,6 +94,14 @@
                     }
                 ]
             }
+        },
+        methods: {
+            expandEvent(item, e) {
+                console.log(item, e);
+            }
+        },
+        mounted() {
+
         }
     }
 </script>
@@ -351,7 +359,8 @@
             :data="tableData2"
             :column-config="columnConfig2"
             expandable
-            style="width: 100%">
+            style="width: 100%"
+            v-on:table-expand-event="expandEvent">
             <div
                 v-for="(item, index) in tableData2"
                 :key="item.id"
