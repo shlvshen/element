@@ -30,12 +30,19 @@ export default {
     },
     methods: {
         init() {
+            var _this = this;
             if (!this.data) {
                 this.data = [{}];
             }
             this.data.forEach(item => {
                 this.$set(item, 'isExpand', false);
             });
+
+            this.renderTable();
+            this.renderExpand();
+            window.onresize = function () {
+                _this.renderExpand();
+            }
         },
         expand(item, e) {
             item.isExpand = !item.isExpand;
@@ -46,10 +53,12 @@ export default {
             this.$refs.tablerow.forEach(dom => {
                 this.expandWidthList.push(dom.clientWidth);
             })
+        },
+        renderTable() {
+            
         }
     },
     mounted() {
         this.init();
-        this.renderExpand();
     }
 }

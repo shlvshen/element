@@ -90,7 +90,8 @@
                         width: 280
                     },
                     {
-                        label: '备注'
+                        label: '备注',
+                        width: 280
                     }
                 ]
             }
@@ -487,5 +488,10 @@
 | column-config | 表格列配置 | array | — | — |
 | optional | 是否需要checkbox | boolean | — | false |
 | expandable | 是否需要可展开 | boolean | — | false |
+
+### Table Events
+| 事件名 | 说明 | 参数 |
+| ---- | ---- | ---- |
+| table-expand-event | 展开表格时的回调 | item,$event |
 
 
