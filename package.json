@@ -1,6 +1,6 @@
 {
   "name": "thx-knight",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "A Component Library for Vue.js.",
   "main": "lib/thx-knight.common.js",
   "files": [
