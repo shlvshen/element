@@ -25,7 +25,7 @@ export default {
     },
     data() {
         return {
-            expandWidthList: []
+            tableWidth: 0
         }
     },
     methods: {
@@ -38,7 +38,6 @@ export default {
                 this.$set(item, 'isExpand', false);
             });
 
-            this.renderTable();
             this.renderExpand();
             window.onresize = function () {
                 _this.renderExpand();
@@ -51,12 +50,22 @@ export default {
         renderExpand() {
             this.expandWidthList = [];
             this.$refs.tablerow.forEach(dom => {
-                this.expandWidthList.push(dom.clientWidth);
+                this.tableWidth = this.$refs.eltable2.offsetWidth;
             })
         },
-        renderTable() {
-            
-        }
+        // renderThead() {
+        //     var html = '';
+        //     var expandTh = '';
+        //     var dataTh = '';
+        //     if (this.expandable) {
+        //         expandTh = '<th width=40></th>';
+        //     }
+        //     this.columnConfig.forEach(config => {
+        //         dataTh += '<th width='+config.width+'><div class="cell" style="width: '+config.width+'px">'+config.label+'</div></th>';
+        //     });
+        //     html = '<tr>' + expandTh + dataTh + '</tr>';
+        //     return html;
+        // }
     },
     mounted() {
         this.init();

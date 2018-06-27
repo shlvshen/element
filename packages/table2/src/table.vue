@@ -1,11 +1,12 @@
 <template>
-    <div>
+    <div ref="eltable2">
         <table 
             cellspacing="0"
             cellpadding="0"
             border="0"
             width="100%"
             class="el-table2">
+            <!-- <thead class="thead-dark" v-html="renderThead()"> -->
             <thead class="thead-dark">
                 <tr>
                     <th v-if="expandable" width="40"></th>
@@ -72,7 +73,7 @@
                             <div 
                                 v-if="expandable && item.isExpand"
                                 class="expand-con"
-                                :style="'width:' + expandWidthList[index] + 'px'">
+                                :style="'width:' + tableWidth + 'px'">
                                 <slot :name="'expand' + index"></slot>
                             </div>
                         </div>
