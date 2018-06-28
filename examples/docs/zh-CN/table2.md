@@ -72,7 +72,8 @@
                         width: 280
                     },
                     {
-                        label: '备注'
+                        label: '备注',
+                        width: 200
                     }
                 ],
                 columnConfig2: [
@@ -83,22 +84,22 @@
                     },
                     {
                         label: '个人信息',
-                        width: 150
+                        width: 200
                     },
                     {
                         label: '住址',
-                        width: 280
+                        width: 200
                     },
                     {
                         label: '备注',
-                        width: 280
+                        width: 200
                     }
                 ]
             }
         },
         methods: {
             expandEvent(item, e) {
-                console.log(item, e);
+                // console.log(item, e);
             }
         },
         mounted() {
@@ -191,7 +192,8 @@
                         width: 280
                     },
                     {
-                        label: '备注'
+                        label: '备注',
+                        width: 200
                     }
                 ]
             }
@@ -264,7 +266,8 @@
                         width: 280
                     },
                     {
-                        label: '备注'
+                        label: '备注',
+                        width: 200
                     }
                 ]
             }
@@ -338,7 +341,8 @@
                         width: 280
                     },
                     {
-                        label: '备注'
+                        label: '备注',
+                        width: 200
                     }
                 ]
             }
@@ -432,7 +436,8 @@
                         width: 280
                     },
                     {
-                        label: '备注'
+                        label: '备注',
+                        width: 200
                     }
                 ],
                 tableData2: [
@@ -485,13 +490,20 @@
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
 |---------- |-------------- |---------- |--------------------------------  |-------- |
 | data | 显示的数据 | array | — | — |
-| column-config | 表格列配置 | array | — | — |
-| optional | 是否需要checkbox | boolean | — | false |
+| column-config | 表格列配置，对象数组，每一项代表一列，详情看下表 | array | — | — |
+| optional | 是否需要checkbox，如果为true，序号列会自动出现checkbox | boolean | — | false |
 | expandable | 是否需要可展开 | boolean | — | false |
 
 ### Table Events
 | 事件名 | 说明 | 参数 |
 | ---- | ---- | ---- |
 | table-expand-event | 展开表格时的回调 | item,$event |
+
+### columnConfig
+| 事件名 | 说明 |
+| ---- | ---- |
+| label | 表格头部显示的文字 |
+| width | 该列宽度，实际宽度为设置的值所占总值的百分比，例如，所有width的和为100，该column的width为20，则该column的宽度为表格总宽度的20%；正确的做法是每一项都设置width，如果有未设置width的项，系统默认给值10 |
+| type | 表格列的类型，目前支持index(序号) |
 
 

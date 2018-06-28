@@ -8,6 +8,9 @@ table {
     font-weight: lighter;
     text-align: left;
 }
+.el-table2 .thead-dark th {
+    border: 1px solid transparent;
+}
 .el-table2 td {
     border: 1px solid #ddd;
     padding: 0;
@@ -20,7 +23,12 @@ table {
 }
 
 .el-table2 .cell {
+    box-sizing: border-box;
     padding: 0 10px;
+}
+
+.el-table2 th .cell {
+    white-space: nowrap;
 }
 
 .el-table2 .tr-first>td {

@@ -25,7 +25,8 @@ export default {
     },
     data() {
         return {
-            tableWidth: 0
+            tableWidth: 0,
+            thHtml: ''
         }
     },
     methods: {
@@ -38,34 +39,47 @@ export default {
                 this.$set(item, 'isExpand', false);
             });
 
-            this.renderExpand();
+            // 设置表格宽度
+            this.renderTable();
             window.onresize = function () {
-                _this.renderExpand();
+                _this.renderTable();
             }
         },
         expand(item, e) {
             item.isExpand = !item.isExpand;
             this.$emit('table-expand-event', item, e);
         },
-        renderExpand() {
-            this.expandWidthList = [];
-            this.$refs.tablerow.forEach(dom => {
-                this.tableWidth = this.$refs.eltable2.offsetWidth;
-            })
+        renderTable() {
+            this.tableWidth = this.$refs.eltable2.offsetWidth;
+
+            var totalWidth = 0;
+            // 可用宽度，是总宽度-expand的宽度
+            var usableWidth = this.tableWidth - 40;
+            this.columnConfig.forEach(col => {
+                col.width = col.width || 10;
+                totalWidth += parseFloat(col.width);
+            });
+
+            this.columnConfig.forEach(col => {
+                col.width = col.width || 10;
+                // -2为减去边框宽度
+                col.resWidth = col.width/totalWidth * usableWidth - 2;
+            });
+            this.renderThead();
         },
-        // renderThead() {
-        //     var html = '';
-        //     var expandTh = '';
-        //     var dataTh = '';
-        //     if (this.expandable) {
-        //         expandTh = '<th width=40></th>';
-        //     }
-        //     this.columnConfig.forEach(config => {
-        //         dataTh += '<th width='+config.width+'><div class="cell" style="width: '+config.width+'px">'+config.label+'</div></th>';
-        //     });
-        //     html = '<tr>' + expandTh + dataTh + '</tr>';
-        //     return html;
-        // }
+        renderThead() {
+            var expandTh = '';
+            var dataTh = '';
+
+            if (this.expandable) {
+                expandTh = '<th width=40></th>';
+            }
+            this.columnConfig.forEach(config => {
+                dataTh += '<th width='+config.resWidth+'><div class="cell" style="width:'+config.resWidth+'px">'+config.label+'</div></th>'
+            });
+
+            this.thHtml = '<tr>'+expandTh+dataTh+'</tr>';
+        }
     },
     mounted() {
         this.init();

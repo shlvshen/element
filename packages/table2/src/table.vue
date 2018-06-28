@@ -6,20 +6,19 @@
             border="0"
             width="100%"
             class="el-table2">
-            <!-- <thead class="thead-dark" v-html="renderThead()"> -->
-            <thead class="thead-dark">
-                <tr>
+            <thead class="thead-dark" v-html="thHtml">
+                <!-- <tr>
                     <th v-if="expandable" width="40"></th>
                     <th 
                         v-for="col in columnConfig"
                         :key="col.label"
-                        :width="col.width">
-                        <div class="cell" :style="'width:' + col.width + 'px'">
+                        :width="col.resWidth">
+                        <div class="cell" :style="'width:' + col.resWidth + 'px'">
                             <el-checkbox v-if="col.type=='index' && optional"></el-checkbox>
                             {{col.label}}
                         </div>
                     </th>
-                </tr>
+                </tr> -->
             </thead>
             <tbody v-if="data && data.length > 0">
                 <tr v-for="(item, index) in data"
@@ -47,7 +46,7 @@
                                             v-if="expandable" 
                                             width="40"
                                             @click="expand(item, $event)">
-                                            <div class="cell">
+                                            <div class="cell" style="width: 40px;">
                                                 <div :class="item.isExpand ? 'el-table__expand-icon--expanded' : 'el-table__expand-icon'">
                                                     <i class="el-icon el-icon-caret-right"></i>
                                                 </div>
@@ -56,8 +55,8 @@
                                         <td 
                                             v-for="col in columnConfig"
                                             :key="col.label"
-                                            :width="col.width">
-                                            <div class="cell" :style="'width:' + col.width + 'px'">
+                                            :width="col.resWidth">
+                                            <div class="cell" :style="'width:' + col.resWidth + 'px'">
                                                 <!-- 普通slot -->
                                                 <slot :name="'td' + index + col.label"></slot>
                                                 <!-- 序号 -->
